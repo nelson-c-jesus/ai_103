@@ -3,7 +3,9 @@
 
 ## 1. Develop generative AI apps in Azure
 
-- [`Documentação Oficial`](https://learn.microsoft.com/en-us/training/paths/develop-generative-ai-apps/)
+### 1.1. [Documentação Oficial](https://learn.microsoft.com/en-us/training/paths/develop-generative-ai-apps/)
+
+### 1.2. [Plan and prepare to develop AI solutions on Azure](https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/)
 
 - **Introduction**
     - Develop comprehensive AI Solutions that combine:
@@ -185,6 +187,486 @@
 
 - **Exercise - Prepare for an AI development project**
     [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/01-Explore-ai-studio.html)
+
+
+### 1.3. [Select, deploy and evaluate Microsoft Foundry models](https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/)
+
+- **Introduction**
+
+    - Scenario :: Build a AI-powered customer support chatbot
+        1. Select language model that can understand customer questionsa
+        2. Provide accurate responsees
+        3. Maintain tone and safety standards
+
+    - Foundry portal
+        - Explore over 1 900 models
+        - Providers
+            - Microsoft
+            - Anthropic
+            - OpenAI
+            - Meta
+            - Hugging Face
+            - Cohere
+            - Mistral
+        - Compare models for
+            - Quality
+            - Safety
+            - Cost
+            - Performance
+        - Deploy model to endpoint so app can consume it
+        - Evaluate performance
+
+- **Explore the model catalog**
+
+    - Model catalog categories
+        - Foundry Models sold directly by Azure<br/>Models billed directly through Azure subscription<br/>include Azure OpenAI models as well as models from<br/>Microsoft and other providers
+        - Foundry Models from partners and community<br/>Models provided by trusted partners and community
+
+    - Finding Modls in the model catalog
+        - Each model has a _model card_ showing key information
+            1. Provider
+            2. Capabilities
+            3. Benchmark metrics
+            4. Responsible AI considerations
+            5. Deployment options
+
+        - Filters
+            - Collection<br/>Models that are provided in Azure or in the<br/>Hugging Face repository
+            - Capabilities<br/>Specific models abilities like
+                - Reasoning (complex problem-solving)
+                - Tool calling (API and function integration)
+                - Multimodal processing (text,, images, audio)
+            - Source<br/>Model provider
+            - Inference tasks<br/>Specific tasks like
+                - Text generation
+                - Summarization
+                - Translation
+                - Image generation
+                - Speech synthesis,...
+            - Fine-tuning methods<br/>Supported techniques for fine-tuning a model
+            - Industry<br/>Models trained on industry-specific datasets
+
+    - Understand generative AI model types
+        - Large Language Models (LLMs)
+            - GPT-5
+            - Mistral Large
+            - Llama 3 70B
+            - Designed for tasks
+                - Deep reasoning
+                - Complex content generation
+                - Extensive context understanding
+            - Require more computational resources
+        - Small Language Models (SLMs)
+            - Phi-4
+            - Mistal OSS
+            - Llama 3 8B
+            - Offers
+                - Efficiency
+                - Cost-efectiveness
+                - Can run on lower-end hardware
+                - Edge devices
+
+    - Chat completion models<br/>Designed to generate coherent, contextually appropriate text responses<br/>Powers conversational interfaces and content generation apps
+
+    - Reasoning models<br/>Used for complex tasks like
+        - Mathematics
+        - Coding
+        - Science
+        - Strategy
+        - Logistics
+
+    - Specialized models
+        - Embedding models like ADA and Cohere<br/>Convert text into numerical representations.<br/>Enable
+            - Semantic search
+            - Recommendation systems
+            - RAG
+        - Image generation models like GPT-image-1<br/>Create image from text descriptions.<br/>Used for
+            - Marketing materials
+            - Illustrations
+            - Design mockups
+        - Video generation models<br/>Like Sora 2 that crearee content from text descriptions
+        - Image analysis models<br/>Like GPT-4.1 can accept _multimodal_ input(text and imagens)<br/>and generate natural language output based on prompts<br/>that include images for analysis
+        - Text to speech (TTS) models<br/>Like GPT-4o-tts can convert text-based input to synthetised speech
+        - Speech to text (STT) models<br/>Like GPT-4o-transcribe can convert audio data contanining speech<br/>into texrt transcriptions
+    
+    - Regional and domain-specific models<br/>Some models are otimized for specific
+        - Languages
+        - Regions
+        - Industries
+
+- **Select models using benchmarks**
+
+    - Foundry portal offers benchmarking organized in
+        - Quality
+        - Safety
+        - Cost
+        - Performance
+
+    - Access models benchmarks
+        - Model leaderboard<br/>See comparative rankings across all avaliable models
+        - Benchmarks<br/>Shows how the modl performs across various metrics and datasets
+
+    - Quality benchmarks
+        - Assess how well a model generates
+            - Accurate
+            - Coherent
+            - Contextually appropriate responses
+        - Quality index average accuracy scores across multiple benchmark datasets
+        - Datasets used on benchmarks
+            - Arena-Hard :: adversarial question answering
+            - BIG-Bench Hard :: reasoning capabilities
+            - GPQA :: graduate-level multi-discipline questions
+            - HumanEval+ and MBPP+ :: code generation tasks
+            - MATH :: mathematical reasoning
+            - MMLU-Pro :: general knowledge assessment
+            - IFEval :: instruction following
+        - Benchmark scores are normalized indexes from 0 to 1 (higher is better)
+
+    - Safety benchmarks
+        - Safety metrics ensure that models don't generate
+            - Harmful
+            - Biased
+            - Inappropriate content
+        - Safety dimensions
+            - Harmful behaviour detection (HarmBenchmark)
+                - Evaluation calculates Attact Success Rate (ASR)<br/>Lower values are safer
+                - Functional areas
+                    - Standard harmful behaviours
+                        - Cybercrime
+                        - Illegal activities
+                        - General harm
+                    - Contextually harmful behaviours
+                        - Misinformation
+                        - Harassment
+                        - Bullying
+                    - Copyright violations
+                        - Reproducing copyrighted material
+            - Toxic content detection
+                - ToxiGen dataset
+                - Mesuare how well models identify hate speech
+                - Higher F1 scores indicate better detection performance
+            - Sensitive domain knowledge
+                - Benchmark Weapons of Mass Destruction Proxy (WMDP)<br/>Measure model knowledge in
+                    - Biosecurity
+                    - Cybersecurity
+                    - Chemical security
+                - Higher scores indicate more knowledge of<br/>potential dangerous capabilities
+
+    - Cost benchmarks
+        - Useful for understanding the finantial impact of model usage
+        - Cost per input tokens<br/>Price for 1M input tokens (text send to model)
+        - Cost per output tokens<br/>Price for generating 1M output tokens (text that the model produces)
+        - Estimated cost<br/>Combines input-output costs using a typical 3:1 ratio<br/>(3 input tokens for 1 output token) &rarr; lower is better
+
+    - Performance benchmarks
+        - Measure how quickly and efficiently models respond to requests
+        - Latency measurements
+            - Latency mean :: average time in seconds to process a request
+            - Latency P50 (median) :: 50% of requests complete faster than this time
+            - Latency P90 :: 90% of requests complete faster than this time
+            - Latency P95 :: 95% of requests complete faster than this time
+            - Latency P99 :: 99% of requests complete faster than this time
+            - Time to first token (TTFT) :: time until the first token arrives when using streaming
+        - Troughput measurements
+            - Generated tokens per second (GTPS) :: output tokens generated per second
+            - Total tokens per second (TTPS) :: combined input and output tokens processed per second
+            - Time between tokens :: interval between receiving consecutive tokens
+        - Leaderboard uses
+            - Mean time to first token (lower is better)
+            - Mean generated tokens per second (higher is better)
+
+    - Use leaderboards and comparison features
+        - Scenario leaderboards<br/>Models optimized for
+            - Reasoning
+            - Coding
+            - Math
+            - Question answering
+            - Groundedness
+        - Trade-off charts display 2 metrics
+            - Quality _vs_ Cost
+            - Quality _vs_ Troughput
+            - Models close to top-right corner perform well on<br/>both metrics
+        - Side-by-side comparison (can select 2 or 3 models) and<br/>compare across
+            - Performance benchmarks (quality, safety, throughput)
+            - Model details (context window, training data, supported languages)
+            - Supported endpoints (deployment options)
+            - Feature support (function calling, structured output, vision)
+
+- **Deploy models to endpoints**
+
+    - Understand model deployment types
+        - Global Standard
+            Can use any Azure region on a pay-per-token basis
+            Best for general workloads, and provide the highest quota.
+        - Global Provisioned 
+            Can use any Azure region
+            Use is based on a reserved Provision Throughput Units (PTU)<br/>basis to provide predictable high-throughput.
+        - Global Batch
+            Can use any Azure region at a 50% discount for<br/>large asynchronous jobs within 24-hours.
+        - Data Zone Standard
+            Ensure data stays within a specific data zone on a pay-per-token basis
+            Best for scenarios where EU/US data zone compliance is required.
+        - Data Zone Provisioned
+            Provide predictable throughput based on reserved PTUs within a data zone.
+        - Data Zone Batch
+             Designed for large asynchronous batch jobs within a data zone/
+        - Standard
+            Are deployed within a single region on a pay-per-token basis
+            Great when you need regional data residency compliance or for low-volume scenarios.
+        - Regional Provisioned
+            Provide reserved PTUs within a single region.
+        - Developer 
+            Use any Azure region on a pay-per-token basis 
+            For fine-tuned model evaluation only.
+        - In the catalog eeach models indicates wich deployment types support
+        - The portal automatically selects the best deployment<br/>option based on
+            - Environment
+            - Model requirements
+        - Global standard deployments should be used whenever possible
+
+    - Deploy a model
+        - Discover
+        - Models
+        - Deploy
+            - Default settings
+                Deploy quickly with recommended config
+            - Custom settings
+                Customize deployment options
+        - Models 
+            - Partners & Community
+                Need _review_ and **Agree and Proceed**
+            - Sold by Azure
+                Don't need subscription
+        - Configure deployment settings
+            - Deployment name
+                - Defaults to model name
+                - Change form multiple deployments of the same model
+                - In inference, code uses this name in the `model` parameter to route requests
+            - Deployment type
+                - Defined by the portal based on
+                    - Model
+                    - Environment
+                - Each model supports different
+                    - Deployment types
+                    - Data residency
+                    - Data throughput
+        - For managed compute deployments<br/>configure
+            - Virtual machine SKU
+                Choose from supported VM types
+                Needed an Azure Machine Learning compute quota
+            - Instance count
+                Specify the number of instances to deploy for<br/>load distribution and redundancy
+        - Deployt
+        - Foundry Playground (test the model)
+        - Verify deployment status as **Succeeded**
+
+    - Manage deployed models
+        - Manage models from the **Build** section
+        - From the deployment list &rarr; Model, view details
+            - Deployment configuration and status
+            - Endpoint URL for API access
+            - Authentication keys or tokens
+            - Monitoring and usage metrics
+            - Option to adjust deployment settings or delete the deployment
+
+    - Test in the playground
+        - Test deployed models without writing code
+        - Pre-selects the most recent deployment
+        - Test immediatly
+        - Displays both input and the models output
+        - Experiment different typs of prompts
+            - Simple questions to verify basic understanding
+            - Complex multi-step reasoning problems
+            - Requests for specific formats or styles
+            - Edge-cases that might reveal limitations
+        - System messages set
+            - Context
+            - Tone
+            - Instructions to user inputs
+        - Modify parameters
+            - Temperature (creativity _vs_ consistency)
+            - Max tokens (response length limits)
+            - Top-P (nucleus sampling) to fine-tune generation behaviour
+        - Code tab
+            - Show how to call the model programmatically
+            - Code samples for
+                - Authentication
+                - Endpoint configuration
+                - Request formatting
+        - Develop prompt engineering and test before integrate in an app
+
+    - Access models programmatically
+        - Endpoint URL
+            The API endpoint where your application sends requests
+        - Authentication key
+            The secret key or token your application presents to authenticate requests
+        - Deployment name
+            The name specified during deployment
+
+- **Evaluate model performance**
+
+    - Why evaluate models
+        - Quality assurance
+            Identifies issues and ensures your model provides accurate, relevant responses
+        - User satisfaction
+            Improves when models consistently deliver helpful, appropriate responses
+        - Continuous improvement
+            Analyze evaluation results to identify enhancement opportunities
+        - Compliance and safety
+            Verification confirms your model
+                - Adheres to policies
+                - Avoid generating harmful content
+                - Respect user privacy
+                - Respect data protection requirements
+
+    - Manual evaluation
+        - Manual evaluation involves human reviewers assessing model responses
+        - Interactive testing in the playground lets explore model behavior qualitatively
+        - Structured review involves creating a set of<br/>test cases representing your application's use cases based on criteria
+            - Relevance :: Does the response address the question or request?
+            - Informativeness :: Does it provide sufficient detail and useful information?
+            - Engagement :: Is the response interesting and appropriately conversational?
+            - Accuracy :: Are facts and statements correct?
+            - Safety :: Does the response avoid harmful, biased, or inappropriate content?
+            - Aggregate ratings across multiple test cases provide quantitative measures of overall quality
+        - User studies collect fedback from actual or<br/>representative users interacting with the application
+        - Manual evaluation is a complements automated approaches
+        - Manual evaluation capture subjectivity
+            - User satisfaction
+            - Contextual appropriateness
+            - Brand alignment
+
+    - Automated evaluation metrics
+        - Uses standard metrics to assess model outputs automatically
+        - Scale efficiently
+        - Provide consistent, objective measurements
+        - Generation quality metrics
+            - Groundedness
+                Determines whether responses are based on provided context<br/>rather than speculation
+                Groundedness Pro offers binary assessment (grounded or not grounded)<br/>useful for factual accuracy requirements.
+            - Relevance
+                Measures whether responses address the user's question or request appropriately
+            - Coherence
+                Assesses whether responses flow logically and maintain consistent ideas.
+            - Fluency
+                Evaluates linguistic correctness and natural language quality
+        - Risk and safeety metrics
+            - Self-harm content
+                Detects responses discussing or encouraging self-harm
+            - Hateful and unfair content
+                Identifies bias, discrimination, or hateful statements
+            - Violent content
+                Flags responses containing or promoting violence
+            - Sexual content
+                Detects inappropriate sexual content
+            - Protected material
+                Identifies potential copyright or proprietary content reproduction
+            - Indirect attack (jailbreak)
+                Assesses vulnerability to manipulation attempts
+            - For content harm metrics, results aggregate as **defect rate**
+                Percentage of responses exceeding a severity threshold (typically Medium)
+            - For protected material and indirect attack
+                defect rate $ = \Big(\frac{\text{true instances}}{\text{total instances}}\Big) \times 100$
+            - AI-assisted evaluation need to specify a GPT model to perform the assessment
+
+    - Natural Language Processing (NLP) metrics
+        - Are mathmatical-based evaluation
+        - Need ground truth data &mdash; expected or correct responses for comparison
+        - F1-score
+            Measures the ratio of shared words between generated and ground truth answers
+            Balancing precision (avoiding incorrect words) and recall (including important words)
+            Is valuable for tasks like text classification and information retrieval
+        - Bilingual Evaluation Understudy (BLEU)
+            Compares n-grams (word sequences) between generated and reference texts, commonly used for machine translation evaluation
+        - Metric for Evaluation of Translation with Explicit Ordering (METEOR)
+            Extends BLEU by accounting for `synonyms`, `stemming`, and `paraphrasing`, providing more flexible comparison
+        - Recall-Oriented Understudy for Gisting Evaluation (ROUGE)
+            Emphasizes recall over precision
+            Useful for summarization tasks where covering key points matters more than avoiding extra words
+        - Google-BLEU (GLEU)
+            is a variant of BLEU designed for sentence-level evaluation
+        - NLP metrics work well when you have definitive correct answers or reference texts
+
+    - Create comprehensive evaluations
+        - **Evaluation** feature lets you run systematic evaluations<br/>using test datasets and multiple metrics simultaneously
+        - Evaluation can be one of the following
+            - Model
+                Evaluate a deployed model with prompts you specify
+                The system generates outputs during evaluation
+            - Agent
+                Evaluate an agent's responses with user-defined prompts.
+            - Dataset
+                Evaluate pre-generated outputs already present in your test dataset
+        - Dataset to provide inputs for assessment can be
+            - Upload new dataset
+                Provide a CSV or JSONL file containing test cases from your local storage.
+            - Use existing dataset
+                Select from datasets you've previously uploaded to your project.
+            - Generate synthetic dataset
+                The system can generate sample data based on a topic description you provide.
+            - Pre-generated outputs
+                select or upload your dataset containing both inputs and model-generated responses
+
+    - Review evaluation results
+        - The results show aggregate scores for the metrics you selected and details of each test prompt
+
+    - Explore the evaluator library
+        - Provides a centralized location to view and manage all available evaluators
+        - Supports version management
+            - Letting you compare different versions
+            - Restore previous versions if needed
+            - Collaborate with others on custom evaluators
+        - Access from project's `Evaluation` page by selecting the<br/> `Evaluator library` tab
+        - We can
+            - View Microsoft-curated evaluators for quality, safety, and performance
+            - Examine evaluator details including name, description, parameters, and associated files
+            - Review annotation prompts for quality evaluators to understand how metrics are calculated
+            - Check definitions and severity levels for safety evaluators
+            - Manage custom evaluators you've created for specific scenarios
+
+    - Iterate based on evaluation
+        - Scores are lower than required
+            - Prompt engineering
+                Refining instructions and system messages
+            - Different models
+                Trying models optimized for your use case
+            - RAG integration
+                Adding retrieval capabilities to ground responses in your data
+            - Fine-tuning
+                Training the model on your specific domain (if supported)
+            - These steps can grow in complexity and sometimes cost
+        - Safety metrics show concerns
+            - Content filters
+                Implementing Azure AI Content Safety services
+            - Prompt hardening
+                Adding safety instructions to system messages
+            - Output validation
+                Checking responses before displaying to users
+        - Regular evaluation as you make changes tracks improvements and ensures quality doesn't regress
+    - Combining manual testing, automated metrics, and comprehensive evaluation flows, you build confidence that your model performs well, safely serves users, and meets your application's quality requirements
+- **Exercise - Select, deploy, and evaluate models**
+    [&rarr; saber &plus;](https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/6-exercise)
+
+
+### 1.4. [Develop a generative AI chat app with Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/foundry-sdk/)
+
+- **Explore with the model playground**
+
+
+
+### 1.5. [Developgenerative AI apps that use tools](https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/)
+
+
+### 1.6. [Optimize generative AI model performance with Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/)
+
+
+### 1.7. [Implement a responsible generative AI solution in Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/)
+
+
+
+
+
+
 
 
 
