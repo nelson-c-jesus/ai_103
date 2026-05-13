@@ -1242,12 +1242,540 @@ markmap:
 
 ### 1.5. [Develop generative AI apps that use tools](https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/)
 
-- ** Introduction**
-    - 
+- **Introduction**
+    - Tools enable GenAI apps
+        - Access real-time information
+            Fetch current data, weather, stock prices, or API responses that weren't in the model's training data
+        - Take actions
+            Perform tasks like sending emails, creating database records, or triggering workflows based on AI decisions
+        - Ground responses in facts
+            Retrieve specific, authoritative information to reduce incorrect information and improve accuracy
+        - Extend functionality
+            Connect to your existing systems, databases, and business logic seamlessly
+        - Build intelligent workflows
+            Chain multiple operations together so AI coordinates complex, multi-step processes
+        - Without tools, generative AI works in isolation
+        - With tools the agent can
+            - Observe
+            - Reason
+            - Act on the world around
 
+- **What are tools?**
+
+    - <span>&#9888;</span> ==By default, the model chooses when to use a tool (and which one), based on the prompt
+    &nbsp;&nbsp;&nbsp;&nbsp;You can configure tool selection rules and use the Instructions (system prompt) parameter to guide this choice.==
+
+    - Tools extend Foundry models capabilities
+        - Find information
+        - Perform tasks
+    
+    - (_Some_) Tools available in the Responses API
+        - code_interpreter
+            A Python environment in which the model can generate and run code.
+        - web_search
+            A tool that enables the model to find general information on the Internet, which allows it to base responses on more current data than it was trained on.
+        - file_search
+            A tool that enables the model to search specific files that you upload to a dedicated vector search index - enabling it to ground responses in specific knowledge.
+        - function
+            A tool that enables the model to call custom functions in your application code.
+
+    - Specifying tools in the Responses API
+        - Call one or more tools with `responses.crate()` method
+        - Example
+            <pre><code>
+                from openai import OpenAI
+                client = OpenAI(
+                    base_url={openai_endpoint},
+                    api_key={auth_key_or_token}
+                )
+                response = client.responses.create(
+                    model={model_deployment},
+                    instructions="You are a helpful AI assistant.",
+                    input="Find me some information about vintage computers.",
+                    # Specify available tools as a JSON list
+                    tools=[
+                        { 
+                            # A tool definition
+                            "type": "{tool_type}",
+                            "{tool-specific-setting}": "{value}",
+                                ...
+                        },
+                        { 
+                            # Another tool definition
+                            "type": "{another_tool_type}",
+                            "{tool-specific-setting}": "{value}",
+                                ...
+                        }
+                    ]
+                )
+                print(response.output_text)
+            </code></pre>
+
+- **Use the `code_interpreter` tool**
+
+    - What is the code_interpreter tool?
+        - Enables GenAI models write and run Python code
+        - The model dinamically
+            - Test its logic
+            - Process data
+            - Return actual results from code
+        - Key features
+            - Dynamic Python Execution
+                The model writes and runs Python code in a sandboxed environment
+            - File Handling
+                Upload, process, and download files (CSV, JSON, images, and so on)
+            - Data Analysis
+                Perform calculations, statistical analysis, and data transformations on the fly
+            - Real-time Feedback
+                The model sees code execution results and can iterate or fix errors
+            - Complex Problem Solving
+                Tackle math problems, simulations, and logic puzzles through executable code
+
+    - Common use cases
+        | Use Case | Example |
+        |-|-|
+        | Data Analysis | Parse a CSV file and generate summary statistics |
+        | Math & Physics | Solve differential equations or simulate physics scenarios |
+        | File Conversion | Convert between data formats (JSON ↔ CSV, and so on) |
+        | Prototyping | Test algorithms and ideas before formal implementation |
+
+        <br/>
+    - Example
+        <pre><code>
+            from openai import OpenAI
+            client = OpenAI(
+                base_url={openai_endpoint},
+                api_key={auth_key_or_token}
+            )
+            # Get response using the code_interpreter tool
+            response = client.responses.create(
+                model={model_deployment},
+                instructions="You are an AI assistant that provides information. Use the python tool to run code for math problems.",
+                input="What is the square root of 16?",
+                tools=[{"type": "code_interpreter",
+                        "container": {"type": "auto"}}]
+            )
+            print(response.output_text)
+        </code></pre>
+
+        - Output
+            <pre>
+
+                The square root of 16 is 4.
+            </pre>
+
+        - Model generated Python code
+            <pre><code>
+                import math
+                # Calculate the square root of 16
+                square_root = math.sqrt(16)
+                square_root
+            </code></pre>
+
+    - How the code_interpreter tool works
+        - You send a request
+            Include code_interpreter in your tools array.
+        - Model analyzes the task
+            The model determines if code execution is needed.
+        - Model generates code
+            The model writes Python code to accomplish the task.
+        - Code runs
+            The code runs in a sandboxed environment with access to
+            common libraries (for example: pandas, numpy, and math).
+        - Results returned
+            The model receives the output and incorporates it into its response.
+
+    - Best practices
+        - Be specific
+            Describe the data format and expected output clearly.
+            Many models internally use the name python tool to identify the code_interpreter tool - so use this language in your instructions.
+        - Provide context
+            Include relevant domain knowledge in your prompts
+        - Validate results
+            Always review AI-generated code for correctness before using in production
+        - Monitor costs
+            Code execution adds tokens
+            Complex operations may use more resources
+        - Leverage libraries
+            Common packages like pandas, numpy, and matplotlib are pre-installed
+        - Error handling
+            The model can see errors and will attempt to fix them automatically
+    
+    - Limitations
+        - Executions run in a sandboxed environment with no external network access
+        - Some libraries may not be available; let the model know if a standard library fails
+        - Timeout limits apply to long-running operations
+        - Code runs with memory constraints—massive datasets may need streaming or chunking
+
+- **Use the `web_search`tool**
+
+    - What is the web_search tool?
+        - Gives a GenAI model access to current, external information at runtime.
+        - Model can
+            - Search query
+            - Review relevant sources
+            - Produce an answer in up-to-date content
+        - Useful for
+            - Price changes
+            - Product releases
+            - Policy updates
+            - Current events
+        - Key features
+            - Live information retrieval
+                Get recent information not available in static model training data
+            - Source-grounded responses
+                Build answers from retrieved web content
+            - Reduced hallucination risk
+                Improve reliability by checking external sources
+            - Automatic query generation
+                The model decides when and how to search based on user intent
+            - Seamless user experience
+                Search and response generation happen in one flow
+        - Common use cases
+            | Use Case | Example |
+            |-|-|
+            | Current Events | Summarize key updates on a breaking technology announcement |
+            | Market Research | Compare recent product features or pricing across vendors |
+            | Policy Monitoring | Check whether regulations or guidance have changed |
+            | Fact Verification | Validate claims against reputable public sources |
+            
+            <br/>
+        
+        - Example
+            <pre><code>
+                from openai import OpenAI
+                client = OpenAI(
+                    base_url={openai_endpoint},
+                    api_key={auth_key_or_token}
+                )
+                # Get response using the web_search tool
+                response = client.responses.create(
+                    model={model_deployment},
+                    instructions="You are an AI assistant. Use web search when current information is required.",
+                    input="What are three major announcements from Microsoft Build this week?",
+                    tools=[{"type": "web_search"}]
+                )
+                print(response.output_text)
+            </code></pre>
+
+        - How the `web_search` tool works
+            - You send a request
+                Include a web search tool in the tools array.
+            - Model evaluates the question
+                It decides whether fresh web data is needed.
+            - Search is performed
+                The model issues one or more search queries.
+            - Results are reviewed
+                Relevant pages are selected and summarized.
+            - Response is generated
+                The model combines search findings into the final answer.
+
+        - Best practices
+            - Ask time-aware questions clearly
+                Include words like "latest", "current", or date ranges when needed
+            - Set expectations for sources
+                Prompt for reputable or official sources when accuracy matters
+            - Request concise outputs
+                Ask for short summaries with key points to reduce noise
+            - Verify critical facts
+                For high-stakes scenarios, independently validate important claims
+            - Track usage and latency
+                Web retrieval can increase response time and token usage
+
+        - Limitations
+            - Results depend on what is publicly available and indexable at query time
+            - Source quality can vary, so output may still require human review
+            - Retrieved content may change over time, so repeated runs can produce different answers
+            - Some environments may apply regional, policy, or network restrictions to web access
+
+- **Use the `file_search`tool**
+
+    - What is the `file_search` tool?
+        - Lets the selected model retrieve relevant information from 
+            your own uploaded documents during a response
+        - Model can
+            - Search private or domain-specific files
+                - Policy documents
+                - Manuals
+                - Contracts
+                - Internal knowledge bases
+            - Return grounded answers
+
+        - Key features
+            - Document-grounded answers
+                Responses are based on your uploaded files
+            - Semantic retrieval
+                Finds relevant passages by meaning, not only exact keyword matches
+            - Vector store integration
+                Search across one or more indexed document collections
+            - Citations and transparency
+                Include matched results for debugging and traceability
+            - Better enterprise relevance
+                Use organization-specific knowledge in model outputs
+
+        - Common use cases
+            | Use Case | Example |
+            |-|-|
+            | Policy Q&A | Answer employee questions from HR policy PDFs |
+            | Support Assistants | Retrieve product steps from internal troubleshooting guides |
+            | Legal Review | Locate specific clauses across contract documents |
+            | Knowledge Discovery | Summarize answers from technical documentation sets |
+
+            <br/>
+
+        - Example
+            <pre><code>
+                from openai import OpenAI
+                client = OpenAI(
+                    base_url={openai_endpoint},
+                    api_key={auth_key_or_token}
+                )
+                # Create vector store and upload a file
+                vector_store = client.vector_stores.create(name="policy-docs")
+                client.vector_stores.files.upload_and_poll(
+                    vector_store_id=vector_store.id,
+                    file=open("expenses_policy.pdf", "rb")
+                )
+                # Get response using the file_search tool
+                response = client.responses.create(
+                    model=model_deployment,
+                    instructions="You are an AI assistant that provides information from HR policy documents.",
+                    input="What's the maximum amount I can claim for a taxi ride?",
+                    tools=[{
+                        "type": "file_search",
+                        "vector_store_ids": [vector_store.id]
+                    }],
+                    include=["file_search_call.results"]
+                )
+                print(response.output_text)
+            </code></pre>
+
+        - How the `file_search tool` works
+            - You prepare files
+                Upload documents to a vector store.
+            - You send a request
+                Include file_search in the tools array with vector store IDs.
+            - Model performs retrieval
+                It searches indexed chunks for relevant content.
+            - Results are injected
+                Matching passages are provided to the model.
+            - Response is generated
+                The model answers using retrieved document context.
+
+        - Best practices
+            - Use high-quality source files
+                Clean, current documents improve retrieval accuracy
+            - Write focused prompts
+                Ask specific questions to reduce ambiguous matches
+            - Scope vector stores carefully
+                Separate domains (HR, legal, finance) when helpful
+            - Include retrieval results in development
+                Use response includes for troubleshooting
+            - Review answers for critical workflows
+                Keep human validation in high-stakes scenarios
+        
+        - Limitations
+            - Answer quality depends on document quality, coverage, and chunk relevance
+            - Very large or mixed-domain stores can return less focused context
+            - Updated source files may require re-indexing before new content is searchable
+            - Retrieval improves grounding but doesn't replace human review for sensitive decisions
+        
+        - <span>&#9888;</span> ==For enterprise-scale agents that need to access large quantities of 
+        &nbsp;&nbsp;&nbsp;&nbsp;data in multiple data stores, you should consider using the 
+        &nbsp;&nbsp;&nbsp;&nbsp;Foundry IQ knowledge store solution with a Microsoft Foundry agent
+        &nbsp;&nbsp;&nbsp;&nbsp;Build knowledge-enhanced AI agents with Foundry IQ [&rarr; saber &plus;](https://learn.microsoft.com/en-us/training/modules/introduction-foundry-iq)==
+
+- **Use the `function` tool**
+
+    - What is the `function` tool?
+        - Lets the selected model call developer-defined functions to 
+        retrieve data or trigger actions during a response
+        - The model doesn't run the business login diretly
+        - Returns a structured function call
+        - The code runs the functions
+        - The function output is passed to the model
+        - Ideal to connect reasoning model to real-world systems
+            - APIs
+            - Databases
+            - Business workflows
+            - Utility functions
+        
+        - Key features
+            - Structured tool calls
+                The model emits explicit function-call requests
+            - Developer-controlled execution
+                Your application decides how and where functions run
+            - Reliable integration pattern
+                Call APIs, internal services, or helper utilities safely
+            - Multi-turn orchestration
+                Return tool output and let the model continue reasoning
+            - Grounded responses
+                Answers can include live, system-generated data
+
+        - Common use cases
+            | Use Case | Example |
+            |-|-|
+            | System Integration | Call an internal API for account or order details |
+            | Task Automation | Trigger workflows like ticket creation or notifications |
+            | Data Lookup | Query business rules or reference tables before answering |
+        
+        - Example that exposes a `get_time` function
+            <pre><code>
+                import time
+                from openai import OpenAI
+                # Function to get the current time
+                def get_time():
+                    return f"The time is {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}"
+                # Main function
+                def main():
+                    client = OpenAI(
+                        base_url={openai_endpoint},
+                        api_key={auth_key_or_token}
+                    )
+                    function_tools = [
+                        {
+                            "type": "function",
+                            "name": "get_time",
+                            "description": "Get the current time"
+                        }
+                    ]
+                    # Initialize messages with a system prompt
+                    messages = [
+                        {"role": "developer", "content": "You are an AI assistant that provides information."},
+                    ]
+                    # Loop until the user types 'quit'
+                    while True:
+                        prompt = input("\nEnter a prompt (or type 'quit' to exit)\n")
+                        if prompt.lower() == "quit":
+                            break
+
+                        # Append the user prompt to the messages
+                        messages.append({"role": "user", "content": prompt})
+
+                        # Get initial response
+                        response = client.responses.create(
+                            model=model_deployment,
+                            input=messages,
+                            tools=function_tools
+                        )
+                        # Append model output to the messages
+                        messages += response.output
+                        # Was there a function call?
+                        for item in response.output:
+                            if item.type == "function_call" and item.name == "get_time":
+                                current_time = get_time()
+                                messages.append({
+                                    "type": "function_call_output",
+                                    "call_id": item.call_id,
+                                    "output": current_time
+                                })
+                                # Get a follow up response using the tool output
+                                response = client.responses.create(
+                                    model=model_deployment,
+                                    instructions="Answer only with the tool output.",
+                                    input=messages,
+                                    tools=function_tools
+                                )
+                        print(response.output_text)
+                # Run the main function when the script starts
+                if __name__ == '__main__':
+                    main()
+            </code></pre>
+            
+            - Output
+                <pre>
+
+
+                    Enter a prompt (or type 'quit' to exit)
+                    Hello
+
+                    Hello! How can I help you today?
+
+                    Enter a prompt (or type 'quit' to exit)
+                    What time is it?
+
+                    The time is 2026-03-19 17:17:41.
+
+                    Enter a prompt (or type 'quit' to exit)
+                </pre>
+
+            - <span>&#9888;</span> ==You can configure the tool to use multiple functions, with or without parameters.
+            &nbsp;&nbsp;&nbsp;&nbsp;OpenAI developers guide [&rarr; saber &plus;](https://developers.openai.com/api/docs/guides/function-calling)==
+
+        - How the `function tool` works
+            - You define tools
+                Provide one or more function definitions in the tools array.
+            - Model evaluates the prompt
+                It determines whether a function call is needed.
+            - Model emits a function call
+                The response includes the function name and call metadata.
+            - Your app runs logic
+                Run the matching function in your code.
+            - You return function output
+                Send a function_call_output item with the result.
+            - Model completes the answer
+                It incorporates tool results into the final response.
+
+        - Best practices
+            - Keep tools focused
+                Small, single-purpose functions are easier to control and test
+            - Validate function inputs
+                Never trust tool arguments blindly in production systems
+            - Handle errors safely
+                Return clear error outputs the model can reason about
+            - Log tool usage
+                Track calls, latency, and failure rates for debugging and governance
+            - Limit sensitive operations
+                Require explicit authorization for high-impact actions
+
+        - Limitations
+            - The model requests function calls, but your application must run them
+            - Incorrect or unexpected tool arguments can occur and should be validated
+            - Tool latency can increase end-to-end response time
+            - Function calling improves reliability, but final outputs still need review for critical decisions
+
+- **Exercise - Create a generative AI chat app that uses tools**
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/04a-use-own-data.html)
 
 
 ### 1.6. [Optimize generative AI model performance with Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/)
+
+
+- **Introduction**
+    - The quality, accuracy, and consistency of the responses a model generates
+        depend on how you configure and augment it
+    - There are several complementary strategies
+        - Prompt engineering
+        - Fine-tuning
+        - Retrieval Augmented Generation (RAG)
+        - Combined strategies
+
+- **Optimize model output with prompt engineering**
+
+    - What is prompt engineering?
+        - Most accessible way to optimize a model's 
+            performance is through prompt engineering.
+        - Prompt engineering is process of designing and
+            refining prompts to improve
+            - Quality
+            - Accuracy
+            - Relevance of the responses
+            - Requires no additional infrastructure
+            - Requires no additional data
+            - Can start experimenting immediatly
+
+    - Understand prompt components
+        - System message
+            Instructions that define the model's behavior, role, and constraints.
+        - User message
+            The question or input from the user.
+        - Assistant message
+            Previous model responses, used in multi-turn conversations.
+        - Examples
+            Sample input/output pairs that demonstrate the expected response format.
+        - <span>&#9888;</span> ==How you structure and combine these components determines 
+        &nbsp;&nbsp;&nbsp;&nbsp;how effectively the model responds.==
+
 
 
 ### 1.7. [Implement a responsible generative AI solution in Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/)
