@@ -1,5 +1,9 @@
-# AI 103
+---
+markmap:
+  initialExpandLevel: 0
+---
 
+# AI 103
 
 ## 1. Develop generative AI apps in Azure
 
@@ -644,8 +648,9 @@
                 Checking responses before displaying to users
         - Regular evaluation as you make changes tracks improvements and ensures quality doesn't regress
     - Combining manual testing, automated metrics, and comprehensive evaluation flows, you build confidence that your model performs well, safely serves users, and meets your application's quality requirements
+
 - **Exercise - Select, deploy, and evaluate models**
-    [&rarr; saber &plus;](https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/6-exercise)
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/02-model-catalog-evaluation.html)
 
 
 ### 1.4. [Develop a generative AI chat app with Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/foundry-sdk/)
@@ -1075,9 +1080,171 @@
                             response_id = event.response.id
                 </code></pre>
 
+        - Async usage
+            - Asynchronos client allows making non-blocking API calls
+            - Ideal for long-running requests
+            - Ideal to handle multiple request concurrently
+                without block the application
+            - How to use
+                `import asyncio` and use `await`with each API call
+            - Example
+                <pre><code>
+                    import asyncio
+                    from openai import AsyncOpenAI
+                    client = AsyncOpenAI(
+                        base_url="https://<resource-name>.openai.azure.com/openai/v1/",
+                        api_key=token_provider,
+                    )
+                    async def main():
+                        response = await client.responses.create(
+                            model="gpt-4.1",
+                            input="Explain quantum computing briefly."
+                        )
+                        print(response.output_text)
+
+                    asyncio.run(main())
+                </code></pre>
+            - Async stream example
+                <pre><code>
+                    async def stream_response():
+                        stream = await client.responses.create(
+                            model="gpt-4.1",
+                            input="Write a haiku about coding.",
+                            stream=True
+                        )
+                        async for event in stream:
+                            print(event, end="", flush=True)
+                    asyncio.run(stream_response())
+                </code></pre>
+
+- **Generate responses with the ChatCompletions API**
+
+    - ChatCompletions API is useful for 
+        - Code maintenance 
+        - Cross-platform compatibility
+    
+    - Submitting a prompt
+        - Uses collections of message objects in JSON format to 
+            encapsulate prompts
+        - Example
+            <pre><code>
+                completion = openai_client.chat.completions.create(
+                    model="gpt-4o",  # Your model deployment name
+                    messages=[
+                        {"role": "system", "content": "You are a helpful assistant."},
+                        {"role": "user", "content": "When was Microsoft founded?"}
+                    ]
+                )
+                print(completion.choices[0].message.content)
+            </code></pre>
+        
+        - Retaining conversational context
+            - ChatCompletions API doesn't provide statful response tracking feature
+            - Must write previous prompts and responses
+            - Example
+                <pre><code>
+                # Initial messages
+                conversation_messages=[
+                    {
+                        "role": "system",
+                        "content": "You are a helpful AI assistant that answers questions and provides information."
+                    }
+                ]
+                # Add the first user message
+                conversation_messages.append(
+                    {"role": "user",
+                    "content": "When was Microsoft founded?"}
+                )
+                # Get a completion
+                completion = openai_client.chat.completions.create(
+                    model="gpt-4o",
+                    messages=conversation_messages
+                )
+                assistant_message = completion.choices[0].message.content
+                print("Assistant:", assistant_text)
+                # Append the response to the conversation
+                conversation_messages.append(
+                    {"role": "assistant", "content": assistant_text}
+                )
+                # Add the next user message
+                conversation_messages.append(
+                    {"role": "user",
+                    "content": "Who founded it?"}
+                )
+                # Get a completion
+                completion = openai_client.chat.completions.create(
+                    model="gpt-4o",
+                    messages=conversation_messages
+                )
+                assistant_message = completion.choices[0].message.content
+                print("Assistant:", assistant_text)
+                # and so on...
+                </code></pre>
+            - Example using a _loop_
+                <pre><code>
+                    # Initial messages
+                    conversation_messages=[
+                        {
+                            "role": "system",
+                            "content": "You are a helpful AI assistant that answers questions and provides information."
+                        }
+                    ]
+                    # Loop until the user wants to quit
+                    print("Assistant: Enter a prompt (or type 'quit' to exit)")
+                    while True:
+                        input_text = input('\nYou: ')
+                        if input_text.lower() == "quit":
+                            print("Assistant: Goodbye!")
+                            break
+                        # Add the user message
+                        conversation_messages.append(
+                            {"role": "user",
+                            "content": input_text}
+                        )
+
+                        # Get a completion
+                        completion = openai_client.chat.completions.create(
+                            model="gpt-4o",
+                            messages=conversation_messages
+                        )
+                        assistant_message = completion.choices[0].message.content
+                        print("\nAssistant:", assistant_message)
+
+                        # Append the response to the conversation
+                        conversation_messages.append(
+                            {"role": "assistant", "content": assistant_message}
+                        )
+                </code></pre>
+
+                - Output
+                    <pre>
+
+
+                        Assistant: Enter a prompt (or type 'quit' to exit)
+
+                        You: When was Microsoft founded?
+
+                        Assistant: Microsoft was founded on April 4, 1975 in Albuquerque, New Mexico, USA.
+
+                        You: Who founded it?
+
+                        Assistant: Microsoft was founded by Bill Gates and Paul Allen.
+
+                        You: quit
+
+                        Assistant: Goodbye!
+                    </pre>
+
+- **Exercise - Create a generative AI chat app**
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/03-foundry-sdk.html)
+
 
 
 ### 1.5. [Develop generative AI apps that use tools](https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/)
+
+- ** Introduction**
+    - 
+
 
 
 ### 1.6. [Optimize generative AI model performance with Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/)
