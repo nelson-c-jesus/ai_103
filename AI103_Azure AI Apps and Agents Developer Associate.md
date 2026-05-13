@@ -652,9 +652,432 @@
 
 - **Explore with the model playground**
 
+    - Model playground
+        - No -code environmnto that shows how models respond to<br/>different inputs and settings
+        - Send prompts to deployed models and see responses in real time
+        - Adjust settings like temperature and max tokens
+        - Add system messages to customize model behavior
+        - Experiment with different models and configurations
+    
+    - Generating code samples
+        - API<br/>Using Responses API, or another API like ChatCompletions
+        - Language<br/>Select you preferred programming language
+        - SDK<br/>Choose which SDK you want to see a sample of
+        - Samples are populated with
+            - Project endpoint
+            - Model deployment name
+            - Current settings
+        
+    - From playground to code
+        - Explore in the playground<br/>Test prompts, adjust settings, and find what works
+        - Generate code samples<br/>Use the Code tab to get SDK samples
+        - Develop your application<br/>Take the generated code and customize it for your specific needs
+        - Iterate and refine<br/>Return to the playground to test new ideas, then update your code
+
+- **Choose an endpoint and SDK**
+    - Considerations for<br/>developing an application
+        - Endpoints
+            Each Microsoft Foundry project has both a Project endpoint and an Azure OpenAI endpoint.
+        - Client SDK
+            Depending on the endpoint you can choose to use the Microsoft Foundry SDK or<br/>the OpenAI SDK to develop a generative AI chat application
+        - Authentication
+            Production applications should use Microsoft Entra ID authentication, which requires the application to be running in the context of a specific identity
+            Or can also use key-based or token-based authentication.
+        - Chat API (OpenAI client API)
+            - ChatCompletions API<br/>Is well-established and compatible across many generative AI models and platforms
+            - Responses API<br/>Recommended for most new development projects
+
+    - Using the Foundry SDK with the project endpoint
+        - [Azure AI Projects for Python](https://pypi.org/project/azure-ai-projects)
+        - [Azure AI Projects for Microsoft .NET](https://www.nuget.org/packages/Azure.AI.Projects)
+        - [Azure AI Projects for JavaScript](https://www.npmjs.com/package/@azure/ai-projects)
+
+    - Installing the SDK(Python)
+        `pip install azure-ai-projects azure-identity openai`
+
+    - Connecting to the project endpoint
+        - Format
+            `https://{resource-name}.services.ai.azure.com/api/projects/<project-name>`
+        - Create **AIProjectClient** object
+            <pre><code>
+                from azure.identity import DefaultAzureCredential
+                from azure.ai.projects import AIProjectClient
+                project_endpoint = "https://{resource-name}.services.ai.azure.com/api/projects/<project-name>"
+                project_client = AIProjectClient(
+                    credential=DefaultAzureCredential(),
+                    endpoint=project_endpoint
+                )
+            </code></pre>
+            <br/>
+
+            <span>&#9888;</span> ==Need to install the `azure-identity` package==
+        - The projet client (`AIProjectClient`) can
+            - Retrieve resource connections
+            - Access project configuration
+            - Enable tracing
+            - Manage datasets and indexes
+
+    - Creating a chat client
+        - Use OpenAI-compatible client object **get_openai_client()**
+            `openai_client = project_client.get_openai_client(api_version="2024-10-21")`
+            <br/>
+
+            <span>&#9888;</span> ==Need to install the `openai` package==
+    
+    - Install SDK
+        - From PyPI
+            `pip install openai azure-identity`
+            <br/>
+
+            <span>&#9888;</span> ==The `azure-identity` package is required if you intend to use token-based authentication to<br/>&nbsp;&nbsp;&nbsp;&nbsp;connect to the endpoint using Microsoft Entra ID credentials==
+
+    - Connecting to The Azure OpenAI endpoint
+        - **Overview** page to get the endpoint at [https://ai.azure.com](https://ai.azure.com)
+        - Format
+            `https://{resource-name}.openai.azure.com/openai/v1`
+        - Create an OpenAI client with your endpoint and Azure credentials
+            <pre><code>
+                from openai import OpenAI
+                from azure.identity import DefaultAzureCredential, get_bearer_token_provider
+                token_provider = get_bearer_token_provider(
+                    DefaultAzureCredential(), "https://ai.azure.com/.default"
+                )
+                openai_client = OpenAI(  
+                base_url = "https://{resource-name}.openai.azure.com/openai/v1/",  
+                api_key=token_provider,
+                )
+            </code></pre>
+        - API key authentication
+            <pre><code>
+            import os
+            from openai import OpenAI
+            openai_client = OpenAI(
+                api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+                base_url="https://{resource-name}.openai.azure.com/openai/v1/"
+            )
+            </code></pre>
+        - Environment variables
+            <span>&#9888;</span> ==Need to set `OPENAI_BASE_URL` and `OPENAI_API_KEY` environment variables==
+            <br/>
+
+            <pre><code>
+                from openai import OpenAI
+                openai_client = OpenAI()  # Uses environment variables
+            </code></pre>
+        -  OpenAI client handles<br/>model inference operations
+            - Generating responses with the Responses API
+            - Chat completions and image generation
+            - Accessing Foundry direct models (non-Azure OpenAI models)
+
+        - Using an AzureOpenAI client object
+            - if you need to use functionality from a<br/>specific version of the Azure OpenAI API
+            - Must specify the API version
+            - Must specify the Azure endpoint
+            - Example
+                <pre><code>
+                    import os
+                    from openai import AzureOpenAI
+                    openai_client = AzureOpenAI(
+                        azure_endpoint = "https://{resource-name}.openai.azure.com"
+                        api_key=os.getenv("AZURE_OPENAI_KEY"),  
+                        api_version="2024-10-21",
+                    )
+                </code></pre>
+
+        - When to use the Foundry SDK
+            - Foundry Agent Service for building and managing AI agents
+            - Tool invocation and approval workflows
+            - Cloud evaluations for testing and validating AI responses
+            - Tracing and observability for monitoring application behavior
+            - Foundry direct models (non-Azure OpenAI models available through the model catalog)
+            - Project metadata, connections, and governance features
+            - Microsoft recommends
+                - When building apps with agents
+                - Evaluations
+                - Foundry-specific features
+
+        - When to use the OpenAI SDK
+            - Full OpenAI API compatibility for existing code and tooling
+            - Portability between OpenAI and Azure OpenAI deployments
+            - Chat Completions, Responses, and Images APIs
+            - Minimal dependency on Foundry-specific concepts
+            - Ideal for model inference workloads
+
+- **Generate responses with the Responses API**
+
+    - Responses API unifies
+        - ChatCompletions API
+        - Assistants API
+        - Accessible
+            - Foundry SDK
+            - OpenAI SDK
+
+    - Responses API offers
+        - Stateful conversations
+            Maintains conversation context across multiple turns
+        - Unified experience
+            Combines chat completions and Assistants API patterns
+        - Foundry direct models
+            Works with models hosted directly in Microsoft Foundry,<br/>not just Azure OpenAI models
+        - Simple integration
+            Access through the OpenAI-compatible client
+        
+    - Generatins a simple response
+        - Generate responses using `responses.create()` method
+            <pre><code>
+                # Generate a response using the OpenAI-compatible client
+                response = openai_client.responses.create(
+                    model="gpt-4.1",  # Your model deployment name
+                    input="What is Microsoft Foundry?"
+                )
+                # Display the response
+                print(response.output_text)
+            </code></pre>
+
+    - Understand response structure
+        - Output_text
+            The generated text response
+        - Id
+            Unique identifier for this response
+        - Status
+            Response status (for example, "completed")
+        - Usage
+            Token usage information (input, output, and total tokens)
+        - Model
+            The model used to generate the response
+        - How to access
+            <pre><code>
+                response = openai_client.responses.create(
+                    model="gpt-4.1",
+                    input="Explain machine learning in simple terms."
+                )
+                print(f"Response: {response.output_text}")
+                print(f"Response ID: {response.id}")
+                print(f"Tokens used: {response.usage.total_tokens}")
+                print(f"Status: {response.status}")
+            </code></pre>
+
+    - Adding instructions
+        - Instructions are often referred to as a _system prompt_
+            <pre><code>
+                response = client.responses.create(
+                    model="gpt-4.1",
+                    instructions="You are a helpful AI assistant that answers questions clearly and concisely.",
+                    input="Explain neural networks."
+                )
+                print(response.output_text)
+            </code></pre>
+
+    - Controlling response geeneration
+        - Additonal parameters
+            <pre><code>
+                response = openai_client.responses.create(
+                    model="gpt-4.1",
+                    instructions="You are a helpful AI assistant that answers questions clearly and concisely.",
+                    input="Write a creative story about AI.",
+                    temperature=0.8,  # Higher temperature for more creativity
+                    max_output_tokens=200  # Limit response length
+                )
+                print(response.output_text)
+            </code></pre>
+        - Temperature
+            Controls randomness (0.0-2.0). Higher values make output more creative and varied
+        - Max_output_tokens
+            Limits the maximum number of tokens in the response
+        - Top_p
+            Alternative to temperature for controlling randomness
+
+    - Working with Foundry direct models
+        - Microsoft Phi
+        - DeepSeek
+        - Other models hosted in Foundry
+        - Example
+            <pre><code>
+                # Using a Foundry direct model
+                response = openai_client.responses.create(
+                    model="microsoft-phi-4",  # Example Foundry direct model
+                    instructions="You are a helpful AI assistant that answers questions clearly and concisely.",
+                    input="What are the benefits of small language models?"
+                )
+                print(response.output_text)
+            </code></pre>
+
+    - Creating conversational experiences
+        - For complex scenarios we can provide
+            - System instructions
+            - Build multi-turn conversations
+        - Example
+            <pre><code>
+                # First turn in the conversation
+                response1 = openai_client.responses.create(
+                    model="gpt-4.1",
+                    instructions="You are a helpful AI assistant that explains technology concepts clearly.",
+                    input="What is machine learning?"
+                )
+                print("Assistant:", response1.output_text)
+                # Continue the conversation
+                response2 = openai_client.responses.create(
+                    model="gpt-4.1",
+                    instructions="You are a helpful AI assistant that explains technology concepts clearly.",
+                    input="Can you give me an example?",
+                    previous_response_id=response1.id
+                )
+                print("Assistant:", response2.output_text)
+            </code></pre>
+        - Example using a _loop_
+            <pre><code>
+                # Track responses
+                last_response_id = None
+                # Loop until the user wants to quit
+                print("Assistant: Enter a prompt (or type 'quit' to exit)")
+                while True:
+                    input_text = input('\nYou: ')
+                    if input_text.lower() == "quit":
+                        print("Assistant: Goodbye!")
+                        break
+                    # Get a response
+                    response = openai_client.responses.create(
+                                model=model_name,
+                                instructions="You are a helpful AI assistant that explains technology concepts clearly.",
+                                input=input_text,
+                                previous_response_id=last_response_id
+                    )
+                    assistant_text = response.output_text
+                    print("\nAssistant:", assistant_text)
+                    last_response_id = response.id
+            </code></pre>
+
+            - Output
+                <pre>
 
 
-### 1.5. [Developgenerative AI apps that use tools](https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/)
+                    Assistant: Enter a prompt (or type 'quit' to exit)
+
+                    You: What is machine learning?
+
+                    Assistant: Machine learning is a type of artificial intelligence (AI) that enables computers to learn from data and improve their performance over time without being explicitly programmed.
+                    It involves training algorithms on large datasets to recognize patterns, make predictions, or take actions based on those patterns.
+                    This allows machines to become more accurate and efficient in their tasks as they are exposed to more data.
+
+                    You: Can you give me an example?
+
+                    Assistant: Certainly! Let's look at a simple example of supervised learning—predicting house prices based on features like size, location, and number of rooms.
+                    Imagine you want to build a machine learning model that can predict the price of a house based on various factors.
+                    ...
+                        { the example provided in the model response may be extensive}
+                    ...
+
+                    You: quit
+
+                    Assistant: Goodbye!
+                </pre>
+
+                <span>&#9888;</span> ==As the user enters new input in each turn, the data sent to the model includes:
+                &nbsp;&nbsp;&nbsp;&nbsp;Instructions system message
+                &nbsp;&nbsp;&nbsp;&nbsp;The input from the user
+                &nbsp;&nbsp;&nbsp;&nbsp;The previous response received from the model==
+
+    - Alternative: Manual conversation chaining
+        - Example
+            <pre><code>
+                try:
+                    # Start with initial message
+                    conversation_history = [
+                        {
+                            "type": "message",
+                            "role": "user",
+                            "content": "What is machine learning?"
+                        }
+                    ]
+
+                    # First response
+                    response1 = openai_client.responses.create(
+                        model="gpt-4.1",
+                        input=conversation_history
+                    )
+                    print("Assistant:", response1.output_text)
+
+                    # Add assistant response to history
+                    conversation_history += response1.output
+                    # Add new user message
+                    conversation_history.append({
+                        "type": "message",
+                        "role": "user", 
+                        "content": "Can you give me an example?"
+                    })
+
+                    # Second response with full history
+                    response2 = openai_client.responses.create(
+                        model="gpt-4.1",
+                        input=conversation_history
+                    )
+                    print("Assistant:", response2.output_text)
+                except Exception as ex:
+                    print(f"Error: {ex}")
+            </code></pre>
+        - Useful when you need to:
+            - Customize which messages are included in context
+            - Implement conversation pruning to manage token limits
+            - Store and restore conversation history from a database
+
+    - Retrieving specific previous responses
+        - Response API maintains response history
+            <pre><code>
+                try:   
+                    # Retrieve a previous response
+                    response_id = "resp_67cb61fa3a448190bcf2c42d96f0d1a8"  # Example ID
+                    previous_response = openai_client.responses.retrieve(response_id)
+                    print(f"Previous response: {previous_response.output_text}")
+                except Exception as ex:
+                    print(f"Error: {ex}")
+            </code></pre>
+
+    - Context window considerations
+        - The `previous_response_id` parameter links responses together,
+            maintaining conversation context across multiple API calls.
+        - For a single run, the active context window can include
+            - System instructions (instructions, safety rules)
+            - Your current prompt
+            - Conversation history (previous user + assistant messages)
+            - Tool schemas (functions, OpenAPI specs, MCP tools, etc.)
+            - Tool outputs (search results, code interpreter output, files)
+            - Retrieved memory or documents (from memory stores, RAG, file search)
+        - All of these are concatenated, tokenized, and sent to the model together on every request
+
+    - Creating responsive chat apps
+        - Responses time depends
+            - Specific model
+            - Context windoe size
+            - Size of the prompt
+
+        - Streaming responses
+            - Example of streaming output
+                <pre><code>
+                    stream = openai_client.responses.create(
+                        model="gpt-4.1",
+                        input="Write a short story about a robot learning to paint.",
+                        stream=True
+                    )
+                    for event in stream:
+                        print(event, end="", flush=True)
+                </code></pre>
+            - Tracking conversation history (response ID)
+                <pre><code>
+                    stream = openai_client.responses.create(
+                        model="gpt-4.1",
+                        input="Write a short story about a robot learning to paint.",
+                        stream=True
+                    )
+                    for event in stream:
+                        if event.type == "response.output_text.delta":
+                            print(event.delta, end="")
+                        elif event.type == "response.completed":
+                            response_id = event.response.id
+                </code></pre>
+
+
+
+### 1.5. [Develop generative AI apps that use tools](https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/)
 
 
 ### 1.6. [Optimize generative AI model performance with Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/)
@@ -1043,7 +1466,7 @@
                 vector_store_ids:
                     - "vectorstore-123"
         </code>
-    - Note:<br/>Some tools require additional parameters like connection IDs or<br/>vector stores references.
+    - <span>&#9888;</span> ==Some tools require additional parameters like connection IDs or<br/>vector stores references==
 
 - **MCP servers**
 
@@ -1065,7 +1488,7 @@
         3. Configure server-specific settings and parameters
         4. Test MCP server functionality in the integrated playground
         5. Deploy agents with MCP server integrations to production
-        - Note:<br/>MCP servers extend agents capabilities with specialized functions while maintaing a<br/>consistent development experience
+        - <span>&#9888;</span> ==MCP servers extend agents capabilities with specialized functions while maintaing a<br/>consistent development experience==
 
     - Tools configuration
         - Start with built-in tools before building custom solutions.
@@ -1082,7 +1505,7 @@
         - Boundary<br/>Confirma the agent respects boundaries defined in its instructions<br/>by yeesting out-of-scope requests.
         - Multi-turn conversation<br/>Vereify the agent maintains context across multiple exchages and<br/>buils in previous responses
         - Tool invocation<br/>Verify agents call the right tools at the right times and incorporate<br/>results correctly.
-        - Note:<br/>Record test results to track improvements and catch regressions
+        - <span>&#9888;</span> ==Record test results to track improvements and catch regressions==
 
     - Deploying agents to project
         - From Foundry portal
@@ -1109,34 +1532,36 @@
         </code>
         
     - Authentication and identity
-        - Note:<br/>When you publish an agent, it receives its own dedicated Entra identity, separate from the project's shared identity.<br/>Permissions don't transfer automatically.<br/>You must reassign RBAC roles to the new agent identity for any resources the agent accesses.<br/>If you skip this step, tool calls that work during development fail with authorization errors once the agent is published.
+        <span>&#9888;</span> ==When you publish an agent, it receives its own dedicated Entra identity, separate from the project's shared identity.<br/>&nbsp;&nbsp;&nbsp;&nbsp;Permissions don't transfer automatically.<br/>&nbsp;&nbsp;&nbsp;&nbsp;You must reassign RBAC roles to the new agent identity for any resources the agent accesses.<br/>&nbsp;&nbsp;&nbsp;&nbsp;If you skip this step, tool calls that work during development fail with authorization errors once the agent is published.==
         - Verifying the endpoint
             1. Get an access token
-                <code>
-                    az account get-access-token --resource https://ai.azure.com
-                </code>
+                `az account get-access-token --resource https://ai.azure.com`
+
             2. Call the Agent application endpoint
-                <code>
+                <pre><code>
                     curl -X POST \
                     "https://**&lt;foundry-resource-name&gt;**.services.ai.azure.com/api/projects/**&lt;project-name&gt;**/applications/**&lt;app-name&gt;**/protocols/openai/responses?api-version=2025-11-15-preview" \
                     -H "Authorization: Bearer **&lt;access-token&gt;**" \
                     -H "Content-Type: application/json" \
                     -d '{"input":"Say hello"}'
-                </code>
-                Note:<br/>If you receive **403 Forbidden**, confirm the caller has the Azure AI User role on the Agent Application resource.
+                </code></pre>
+                <br/>
+
+                <span>&#9888;</span> ==If you receive **403 Forbidden**, confirm the caller has the Azure AI User role on the Agent Application resource.==
 
     - Integration patterns
         - Web applications
-            1. Send user messages to the Responses API endpoint and display responses in your UI.
-            2. Store conversation history client-side for multi-turn interactions.
+            - Send user messages to the Responses API endpoint and display responses in your UI.
+            - Store conversation history client-side for multi-turn interactions.
         - API-driven workflows
-            1. Call the agent endpoint from backend services triggered by events or schedules.2. Process responses programmatically to drive downstream actions.
+            - Call the agent endpoint from backend services triggered by events or schedules.
+            - Process responses programmatically to drive downstream actions.
         - Chatbot interfaces
-            1. Map user sessions to conversations.
-            2. Handle real-time message exchange through the endpoint.
+            - Map user sessions to conversations.
+            - Handle real-time message exchange through the endpoint.
         - Background automation
-            1. Schedule agent calls for recurring tasks.
-            2. Feed system data into agents and process outputs to update business systems.
+            - Schedule agent calls for recurring tasks.
+            - Feed system data into agents and process outputs to update business systems.
 
     - Product considerations
         - Monitoring
@@ -1245,8 +1670,8 @@
                 ISO6391 Name: fr
                 Confidence Score: 0.98
         </pre>
-    - Note:<br/>Mixed language content within same document returns the language<br/>with the largest representation in the content, but with a lower positive rating<br/>
-    If the parser encounters character encoding issues during conversion, the<br/>response for the language name and ISO code will be returned as `(unknown)` and score as `0`
+    - <span>&#9888;</span> ==Mixed language content within same document returns the language<br/>&nbsp;&nbsp;&nbsp;&nbsp;with the largest representation in the content, but with a lower positive rating
+    &nbsp;&nbsp;&nbsp;&nbsp;If the parser encounters character encoding issues during conversion, the<br/>&nbsp;&nbsp;&nbsp;&nbsp;response for the language name and ISO code will be returned as `(unknown)` and score as `0`==
 
 - **Extract entities**
 
