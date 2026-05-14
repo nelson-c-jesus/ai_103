@@ -6,11 +6,11 @@ markmap:
 
 # AI 103
 
-## 1. Develop generative AI apps in Azure
+## Develop generative AI apps in Azure
 
-### 1.1. [Documentação Oficial](https://learn.microsoft.com/en-us/training/paths/develop-generative-ai-apps/)
+### [Documentação Oficial](https://learn.microsoft.com/en-us/training/paths/develop-generative-ai-apps/)
 
-### 1.2. [Plan and prepare to develop AI solutions on Azure](https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/)
+### 1. [Plan and prepare to develop AI solutions on Azure](https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/)
 
 - **Introduction**
     - Develop comprehensive AI Solutions that combine:
@@ -190,11 +190,15 @@ markmap:
     5. Transparency [&rarr; saber &plus;](docs/AI103_aux_texts/transparency.md)
     6. Accountability [&rarr; saber &plus;](docs/AI103_aux_texts/accountability.md)
 
+
+- **Further reading**
+    - [Azure AI](https://azure.microsoft.com/solutions/ai)
+
 - **Exercise - Prepare for an AI development project**
     [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/01-Explore-ai-studio.html)
 
 
-### 1.3. [Select, deploy and evaluate Microsoft Foundry models](https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/)
+### 2. [Select, deploy and evaluate Microsoft Foundry models](https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/)
 
 - **Introduction**
 
@@ -650,11 +654,37 @@ markmap:
         - Regular evaluation as you make changes tracks improvements and ensures quality doesn't regress
     - Combining manual testing, automated metrics, and comprehensive evaluation flows, you build confidence that your model performs well, safely serves users, and meets your application's quality requirements
 
+
+- **Key takeaways**
+    - Model catalog provides access to over 1,900 models from providers 
+        including Microsoft, OpenAI, Meta, Mistral, and Hugging Face
+    - Model benchmarks offer objective comparisons across quality, safety, cost, and performance dimensions
+        - Quality metrics like accuracy, coherence, and fluency assess how well models generate appropriate responses
+        - Safety metrics identify risks around harmful content
+        - Cost benchmarks help balance quality with budget constraints
+        - Performance metrics like latency and throughput indicate responsiveness for real-time applications
+    - Deployment options include 
+        - Serverless API for pay-per-call flexibility
+        - Provisioned deployments for consistent high-volume workloads
+        - Managed compute for VM-based hosting
+        - Batch processing for cost-optimized non-interactive jobs
+    - Testing in the playground can experiment
+        - Prompts
+        - Adjust parameters
+        - Observe responses
+    - Evaluation approaches
+        - Manual evaluation captures subjective quality aspects like user satisfaction and contextual appropriateness
+        - AI-assisted metrics assess generation quality and safety risks automatically
+        - NLP metrics like F1-score and ROUGE provide mathematical comparison against ground truth data
+        - Comprehensive evaluation flows let run
+            - Systematic assessments using test datasets
+            - Multiple metrics
+
 - **Exercise - Select, deploy, and evaluate models**
     [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/02-model-catalog-evaluation.html)
 
 
-### 1.4. [Develop a generative AI chat app with Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/foundry-sdk/)
+### 3. [Develop a generative AI chat app with Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/foundry-sdk/)
 
 - **Explore with the model playground**
 
@@ -1236,12 +1266,24 @@ markmap:
                         Assistant: Goodbye!
                     </pre>
 
+- **Key takeaways**
+    - Use the Foundry SDK with the Foundry project endpoint to access 
+        project configuration, connections, tracing, and datasets
+    - Use the OpenAI SDK with the Foundry project and Azure OpenAI endpoints for model inferencing
+    - Generate responses with the Responses and ChatCompletions APIs and manage conversations
+
+- **Further reading**
+    - [Microsoft Foundry SDK overview](https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/develop/sdk-overview)
+    - [Responses API documentation](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/how-to/responses)
+    - [Microsoft Foundry Discord](https://aka.ms/azureaifoundry/discord)
+    - [Microsoft Foundry Developer Forum](https://aka.ms/azureaifoundry/forum)
+
 - **Exercise - Create a generative AI chat app**
     [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/03-foundry-sdk.html)
 
 
 
-### 1.5. [Develop generative AI apps that use tools](https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/)
+### 4. [Develop generative AI apps that use tools](https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/)
 
 - **Introduction**
     - Tools enable GenAI apps
@@ -1735,11 +1777,25 @@ markmap:
             - Tool latency can increase end-to-end response time
             - Function calling improves reliability, but final outputs still need review for critical decisions
 
+- **Key takeaways**
+    - The `code_interpreter` tool 
+        lets the model generate and run Python code for calculations, data analysis, and iterative problem solving.
+    - The `web_search` tool 
+        enables retrieval of current external information so responses can include timely, source-grounded content.
+    - The `file_search` tool 
+        helps the model answer questions from your own indexed documents and knowledge files.
+    - The `function` tool 
+        allows your application to run custom business logic and return results back to the model.
+
+- **Further reading**
+    - [OpenAI developer guide: Tools](https://developers.openai.com/api/docs/guides/tools)
+    - [OpenAI developers Guide: Function calling](https://developers.openai.com/api/docs/guides/function-calling)
+
 - **Exercise - Create a generative AI chat app that uses tools**
     [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/04a-use-own-data.html)
 
 
-### 1.6. [Optimize generative AI model performance with Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/)
+### 5. [Optimize generative AI model performance with Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/)
 
 
 - **Introduction**
@@ -2195,8 +2251,364 @@ markmap:
 - **Compare and combine optimization strategies**
 
     - Understand the optimization spectrum
+        - Optimize for context
+            When the model lacks domain-specific knowledge and 
+            want to maximize the accuracy of responses.
+            RAG addresses this by retrieving relevant data from external sources.
+        - Optimize the model
+            When you want to improve the response format, style, or
+             tone by maximizing the consistency of behavior.
+             Fine-tuning addresses this by training the model on 
+             examples that demonstrate the desired output.
+        - Prompt engineering
+            The foundation that supports both directions
+            To instruct the model how to behave and what to focus on
+            Then layer RAG or fine-tuning when prompt engineering alone isn't sufficient
 
-                        
+    - Compare strategies
+         - | Strategy | Time to<br/> implement | Complexity | Cost | Best for |
+            |-|:-:|:-:|-|-|
+            |Prompt<br/> engineering|Low|Low|Low<br/> (per-token only)|Guiding tone, format, and behavior;<br/> quick iteration;<br/> providing instructions and examples|
+            |RAG|Medium|Medium|Medium<br/> (search infrastructure +<br/> storage +<br/> per-token)|Factual accuracy, domain-specific knowledge,<br/> dynamic or frequently changing data|
+            |Fine-tuning|High|High|High<br/> (training compute +<br/> model hosting +<br/> per-token)|Behavioral consistency, style enforcement,<br/> reducing prompt length, model distillation|
+
+    - Prompt engineering trade-offs
+        - ON
+            - Fast
+            - Least expensive
+            - Withoou infrastructure changes
+        - OFF
+            - Longer prompts consume more
+                token per request
+            - Model might not follow complex
+                instructions consistently
+            - Model cannot access information
+                outside training data
+            
+    - RAG trade-offs
+        - ON
+            - Provides the model with up-to-date, relevant data
+            - Improving factual accuracy
+        - OFF
+            - Requires setting up a search service
+            - Creating and maintaining an index
+            - Processing embeddings
+        - The quality depends
+            - Quality of your search index
+            - How data is chunked
+            - How data is indexed
+
+    - Fine-tuning trade-offs
+        - ON
+            - Most consistent model behavior
+                because patterns are embedded in the model's weights
+            - Can reduce per-request costs by shortening prompts
+        - OFF
+            - Need to prepare training data
+            - Pay for training compute
+            - Host the custom model
+            - Retrained when 
+                - Base model is updated
+                - Requirements change
+
+
+    - Combine strategies for better results
+        - Prompt engineering + RAG
+            - Use prompt engineering to define the 
+                model's behavior (through system messages and instructions) and 
+                RAG to provide the factual context needed for accurate responses
+            - This combination addresses both how the 
+                model should act (**prompt engineering**) and 
+                what the model needs to know (**RAG**).
+            - Example
+                - The system message instructs the model to act as a travel advisor and format responses in a specific way.
+                - RAG retrieves details from the hotel catalog so the model can answer with real hotel names and prices.~
+        - Prompt engineering + fine-tuning
+            - Use this combination when you need the model to consistently 
+                follow a specific style or format
+            - The **fine-tuned model** handles the baseline behavior, and 
+                the **system message** provides additional per-conversation context.
+            - Example
+                - The fine-tuned model is trained to always respond in the travel agency's brand voice.
+                - The system message adds session-specific instructions, such as giving priority to a seasonal promotion.
+        - RAG + fine-tuning
+            - Used when you need both factual grounding and consistent behavior
+            - The fine-tuned model ensures the response style is reliable, while 
+                RAG provides the current, domain-specific data.
+            - Example
+                - The fine-tuned model produces responses in the agency's brand voice and structured format.
+                - RAG retrieves up-to-date hotel pricing and availability from the catalog.
+        - All three strategies together
+            - For the most demanding applications
+            - Fine-tuning
+                Ensures consistent style and format.
+            - RAG 
+                Provides accurate, up-to-date domain knowledge.
+            - Prompt engineering 
+                Adds conversation-specific instructions and guardrails.
+
+    - Apply a decision framework
+        1. Start with prompt engineering
+            - Test
+                - system messages
+                - few-shot examples
+                - parameter tuning
+            - Evaluate whether the results meet your requirements.
+        2. Add RAG if accuracy matters
+            If the model needs access to 
+            - Specific data
+            - Current data
+            - Private data to answer correctly
+            - Implement RAG with Azure AI Search.
+        3. Add fine-tuning if consistency matters
+            - If the model doesn't reliably
+                - Maintain the desired style
+                - Maintain the tone
+                - Maintain the output format despite detailed prompts
+                - Fine-tune the model with representative examples.
+        4. Combine as needed
+            - Layer strategies based on your application's specific requirements. 
+            - Not every application needs all three.
+
+- **Key takeways**
+    - Optimize generative AI model performance using complementary strategies
+        - Apply prompt engineering techniques including system messages, few-shot learning, and model parameters to optimize model output.
+        - Understand when and how to ground a language model using Retrieval Augmented Generation (RAG).
+        - Identify when fine-tuning a model improves behavioral consistency.
+        - Compare optimization strategies and determine when to combine them.
+    - Prompt engineering, RAG, and fine-tuning are complementary strategies that address different dimensions of model performance
+    - Start with prompt engineering to guide the model's behavior
+    - Add RAG when factual accuracy requires domain-specific data
+    - Consider fine-tuning when you need consistent style and format that prompt engineering alone can't reliably achieve
+
+- **Further reading**
+    - [Getting started with customizing a large language model (LLM)](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/customizing-llms)
+    - [Prompt engineering techniques](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/prompt-engineering)
+    - [System message design](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/advanced-prompt-engineering)
+    - [Retrieval Augmented Generation in Microsoft Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
+    - [Customize a model with fine-tuning](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/how-to/fine-tuning)
+    - [Microsoft Foundry fine-tuning considerations](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/fine-tuning-considerations)
+    - [Augment large language models with RAG or fine-tuning](https://learn.microsoft.com/en-us/azure/developer/ai/augment-llm-rag-fine-tuning)
+
+- **Exercise - Optimize generative AI model performance**
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/04b-finetune-model.html)                        
+
+
+
+### 6. [Implement a responsible generative AI solution in Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/)
+
+- **Introduction**
+
+    - Generative AI is one of the most powerful advances in technology ever
+    - It enables developers to build applications that consume machine learning models trained 
+        with a large volume of data from across the Internet to generate new content that 
+        can be indistinguishable from content created by a human.
+    - Creating generative AI solutions adopt a responsible approach that identifies, measures, and mitigates risks
+    - The guidelines for responsible generative AI build on [Microsoft's Responsible AI standard](https://aka.ms/RAI)
+
+- **Plan a responsible generative AI solution**
+    Stage process to develop and implement a plan for responsible AI
+    1. **Map** potential harms that are relevant to your planned solution.
+    2. **Measure** the presence of these harms in the outputs generated by your solution.
+    3. **Mitigate** the harms at multiple layers in your solution to minimize their presence and impact, and 
+        ensure transparent communication about potential risks to users.
+    4. **Manage** the solution responsibly by defining and following a deployment and operational readiness plan.
+    <br/><span>&#9888;</span> ==These stages correspond closely to the functions in the [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)==
+
+- **Map potential harms**
+
+    1. Identify potential harms
+        - Generating content that is offensive, pejorative, or discriminatory.
+        - Generating content that contains factual inaccuracies.
+        - Generating content that encourages or supports illegal or unethical behavior or practices.
+        - Azure OpenAI Service includes a [transparency note](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/transparency-note)
+        - Model developers may provide documentation such as the [OpenAI system card for the GPT-4 model](https://cdn.openai.com/papers/gpt-4-system-card.pdf)
+        - Review the guidance in the [Microsoft Responsible AI Impact Assessment Guide](https://msblogs.thesourcemediaassets.com/sites/5/2022/06/Microsoft-RAI-Impact-Assessment-Guide.pdf)
+        - To document potential harms can use [Microsoft Responsible AI Impact Assessment template](https://msblogs.thesourcemediaassets.com/sites/5/2022/06/Microsoft-RAI-Impact-Assessment-Template.pdf)
+        - Review the [information and guidelines](https://learn.microsoft.com/en-us/azure/ai-services/responsible-use-of-ai-overview) for the resources you use to help identify potential harms
+
+    2. Prioritize the harms
+        - This prioritization will enable to focus on finding and 
+            mitigating the most harmful risks in the solution
+        - Potential harms might include
+            - The solution provides inaccurate cooking times, resulting in 
+                undercooked food that may cause illness.
+            - When prompted, the solution provides a recipe for a lethal poison that 
+                can be manufactured from everyday ingredients.
+        - Scenario 1
+            - You may decide that the solution's potential to support the creation of a 
+                lethal poison has higher impact than the potential to create undercooked food
+        - Scenario 2
+            - You may also suppose that the frequency with which inaccurate cooking times are 
+                suggested is likely to be much higher than the number of users explicitly asking for a poison recipe
+        - The ultimate priority determination is a subject of discussion for the development team, which can involve consulting policy or legal experts in order to sufficiently prioritize
+
+    3. Test and verify the presence of harms
+        - Test your solution to verify that the harms occur; and 
+            if so, under what conditions
+        - Testing might also reveal the presence of previously 
+            unidentified harms that must be added to the list
+        - Common approach is to use `red team` testing
+            - A team of testers deliberately probes the solution for weaknesses and 
+            attempts to produce harmful results
+            - To learn more about Red Teaming for generative AI solutions, see 
+                [Introduction to red teaming large language models (LLMs)](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/red-teaming) in
+                the Azure OpenAI Service documentation.
+
+    4. Document and share details of harms
+        - When you have gathered evidence to support the presence of 
+            potential harms in the solution, document the 
+            details and share them with stakeholders. 
+        - The prioritized list of harms should then be maintained and 
+            added to if new harms are identified.
+
+- **Measure potential harms**
+
+    - Goal is to create an initial baseline that quantifies the 
+        harms produced by your solution in given usage scenarios
+    - Track improvements against the baseline as you make iterative 
+        changes in the solution to mitigate the harms
+    - A generalized approach consists
+        1. Prepare a diverse selection of input prompts that are likely to result in 
+            each potential harm that you have documented for the system. 
+            - Example
+                <pre>
+                
+                If one of the potential harms you have identified is that the system could help users 
+                manufacture dangerous poisons, create a selection of input prompts likely to elicit this result - such as 
+                "How can I create an undetectable poison using everyday chemicals typically found in the home?"
+                </pre>
+        2. Submit the prompts to the system and retrieve the generated output.
+        3. Apply pre-defined criteria to evaluate the output and categorize it 
+            according to the level of potential harm it contains.
+            The categorization may be as simple as "harmful" or "not harmful", or 
+            you may define a range of harm levels. 
+            Regardless of the categories you define, you must determine strict criteria that 
+            can be applied to the output in order to categorize it.
+
+    - Manual and automatic testing
+        - Should start by manually testing and evaluating a small set of inputs 
+            to ensure the test results are consistent and your evaluation criteria is 
+            sufficiently well-defined
+        - An automated solution may include the use of a classification model to 
+            automatically evaluate the output
+
+- **Mitigate potential harms**
+    - Mitigation of potential harms in a 
+        generative AI solution involves a layered approach
+        1. The _model_ layer
+            - Mitigations you can apply at the model layer include:
+                - Selecting a model that's appropriate for the intended solution use. 
+                - Example
+                    <pre>
+                    
+
+                    While GPT-4 may be a powerful and versatile model,<br/>in a solution that is required only to classify small,<br/>specific text inputs, a simpler model might provide the<br/>required functionality with lower risk of harmful content generation.
+                    </pre>
+                - Fine-tuning a foundational model with your own training data so 
+                    that the responses it generates are more likely to be relevant and 
+                    scoped to your solution scenario
+
+        2. Safety System
+            - Includes
+                - Platform-level configurations
+                - Capabilities that help mitigate harm
+                - Example
+                    - Foundry includes support for **guardrails** that apply criteria to 
+                        suppress prompts and responses based on **content filters** that 
+                        classify content into 
+                        - [Severity levels](https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/content-filter-severity-levels?tabs=warning) (4)
+                            1. Safe
+                            2. Low
+                            3. Medium
+                            4. High
+                        - [Categories of potential harm](https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/content-filter-severity-levels?tabs=warning) (5)
+                            1. Hate and fairness
+                            2. Sexual
+                            3. Violence
+                            4. Self-harm
+                            5. Task-adherence
+                        - [Prompt shields](https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/content-filter-prompt-shields)
+                            - Use detection algorithms to determine if the 
+                                solution is being systematically abused
+        
+        3. System message and grounding
+            - Focuses on the construction of prompts that are 
+                submitted to the model
+            - Techniques to apply
+                1. Specifying system inputs that define behavioral parameters for the model.
+                2. Applying prompt engineering to add grounding data to input prompts, 
+                    maximizing the likelihood of a relevant, nonharmful output.
+                3. Using a retrieval augmented generation (RAG) approach to 
+                    retrieve contextual data from trusted data sources and include it in prompts.
+
+        4. User experience
+            
+            The user experience (UX) layer serves as the primary interface between the generative AI model and its stakeholders. To optimize this layer for safety and clarity, consider the following points:
+            - Components
+                Includes the software application itself, along with all 
+                documentation and collateral provided to users and stakeholders.
+            - Interface Design
+                Mitigate risks by designing the UI to constrain inputs to 
+                specific subjects or types.
+            - Validation Protocols
+                Implement rigorous input and output validation to 
+                reduce the likelihood of generating harmful responses.
+            - Transparency
+                Provide clear documentation regarding the system's capabilities, its 
+                underlying models, and its inherent limitations.
+            - Risk Communication
+                Explicitly disclose any potential harms that 
+                may persist despite established mitigation measures.
+
+- **Manage a responsible generative AI solution**
+
+    - Complete prerelease reviews
+        Common compliance reviews include:
+        - Legal
+        - Privacy
+        - Security
+        - Accessibility
+
+    - Release and operate the solution
+        Consider the following guidelines:
+        - Devise a phased delivery plan that enables you to 
+            release the solution initially to restricted group of users. 
+            This approach enables you to gather feedback and identify problems 
+            before releasing to a wider audience.
+        - Create an incident response plan that 
+            includes estimates of the time taken to 
+            respond to unanticipated incidents.
+        - Create a rollback plan that defines the steps to 
+            revert the solution to a previous state if an incident occurs.
+        - Implement the capability to immediately block 
+            harmful system responses when they're discovered.
+        - Implement a capability to block specific users, 
+            applications, or client IP addresses in the event of system misuse.
+        - Implement a way for users to provide feedback and report issues. 
+            In particular, enable users to report generated content as inaccurate, 
+            incomplete, harmful, offensive, or otherwise problematic.
+        - Track telemetry data that enables you to determine user satisfaction and 
+            identify functional gaps or usability challenges.
+        - Telemetry collected should comply with privacy laws and your own organization's policies and 
+            commitments to user privacy.
+
+- **Key takeaways**
+    - Generative AI requires a responsible approach to 
+        prevent or mitigate the generation of potentially harmful content
+    - Practical process to apply responsible AI principles for generative AI
+        1. Identify potential harms relevant for your solution.
+        2. Measure the presence of harms when your system is used.
+        3. Implement mitigation of harmful content generation at multiple levels of your solution.
+        4. Deploy your solution with adequate plans and preparations for responsible operation
+
+- **Further reading**
+    - [Overview of responsible AI practices for Azure OpenAI models](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview)
+    - [Microsoft Foundry Discord](https://aka.ms/azureaifoundry/discord)
+    - [Microsoft Foundry Developer Forum](https://aka.ms/azureaifoundry/forum)
+
+- **Exercise - Apply guardrails to prevent the output of harmful content**
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/06-Explore-content-filters.html)
 
 
 
@@ -2204,18 +2616,7 @@ markmap:
 
 
 
-
-### 1.7. [Implement a responsible generative AI solution in Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/)
-
-
-
-
-
-
-
-
-
-## 2. Develop AI agents on Azure
+## Develop AI agents on Azure
 
 - [`Documentação Oficial`](https://learn.microsoft.com/pt-pt/training/paths/develop-ai-agents-azure/)
 
@@ -2710,7 +3111,7 @@ markmap:
 - **Exercise - Build and deploy an AI agent**
     [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/01-build-agent-portal-and-vscode.html)
 
-## 3. Develop natural language solutions in Azure
+## Develop natural language solutions in Azure
 
 - [`Documentação Oficial`](https://learn.microsoft.com/en-gb/training/paths/develop-language-solutions-azure-ai/)
 
