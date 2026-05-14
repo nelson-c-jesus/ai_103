@@ -1,6 +1,7 @@
 ---
 markmap:
   initialExpandLevel: 0
+  spacingVertical: 30
 ---
 
 # AI 103
@@ -1763,6 +1764,7 @@ markmap:
             - Requires no additional infrastructure
             - Requires no additional data
             - Can start experimenting immediatly
+        -  Helps guide how a model responds
 
     - Understand prompt components
         - System message
@@ -1775,6 +1777,431 @@ markmap:
             Sample input/output pairs that demonstrate the expected response format.
         - <span>&#9888;</span> ==How you structure and combine these components determines 
         &nbsp;&nbsp;&nbsp;&nbsp;how effectively the model responds.==
+
+    - Design effective system messages
+        - System message is a set of instructions provided to the 
+            model to guide its responses
+        - System messages appear first in the conversation and
+            act as the highest-levs  set of instructions
+        - System messages are used to
+            - Define the assistent's role and boundaries
+            - Set the tone ando communication style
+            - Specify output formats, such JSON or bullet points
+            - Add safety and quality constraints for your scenario
+        - System messages can be
+            - Simple
+                <pre>
+                    You are a helpful AI assistant.
+                </pre>
+            - Detailed
+                <pre>
+                    You are a friendly travel advisor for Margie's Travel.
+                    Answer only questions related to travel, hotels, and trip planning.
+                    Use a warm, conversational tone.
+                    If you don't have enough information to answer, ask a clarifying question.
+                    Format hotel recommendations as a bulleted list with the hotel name, location, and price range.
+                </pre>
+            - <span>&#9888;</span> ==A system message influences the model but doesn't guarantee compliance.
+            &nbsp;&nbsp;&nbsp;&nbsp;You should test and iterate on your system messages and
+            &nbsp;&nbsp;&nbsp;&nbsp;layer them with other mitigations like content filtering and evaluation==
+
+        - System messages checklist
+            - Start with the assistant's role
+                State the role and the expected outcome for a typical request.
+            - Define boundaries
+                List the topics, actions, and content types the assistant should avoid.
+            - Specify the output format
+                If you need a specific format, state it plainly and keep it consistent.
+            - Add a "when unsure" policy
+                Tell the model what to do when the user's request is ambiguous, out of scope, or when the model lacks information.
+
+        - Apply prompt engineering patterns
+            - Effective prompts use patterns that help the
+                model produce better responses
+            - Common patterns to use
+                - Persona
+                    Instruct the model to take on a specific perspective or role
+                    <br/>
+                    | &nbsp; | No persona | With persona |
+                    |-|-|-|
+                    |System message|None|You're a seasoned marketing professional<br/>writing for technical customers.|
+                    |User prompt|Write a one-sentence description of a<br/>CRM product.|Write a one-sentence description of a<br/>CRM product.|
+                    |Response|A CRM product is a software tool<br/>designed tomanage a company's<br/>interactions with customers.|Experience seamless customer relationship<br/>management with our CRM, designed to streamline<br/>operations and drive sales growth with robust analytics.|
+                
+                - Format template
+                    <pre>
+                        Format the result to show:
+                        - Hotel name
+                        - Location
+                        - Star rating
+                        - Price range per night
+                    </pre>
+                    <span>&#9888;</span> ==This pattern ensures consistent, organized responses that are
+                    &nbsp;&nbsp;&nbsp;&nbsp;easy to parse in your application==
+
+                - Chain-of-Thought (CoT)
+                    - Ask the model to explain its reasoning step-by-step
+                    - This technique reduces the chance of  inacurate results
+                    - This technique makes easier to verify the model's logic
+                    - Instead of
+                        <pre>
+
+
+                            Which hotel is best for a family of four?
+                        </pre>
+                    - Use
+                        <pre>
+
+
+                            Which hotel is best for a family of four?
+                            Take a step-by-step approach: 
+                            consider room size, amenities for children, location, and price.
+                        </pre>
+                    - **Beak the task down**
+                        - This related technique consists in<br/>explicit sub-steps _before_ the model responds
+                        - Example
+                            - First ask the model to extract key facts from a passage
+                            - In a follow-up prompt ask it to answer a<br/>question based on those facts
+                            - Decomposing the work reduce errors on<br/>complex, multi-part tasks
+                    - <span>&#9888;</span> ==Chain-of-thought prompting is a technique for non-reasoning models.
+                    &nbsp;&nbsp;&nbsp;&nbsp;Reasoning models like o-series models handle step-by-step logic internally.==
+
+                - Few-shot learning
+                    - Provide one or more examples of the desired input/output<br/>
+                        to help model identify the pattern
+                    - Other
+                        - One-shot
+                            Single example
+                        - Zero-shot
+                            No examples
+                    - Example
+                        <pre>
+
+
+                            Classify the following customer messages:
+
+                            Message: "I need to change my flight to Rome"
+                            Category: Booking change
+
+                            Message: "What's the weather like in Bali in March?"
+                            Category: Travel information
+
+                            Message: "Can I get a refund for my cancelled tour?"
+                            Category:
+                        </pre>
+
+                - Use clear syntyac and delimiters
+                    - When prompt includes multiple sections like
+                        Instructions
+                        Source text
+                        Examples
+                        Use delimiters like `---`, markdown headers or XML tags to<br/>separate them
+                        This way the modl can distinguish instructions from
+                        content and reduce the chance of misinterpretation
+                    - <span>&#9888;</span> ==Models can be susceptible to **recency bias**, meaning text near the end of a 
+                        &nbsp;&nbsp;&nbsp;&nbsp;prompt can have more influence than text at the beginning
+                        &nbsp;&nbsp;&nbsp;&nbsp;If the model isn't following your instructions consistently, try
+                        &nbsp;&nbsp;&nbsp;&nbsp;repeating the key instruction at the end of the prompt.==
+
+    - Configure model parameters
+        - Temperature
+            Controls the randomness of the output. 
+            - A higher value (0.7) produces more creative and varied responses
+            - A lower value (0.2) produces more focused and deterministic responses
+            - Use lower values for factual tasks
+            - Use higher values for creative ones.
+        - Top_p
+            Also controls randomness.
+            Limiting the model to a subset of the most probable next tokens
+            A `top_p` of 0.9 means the model considers only the top 90% of probable tokens
+        - <span>&#9888;</span> ==The general recommendation is to 
+            &nbsp;&nbsp;&nbsp;&nbsp;adjust either temperature or top_p, 
+            &nbsp;&nbsp;&nbsp;&nbsp;not both at the same time.==
+
+    - When prompt engineering is enough
+        It's effective when we need to
+        - Guide the model's tone, format and behaviour
+        - Provide specific instructions for a task
+        - Quickly iterate on results withour infrastructure changes
+        - Keep costs low, as no additional traing or data storage is required
+
+    - Limitations
+        - Model doesn't have the access to the
+        information it needs (some organization's private information)
+        - Fails to maintain a specific behaviour despite detailed instructions
+        - When a model lacks relevant context, it might generate responses that
+            sound plausible but are factually incorrect
+
+- **Ground your model with Retrieval Augmented Generation**
+
+    - Understanding grounding
+        -  When you use a language model without grounding, 
+            the only information it has comes from its training data
+            - Result
+                - Can be inaccurate 
+                - Include fabricated details
+        - The most common technique for grounding a language model is
+            Retrieval Augmented Generation (RAG)´
+        - Consider the difference
+            - Ungrounded
+                The model relies only on its training data and 
+                might invent hotel names or details.
+            - Grounded
+                The model receives your actual hotel catalog data as 
+                context and responds with real hotel names, prices, and availability
+        -  Improves the factual accuracy of responses by connecting the model to 
+            information that is specific, current, and relevant to the user's needs
+
+    - How RAG works
+        - Is a pattern that retrieves relevant information from a 
+            data source and includes it in the prompt before the 
+            model generates a response
+        - Steps
+            1. Retrieve
+                Search a data source for information that is relevant to the user's question.
+            2. Augment
+                Add the retrieved information to the prompt as context.
+            3. Generate
+                Send the augmented prompt to the language model to generate a grounded response.
+
+    - Create embeddings for search
+        - An embedding is a mathematical representation of 
+            text as a vector
+        - A vector (of an embedding) is a list of floating-point numbers that 
+            captures the meaning of words, sentences, or documents
+        - Embeddings with similar meanings, show vectors closer together in a 
+            multidimensional space, reflecting their semantic similarity
+        - Cosine similarity measures how close two vectors are by 
+            calculating the angle between them
+            A value near 1 means the vectors are very similar
+
+    - Use Azure AI Search for retrieval
+        - Azure AI Search provides the 
+            retrieval component for RAG solutions
+        - Allows bringing our own data, create a searchable index and 
+            query it to retrieve relevant information
+
+    - How to use Azure AI Search
+        - Add your data to Microsoft Foundry from sources
+            - Azure Blob Storage
+            - Azure Data Lake Storage Gen2
+            - Microsoft OneLake
+            - Upload files directly.
+        - Create an index 
+            Using an embedding model to generate vector representations of your content.
+            The index is stored in Azure AI Search.
+        - Query the index when a user asks a question
+            The system converts the question to an embedding, 
+            searches for the most similar content, and 
+            returns the relevant results.
+
+    - Azure AI Search supports
+        - Keyword search
+            Matches exact terms in the query to text in the index.
+        - Semantic search
+            Uses semantic models to match the meaning of the query rather than exact keywords.
+        - Vector search
+            Uses embeddings to find semantically similar content.
+        - Hybrid search
+            Combines keyword, semantic, and vector search for the most accurate results. 
+            Hybrid search is recommended for generative AI applications.
+
+    - Implement RAG with the Azure AI Foundry SDK
+        - Create an Azure AI Search index
+            - [MS Learn](https://learn.microsoft.com/en-us/azure/search/search-how-to-create-search-index?tabs=portal)
+            - [YouTube](https://www.youtube.com/watch?v=pNFNpf_ejRw)
+        - Connect to a model through Foundry project
+        - With the `azure-ai-projects` SDK 
+            - Get an authenticated OpenAI client
+            - Use the Responses API to generate grounded answers
+        - Example
+            <pre><code>
+                import os
+                from azure.ai.projects    import AIProjectClient
+                from azure.identity       import DefaultAzureCredential
+                project = AIProjectClient(
+                    endpoint=os.environ["PROJECT_ENDPOINT"],
+                    credential=DefaultAzureCredential(),
+                )
+                client = project.get_openai_client()
+                response = client.responses.create(
+                    model="gpt-4o",
+                    input=[
+                        {"role": "system", "content": "You are a helpful travel advisor. "
+                        "Use the following hotel data to answer: " + retrieved_context},
+                        {"role": "user", "content": "Which hotels do you offer in Paris?"},
+                    ],
+                )
+                print(response.output_text)
+            </code></pre>
+
+            - `retrieved_context` represents the 
+                documents returned from Azure AI Search index
+            - Injecting those results into the system message, 
+                the model's response is grounded in actual data
+
+    - When to use RAG
+        - The model needs domain-specific knowledge
+            Your organization has private data that the model wasn't trained on, 
+            like a product catalog, policy documents, or internal knowledge base.
+        - Information changes frequently
+            Your data is updated regularly, such as inventory, pricing, or news. 
+            RAG retrieves current data at query time without retraining.
+        - Factual accuracy is critical
+            You need responses grounded in real data 
+            rather than the model's general knowledge.
+        - The base model's training data has a cutoff
+            Events or information that occurred after the model's training cutoff date
+            need to be accessible.
+        - <span>&#x1F4A1;</span> ==Building agents that need grounded knowledge 
+        without managing search infrastructure, 
+        consider Foundry IQ — a managed knowledge store that 
+        simplifies grounding for AI agents.
+        Build knowledge-enhanced AI agents with Foundry IQ [&rarr; saber &plus;](https://learn.microsoft.com/en-us/training/modules/introduction-foundry-iq/)==
+
+- **Fine-tune a model for consistent behavior**
+
+    - Introduction
+        - Prompt engineering helps you guide the model's behavior
+        - RAG helps to ground responses in factual data
+        - But if 
+            - The model still doesn't produce responses with the consistent style
+            - The model still doesn't use the right tone
+            - The model does not output the format you need
+            - The model ignores or inconsistently follows your instructions
+                (even with detailed system messages and few-shot examples)
+                it might be time to fine-tune the model.
+
+    - What is **fine-tuning** a model
+        - Is the process of taking a pretrained language model and 
+            further training it on a smaller, task-specific dataset
+        - It adjusts the model's internal weights so 
+            that it produces responses that are consistent with the 
+                patterns in your training data.
+
+    - Understand fine-tuning
+        - Fine-tuning builds on models trained on 
+            vast amounts of general data by 
+            training the model with additional examples that 
+            reflect your specific requirements
+        - Fine-tuning uses Low-Rank Adaptation (LoRA)
+            - A technique that approximates weight changes with a lower-rank representation
+            - LoRA updates only a smaller subset of important parameters
+            - This makes training faster
+            - This makes training more cost-effective
+                - Less time
+                - Fewer computing resources
+                - Less data to customize a model's behavior
+            - Maintaining model quality
+
+    - Know when to fine-tune
+        - Consistent style and tone
+            Your organization has a specific brand voice, and 
+            the model needs to follow it reliably across all interactions. 
+            - Example
+                <pre>
+
+                    A travel agency wants every response to use a warm, 
+                    encouraging tone with short paragraphs.
+                </pre>
+        - Specific output formats
+            You need the model to reliably produce structured output, 
+            like JSON responses following a defined schema, and 
+            few-shot examples alone aren't sufficient.
+        - Reducing prompt length
+            Long system messages with many examples consume tokens and increase latency. 
+            Fine-tuning embeds those patterns into the model, 
+            reducing the prompt size needed for each request.
+        - Distillation
+            You want to transfer the capabilities of a large, 
+            expensive model to a smaller, more efficient one. 
+            - Example
+                <pre>
+
+
+                    You can collect outputs from a high-performing model and 
+                    use them to fine-tune a smaller model that achieves similar 
+                    quality at lower cost and latency.
+                </pre>
+        - Enhancing tool usage
+            When your application uses tool calling, 
+            fine-tuning with tool examples can improve the accuracy of 
+            tool selection and parameter generation
+        - <span>&#9888;</span> ==Fine-tuning is an advanced capability. 
+        &nbsp;&nbsp;&nbsp;&nbsp;Always start by evaluating the baseline performance of a 
+        &nbsp;&nbsp;&nbsp;&nbsp;standard model against your requirements before considering fine-tuning. 
+        &nbsp;&nbsp;&nbsp;&nbsp;Without a baseline, it's hard to detect whether fine-tuning improved or 
+        &nbsp;&nbsp;&nbsp;&nbsp;degraded the model's performance.==
+
+    - Explore types of fine-tuning
+        - Supervised fine-tuning (SFT)
+            - Train the model on a labeled dataset of prompt-and-response pairs
+            - The model learns to produce outputs that match the patterns in your training data
+            - This technique works best when there are clear, well-defined ways to approach a task.
+        - Reinforcement fine-tuning (RFT)
+            - Optimize the model's behavior through iterative feedback, using a 
+                grader to reward better responses incrementally
+            - RFT works well for complex or dynamic tasks where there are 
+                many possible solutions and you want to improve the model's reasoning quality.
+        - Direct Preference Optimization (DPO)
+            - Align the model based on human preferences by 
+                providing preferred and non-preferred response pairs
+            - DPO is computationally lighter than traditional reinforcement 
+                learning approaches while being equally effective at alignment
+        - Is possible to combine tchniques
+            First use supervised fine-tuning to create a customized model, 
+            After use DPO to further align the responses to your specific preferences
+
+    - Prepare training data
+        - Fine-tuning requires a dataset of high-quality examples in JSONL (JSON Lines) format
+        - Example for chat completion models
+            <pre><code>
+                {"messages": [
+                    {"role": "system", "content": "You are a friendly travel advisor for Margie's Travel."}, 
+                    {"role": "user", "content": "What's a good beach destination in Europe?"}, 
+                    {"role": "assistant", "content": "For a beautiful European beach experience, consider the Algarve in southern Portugal! It offers stunning golden cliffs, warm waters, and charming coastal towns. The best time to visit is from May through September."}]}
+                {"messages": [
+                    {"role": "system", "content": "You are a friendly travel advisor for Margie's Travel."}, 
+                    {"role": "user", "content": "I need a budget hotel in Tokyo."}, 
+                    {"role": "assistant", "content": "Here are some great budget-friendly options in Tokyo:\n\n- **Sakura Hotel Jimbocho** - Central location, from $45/night\n- **Khaosan World Asakusa** - Near Senso-ji temple, from $35/night\n- **Imano Tokyo Ginza Hostel** - Modern design, from $40/night\n\nAll three options are close to public transit, making it easy to explore the city."}]}
+            </code></pre>
+        - When preparing training data
+            - Include a consistent system message across examples.
+            - Use high-quality, representative examples that cover the range of scenarios you expect.
+            - Aim for at least hundreds of examples; more is generally better.
+            - Ensure the assistant responses reflect exactly the style, format, and tone you want.
+            - <span>&#9888;</span> ==Including a system message in your training data is important. 
+            &nbsp;&nbsp;&nbsp;&nbsp;Leaving it blank tends to produce lower-accuracy models.
+            &nbsp;&nbsp;&nbsp;&nbsp;Use the same system message when you deploy your fine-tuned model for inference.==
+
+    - Challenges
+        - Training costs
+            Fine-tuning has upfront costs for training and 
+            ongoing hourly costs for hosting the custom model.
+        - Data quality requirements
+            - Poor-quality or unrepresentative training data 
+                leads to overfitting, underfitting, or bias.
+        - Maintenance
+            Fine-tuned models may need to be retrained when 
+            data changes or when updated base models are released.
+        - Experimentation
+            Finding the right combination of 
+            hyperparameters (epochs, batch size, learning rate) 
+            requires testing and iteration.
+        - Model drift
+            Specializing too narrowly can make the model less effective at 
+            general language tasks outside the fine-tuned domain.
+
+- **Compare and combine optimization strategies**
+
+    - Understand the optimization spectrum
+
+                        
+
+
+
+
+
 
 
 
@@ -1813,7 +2240,7 @@ markmap:
             - Perform tasks on behalf of users
             - Perform tasks on behalf of programs
         2. Can operate independently by
-            - Understanding context
+            - Understanding context- 
             - Making decisions
             - Taking actions 
 
