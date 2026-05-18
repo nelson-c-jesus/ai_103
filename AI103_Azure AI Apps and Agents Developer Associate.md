@@ -4,13 +4,13 @@ markmap:
   spacingVertical: 30
 ---
 
-# AI 103
+# [AI 103](https://learn.MS.com/en-us/training/courses/ai-103t00#course-syllabus)
 
 ## Develop generative AI apps in Azure
 
-### [Documentação Oficial](https://learn.microsoft.com/en-us/training/paths/develop-generative-ai-apps/)
+### [Documentação Oficial](https://learn.MS.com/en-us/training/paths/develop-generative-ai-apps/)
 
-### 1. [Plan and prepare to develop AI solutions on Azure](https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/)
+### 1. [Plan and prepare to develop AI solutions on Azure](https://learn.MS.com/en-us/training/modules/prepare-azure-ai-development/)
 
 - **Introduction**
     - Develop comprehensive AI Solutions that combine:
@@ -19,7 +19,7 @@ markmap:
         3. Prompt engineering solutions
         4. Custom code
     
-    - Microsoft Foundry ::  a comprehensive platform for AI development on Microsoft Azure
+    - MS Foundry ::  a comprehensive platform for AI development on MS Azure
 
 - **What is Artificial Intelligence (AI)?**
     <br/>
@@ -36,20 +36,20 @@ markmap:
         5. Information extraction.[&rarr; saber &plus;](docs/AI103_aux_texts/information_extracton.md)
 
 
-- **Microsoft Foundry**
+- **MS Foundry**
     <br/>
-    Is a platform for AI development on Microsoft Azure.
+    Is a platform for AI development on MS Azure.
     Web-based visual interface for working with AI projects.
-    Microsoft Foundry SDK, which is used to build AI solutions
+    MS Foundry SDK, which is used to build AI solutions
     programmatically.
 
-    - Microsoft Foundry projects manage:
+    - MS Foundry projects manage:
         - Resource connections.
         - Data.
         - Code.
         - Other elements of AI solution.
 
-    - Each project belongs to a single Microsoft Foundry 
+    - Each project belongs to a single MS Foundry 
         *resource* in Azure, wich provides:
         - Compute
         - Data storage
@@ -69,12 +69,12 @@ markmap:
         - Create and test agents.
         - Create Model Context Protocol (MCP) connections to 
            tools and Foundry IQ knowledge sources.
-        - Explore and test Microsoft Foundry tools.
+        - Explore and test MS Foundry tools.
         - Manage resource configuration and user access.
         - Find the endpoints and keys you need to access assets 
            from client applications.
 
-    - Using Microsoft Foundry SDK allows create and manage assets 
+    - Using MS Foundry SDK allows create and manage assets 
         using scripts or automated Continuous Integration/Continuous 
         Development (CI/CD) actions in DevOps pipelines.
 
@@ -91,23 +91,23 @@ markmap:
             analyze natural language text and perform tasks 
             such as entity extraction, sentiment analysis, and
             summarization.
-        - Overview [&rarr; saber &plus;](https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview)
+        - Overview [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/ai-services/language-service/overview)
         - Features
             
         - Use cases
             
         - Resources 
         - FAQ
-    2. Azure speech [&rarr; saber &plus;](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview)
-    3. Azure translator [&rarr; saber &plus;](https://learn.microsoft.com/en-us/azure/ai-services/translator/overview)
-    4. Azure document intelligence [&rarr; saber &plus;](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)
+    2. Azure speech [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/ai-services/speech-service/overview)
+    3. Azure translator [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/ai-services/translator/overview)
+    4. Azure document intelligence [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)
     5. Azure content understanding
         - Summary
             Provides multi-modal content analysis 
             capabilities that enable you to build 
             models to extract data from forms and 
             documents, images, videos, and audio streams.
-        - Overview [&rarr; saber &plus;](https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/overview)
+        - Overview [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/ai-services/content-understanding/overview)
         - Features
             - Multimodal data ingestion
                 - Documents
@@ -123,7 +123,7 @@ markmap:
             - Post-call analytics for call centers
             - Tax process automation
             - Media asset management
-        - Resources [&rarr; saber &plus;](https://learn.microsoft.com/en-gb/azure/ai-services/content-understanding/)
+        - Resources [&rarr; saber &plus;](https://learn.MS.com/en-gb/azure/ai-services/content-understanding/)
         - FAQ
             1. What is Azure Content Understanding in Foundry Tools?
                 [&rarr; saber &plus;](docs/AI103_aux_texts/content_understanding_ans01.md)
@@ -159,18 +159,18 @@ markmap:
 
     - Programming languages, APIs, and SDKs
         1. Programming languages
-            - Microsoft C#
+            - MS C#
             - Python
             - Node
             - TypeScript
             - Java
             - Others
         2. SDKs
-            -  Microsoft Foundry [&rarr; saber &plus;](https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/sdk-overview?pivots=programming-language-python)
-            - Foundry Tools [&rarr; saber &plus;](https://learn.microsoft.com/en-us/azure/ai-services/reference/sdk-package-resources)
+            -  MS Foundry [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/foundry/how-to/develop/sdk-overview?pivots=programming-language-python)
+            - Foundry Tools [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/ai-services/reference/sdk-package-resources)
         3. APIs
-            - The OpenAI API [&rarr; saber &plus;](https://learn.microsoft.com/en-us/azure/foundry/openai/latest)
-            - REST APIs (Foundry Tools) [&rarr; saber &plus;](https://learn.microsoft.com/en-us/rest/api/aifoundry/aiproject)
+            - The OpenAI API [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/foundry/openai/latest)
+            - REST APIs (Foundry Tools) [&rarr; saber &plus;](https://learn.MS.com/en-us/rest/api/aifoundry/aiproject)
 
 - **Responsible AI**
     <br/>
@@ -181,7 +181,7 @@ markmap:
     the system makes incorret or un fair decisions
     this aldo creates potential harm to users.
     Responsible AI principles
-    [&rarr; saber &plus;](https://learn.microsoft.com/en-us/azure/machine-learning/concept-responsible-ai?wt.mc_id=AZ-MVP-5003638)
+    [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/machine-learning/concept-responsible-ai?wt.mc_id=AZ-MVP-5003638)
     
     1. Fairness [&rarr; saber &plus;](docs/AI103_aux_texts/fairness.md)
     2. Reliability and Safety [&rarr; saber &plus;](docs/AI103_aux_texts/reliability_safety.md)
@@ -192,13 +192,13 @@ markmap:
 
 
 - **Further reading**
-    - [Azure AI](https://azure.microsoft.com/solutions/ai)
+    - [Azure AI](https://azure.MS.com/solutions/ai)
 
 - **Exercise - Prepare for an AI development project**
-    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/01-Explore-ai-studio.html)
+    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/01-Explore-ai-studio.html)
 
 
-### 2. [Select, deploy and evaluate Microsoft Foundry models](https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/)
+### 2. [Select, deploy and evaluate MS Foundry models](https://learn.MS.com/en-us/training/modules/model-catalog-evaluate/)
 
 - **Introduction**
 
@@ -210,7 +210,7 @@ markmap:
     - Foundry portal
         - Explore over 1 900 models
         - Providers
-            - Microsoft
+            - MS
             - Anthropic
             - OpenAI
             - Meta
@@ -228,7 +228,7 @@ markmap:
 - **Explore the model catalog**
 
     - Model catalog categories
-        - Foundry Models sold directly by Azure<br/>Models billed directly through Azure subscription<br/>include Azure OpenAI models as well as models from<br/>Microsoft and other providers
+        - Foundry Models sold directly by Azure<br/>Models billed directly through Azure subscription<br/>include Azure OpenAI models as well as models from<br/>MS and other providers
         - Foundry Models from partners and community<br/>Models provided by trusted partners and community
 
     - Finding Modls in the model catalog
@@ -627,7 +627,7 @@ markmap:
             - Collaborate with others on custom evaluators
         - Access from project's `Evaluation` page by selecting the<br/> `Evaluator library` tab
         - We can
-            - View Microsoft-curated evaluators for quality, safety, and performance
+            - View MS-curated evaluators for quality, safety, and performance
             - Examine evaluator details including name, description, parameters, and associated files
             - Review annotation prompts for quality evaluators to understand how metrics are calculated
             - Check definitions and severity levels for safety evaluators
@@ -657,7 +657,7 @@ markmap:
 
 - **Key takeaways**
     - Model catalog provides access to over 1,900 models from providers 
-        including Microsoft, OpenAI, Meta, Mistral, and Hugging Face
+        including MS, OpenAI, Meta, Mistral, and Hugging Face
     - Model benchmarks offer objective comparisons across quality, safety, cost, and performance dimensions
         - Quality metrics like accuracy, coherence, and fluency assess how well models generate appropriate responses
         - Safety metrics identify risks around harmful content
@@ -681,10 +681,10 @@ markmap:
             - Multiple metrics
 
 - **Exercise - Select, deploy, and evaluate models**
-    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/02-model-catalog-evaluation.html)
+    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/02-model-catalog-evaluation.html)
 
 
-### 3. [Develop a generative AI chat app with Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/foundry-sdk/)
+### 3. [Develop a generative AI chat app with MS Foundry](https://learn.MS.com/en-us/training/modules/foundry-sdk/)
 
 - **Explore with the model playground**
 
@@ -713,11 +713,11 @@ markmap:
 - **Choose an endpoint and SDK**
     - Considerations for<br/>developing an application
         - Endpoints
-            Each Microsoft Foundry project has both a Project endpoint and an Azure OpenAI endpoint.
+            Each MS Foundry project has both a Project endpoint and an Azure OpenAI endpoint.
         - Client SDK
-            Depending on the endpoint you can choose to use the Microsoft Foundry SDK or<br/>the OpenAI SDK to develop a generative AI chat application
+            Depending on the endpoint you can choose to use the MS Foundry SDK or<br/>the OpenAI SDK to develop a generative AI chat application
         - Authentication
-            Production applications should use Microsoft Entra ID authentication, which requires the application to be running in the context of a specific identity
+            Production applications should use MS Entra ID authentication, which requires the application to be running in the context of a specific identity
             Or can also use key-based or token-based authentication.
         - Chat API (OpenAI client API)
             - ChatCompletions API<br/>Is well-established and compatible across many generative AI models and platforms
@@ -725,7 +725,7 @@ markmap:
 
     - Using the Foundry SDK with the project endpoint
         - [Azure AI Projects for Python](https://pypi.org/project/azure-ai-projects)
-        - [Azure AI Projects for Microsoft .NET](https://www.nuget.org/packages/Azure.AI.Projects)
+        - [Azure AI Projects for MS .NET](https://www.nuget.org/packages/Azure.AI.Projects)
         - [Azure AI Projects for JavaScript](https://www.npmjs.com/package/@azure/ai-projects)
 
     - Installing the SDK(Python)
@@ -765,7 +765,7 @@ markmap:
             `pip install openai azure-identity`
             <br/>
 
-            <span>&#9888;</span> ==The `azure-identity` package is required if you intend to use token-based authentication to<br/>&nbsp;&nbsp;&nbsp;&nbsp;connect to the endpoint using Microsoft Entra ID credentials==
+            <span>&#9888;</span> ==The `azure-identity` package is required if you intend to use token-based authentication to<br/>&nbsp;&nbsp;&nbsp;&nbsp;connect to the endpoint using MS Entra ID credentials==
 
     - Connecting to The Azure OpenAI endpoint
         - **Overview** page to get the endpoint at [https://ai.azure.com](https://ai.azure.com)
@@ -827,7 +827,7 @@ markmap:
             - Tracing and observability for monitoring application behavior
             - Foundry direct models (non-Azure OpenAI models available through the model catalog)
             - Project metadata, connections, and governance features
-            - Microsoft recommends
+            - MS recommends
                 - When building apps with agents
                 - Evaluations
                 - Foundry-specific features
@@ -854,7 +854,7 @@ markmap:
         - Unified experience
             Combines chat completions and Assistants API patterns
         - Foundry direct models
-            Works with models hosted directly in Microsoft Foundry,<br/>not just Azure OpenAI models
+            Works with models hosted directly in MS Foundry,<br/>not just Azure OpenAI models
         - Simple integration
             Access through the OpenAI-compatible client
         
@@ -864,7 +864,7 @@ markmap:
                 # Generate a response using the OpenAI-compatible client
                 response = openai_client.responses.create(
                     model="gpt-4.1",  # Your model deployment name
-                    input="What is Microsoft Foundry?"
+                    input="What is MS Foundry?"
                 )
                 # Display the response
                 print(response.output_text)
@@ -924,14 +924,14 @@ markmap:
             Alternative to temperature for controlling randomness
 
     - Working with Foundry direct models
-        - Microsoft Phi
+        - MS Phi
         - DeepSeek
         - Other models hosted in Foundry
         - Example
             <pre><code>
                 # Using a Foundry direct model
                 response = openai_client.responses.create(
-                    model="microsoft-phi-4",  # Example Foundry direct model
+                    model="MS-phi-4",  # Example Foundry direct model
                     instructions="You are a helpful AI assistant that answers questions clearly and concisely.",
                     input="What are the benefits of small language models?"
                 )
@@ -1163,7 +1163,7 @@ markmap:
                     model="gpt-4o",  # Your model deployment name
                     messages=[
                         {"role": "system", "content": "You are a helpful assistant."},
-                        {"role": "user", "content": "When was Microsoft founded?"}
+                        {"role": "user", "content": "When was MS founded?"}
                     ]
                 )
                 print(completion.choices[0].message.content)
@@ -1184,7 +1184,7 @@ markmap:
                 # Add the first user message
                 conversation_messages.append(
                     {"role": "user",
-                    "content": "When was Microsoft founded?"}
+                    "content": "When was MS founded?"}
                 )
                 # Get a completion
                 completion = openai_client.chat.completions.create(
@@ -1253,13 +1253,13 @@ markmap:
 
                         Assistant: Enter a prompt (or type 'quit' to exit)
 
-                        You: When was Microsoft founded?
+                        You: When was MS founded?
 
-                        Assistant: Microsoft was founded on April 4, 1975 in Albuquerque, New Mexico, USA.
+                        Assistant: MS was founded on April 4, 1975 in Albuquerque, New Mexico, USA.
 
                         You: Who founded it?
 
-                        Assistant: Microsoft was founded by Bill Gates and Paul Allen.
+                        Assistant: MS was founded by Bill Gates and Paul Allen.
 
                         You: quit
 
@@ -1273,17 +1273,17 @@ markmap:
     - Generate responses with the Responses and ChatCompletions APIs and manage conversations
 
 - **Further reading**
-    - [Microsoft Foundry SDK overview](https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/develop/sdk-overview)
-    - [Responses API documentation](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/how-to/responses)
-    - [Microsoft Foundry Discord](https://aka.ms/azureaifoundry/discord)
-    - [Microsoft Foundry Developer Forum](https://aka.ms/azureaifoundry/forum)
+    - [MS Foundry SDK overview](https://learn.MS.com/en-us/azure/ai-foundry/how-to/develop/sdk-overview)
+    - [Responses API documentation](https://learn.MS.com/en-us/azure/ai-foundry/openai/how-to/responses)
+    - [MS Foundry Discord](https://aka.ms/azureaifoundry/discord)
+    - [MS Foundry Developer Forum](https://aka.ms/azureaifoundry/forum)
 
 - **Exercise - Create a generative AI chat app**
-    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/03-foundry-sdk.html)
+    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/03-foundry-sdk.html)
 
 
 
-### 4. [Develop generative AI apps that use tools](https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/)
+### 4. [Develop generative AI apps that use tools](https://learn.MS.com/en-us/training/modules/use-generative-ai-tools/)
 
 - **Introduction**
     - Tools enable GenAI apps
@@ -1495,7 +1495,7 @@ markmap:
                 response = client.responses.create(
                     model={model_deployment},
                     instructions="You are an AI assistant. Use web search when current information is required.",
-                    input="What are three major announcements from Microsoft Build this week?",
+                    input="What are three major announcements from MS Build this week?",
                     tools=[{"type": "web_search"}]
                 )
                 print(response.output_text)
@@ -1625,8 +1625,8 @@ markmap:
         
         - <span>&#9888;</span> ==For enterprise-scale agents that need to access large quantities of 
         &nbsp;&nbsp;&nbsp;&nbsp;data in multiple data stores, you should consider using the 
-        &nbsp;&nbsp;&nbsp;&nbsp;Foundry IQ knowledge store solution with a Microsoft Foundry agent
-        &nbsp;&nbsp;&nbsp;&nbsp;Build knowledge-enhanced AI agents with Foundry IQ [&rarr; saber &plus;](https://learn.microsoft.com/en-us/training/modules/introduction-foundry-iq)==
+        &nbsp;&nbsp;&nbsp;&nbsp;Foundry IQ knowledge store solution with a MS Foundry agent
+        &nbsp;&nbsp;&nbsp;&nbsp;Build knowledge-enhanced AI agents with Foundry IQ [&rarr; saber &plus;](https://learn.MS.com/en-us/training/modules/introduction-foundry-iq)==
 
 - **Use the `function` tool**
 
@@ -1792,10 +1792,10 @@ markmap:
     - [OpenAI developers Guide: Function calling](https://developers.openai.com/api/docs/guides/function-calling)
 
 - **Exercise - Create a generative AI chat app that uses tools**
-    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/04a-use-own-data.html)
+    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/04a-use-own-data.html)
 
 
-### 5. [Optimize generative AI model performance with Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/)
+### 5. [Optimize generative AI model performance with MS Foundry](https://learn.MS.com/en-us/training/modules/optimize-generative-ai-model-performance/)
 
 
 - **Introduction**
@@ -2038,10 +2038,10 @@ markmap:
             query it to retrieve relevant information
 
     - How to use Azure AI Search
-        - Add your data to Microsoft Foundry from sources
+        - Add your data to MS Foundry from sources
             - Azure Blob Storage
             - Azure Data Lake Storage Gen2
-            - Microsoft OneLake
+            - MS OneLake
             - Upload files directly.
         - Create an index 
             Using an embedding model to generate vector representations of your content.
@@ -2064,7 +2064,7 @@ markmap:
 
     - Implement RAG with the Azure AI Foundry SDK
         - Create an Azure AI Search index
-            - [MS Learn](https://learn.microsoft.com/en-us/azure/search/search-how-to-create-search-index?tabs=portal)
+            - [MS Learn](https://learn.MS.com/en-us/azure/search/search-how-to-create-search-index?tabs=portal)
             - [YouTube](https://www.youtube.com/watch?v=pNFNpf_ejRw)
         - Connect to a model through Foundry project
         - With the `azure-ai-projects` SDK 
@@ -2113,7 +2113,7 @@ markmap:
         without managing search infrastructure, 
         consider Foundry IQ — a managed knowledge store that 
         simplifies grounding for AI agents.
-        Build knowledge-enhanced AI agents with Foundry IQ [&rarr; saber &plus;](https://learn.microsoft.com/en-us/training/modules/introduction-foundry-iq/)==
+        Build knowledge-enhanced AI agents with Foundry IQ [&rarr; saber &plus;](https://learn.MS.com/en-us/training/modules/introduction-foundry-iq/)==
 
 - **Fine-tune a model for consistent behavior**
 
@@ -2382,20 +2382,20 @@ markmap:
     - Consider fine-tuning when you need consistent style and format that prompt engineering alone can't reliably achieve
 
 - **Further reading**
-    - [Getting started with customizing a large language model (LLM)](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/customizing-llms)
-    - [Prompt engineering techniques](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/prompt-engineering)
-    - [System message design](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/advanced-prompt-engineering)
-    - [Retrieval Augmented Generation in Microsoft Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
-    - [Customize a model with fine-tuning](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/how-to/fine-tuning)
-    - [Microsoft Foundry fine-tuning considerations](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/fine-tuning-considerations)
-    - [Augment large language models with RAG or fine-tuning](https://learn.microsoft.com/en-us/azure/developer/ai/augment-llm-rag-fine-tuning)
+    - [Getting started with customizing a large language model (LLM)](https://learn.MS.com/en-us/azure/ai-foundry/openai/concepts/customizing-llms)
+    - [Prompt engineering techniques](https://learn.MS.com/en-us/azure/ai-foundry/openai/concepts/prompt-engineering)
+    - [System message design](https://learn.MS.com/en-us/azure/ai-foundry/openai/concepts/advanced-prompt-engineering)
+    - [Retrieval Augmented Generation in MS Foundry](https://learn.MS.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
+    - [Customize a model with fine-tuning](https://learn.MS.com/en-us/azure/ai-foundry/openai/how-to/fine-tuning)
+    - [MS Foundry fine-tuning considerations](https://learn.MS.com/en-us/azure/ai-foundry/openai/concepts/fine-tuning-considerations)
+    - [Augment large language models with RAG or fine-tuning](https://learn.MS.com/en-us/azure/developer/ai/augment-llm-rag-fine-tuning)
 
 - **Exercise - Optimize generative AI model performance**
-    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/04b-finetune-model.html)                        
+    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/04b-finetune-model.html)                        
 
 
 
-### 6. [Implement a responsible generative AI solution in Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/)
+### 6. [Implement a responsible generative AI solution in MS Foundry](https://learn.MS.com/en-us/training/modules/responsible-ai-studio/)
 
 - **Introduction**
 
@@ -2404,7 +2404,7 @@ markmap:
         with a large volume of data from across the Internet to generate new content that 
         can be indistinguishable from content created by a human.
     - Creating generative AI solutions adopt a responsible approach that identifies, measures, and mitigates risks
-    - The guidelines for responsible generative AI build on [Microsoft's Responsible AI standard](https://aka.ms/RAI)
+    - The guidelines for responsible generative AI build on [MS's Responsible AI standard](https://aka.ms/RAI)
 
 - **Plan a responsible generative AI solution**
     Stage process to develop and implement a plan for responsible AI
@@ -2421,11 +2421,11 @@ markmap:
         - Generating content that is offensive, pejorative, or discriminatory.
         - Generating content that contains factual inaccuracies.
         - Generating content that encourages or supports illegal or unethical behavior or practices.
-        - Azure OpenAI Service includes a [transparency note](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/transparency-note)
+        - Azure OpenAI Service includes a [transparency note](https://learn.MS.com/en-us/legal/cognitive-services/openai/transparency-note)
         - Model developers may provide documentation such as the [OpenAI system card for the GPT-4 model](https://cdn.openai.com/papers/gpt-4-system-card.pdf)
-        - Review the guidance in the [Microsoft Responsible AI Impact Assessment Guide](https://msblogs.thesourcemediaassets.com/sites/5/2022/06/Microsoft-RAI-Impact-Assessment-Guide.pdf)
-        - To document potential harms can use [Microsoft Responsible AI Impact Assessment template](https://msblogs.thesourcemediaassets.com/sites/5/2022/06/Microsoft-RAI-Impact-Assessment-Template.pdf)
-        - Review the [information and guidelines](https://learn.microsoft.com/en-us/azure/ai-services/responsible-use-of-ai-overview) for the resources you use to help identify potential harms
+        - Review the guidance in the [MS Responsible AI Impact Assessment Guide](https://msblogs.thesourcemediaassets.com/sites/5/2022/06/MS-RAI-Impact-Assessment-Guide.pdf)
+        - To document potential harms can use [MS Responsible AI Impact Assessment template](https://msblogs.thesourcemediaassets.com/sites/5/2022/06/MS-RAI-Impact-Assessment-Template.pdf)
+        - Review the [information and guidelines](https://learn.MS.com/en-us/azure/ai-services/responsible-use-of-ai-overview) for the resources you use to help identify potential harms
 
     2. Prioritize the harms
         - This prioritization will enable to focus on finding and 
@@ -2452,7 +2452,7 @@ markmap:
             - A team of testers deliberately probes the solution for weaknesses and 
             attempts to produce harmful results
             - To learn more about Red Teaming for generative AI solutions, see 
-                [Introduction to red teaming large language models (LLMs)](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/red-teaming) in
+                [Introduction to red teaming large language models (LLMs)](https://learn.MS.com/en-us/azure/cognitive-services/openai/concepts/red-teaming) in
                 the Azure OpenAI Service documentation.
 
     4. Document and share details of harms
@@ -2517,18 +2517,18 @@ markmap:
                     - Foundry includes support for **guardrails** that apply criteria to 
                         suppress prompts and responses based on **content filters** that 
                         classify content into 
-                        - [Severity levels](https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/content-filter-severity-levels?tabs=warning) (4)
+                        - [Severity levels](https://learn.MS.com/en-us/azure/foundry/openai/concepts/content-filter-severity-levels?tabs=warning) (4)
                             1. Safe
                             2. Low
                             3. Medium
                             4. High
-                        - [Categories of potential harm](https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/content-filter-severity-levels?tabs=warning) (5)
+                        - [Categories of potential harm](https://learn.MS.com/en-us/azure/foundry/openai/concepts/content-filter-severity-levels?tabs=warning) (5)
                             1. Hate and fairness
                             2. Sexual
                             3. Violence
                             4. Self-harm
                             5. Task-adherence
-                        - [Prompt shields](https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/content-filter-prompt-shields)
+                        - [Prompt shields](https://learn.MS.com/en-us/azure/foundry/openai/concepts/content-filter-prompt-shields)
                             - Use detection algorithms to determine if the 
                                 solution is being systematically abused
         
@@ -2603,37 +2603,32 @@ markmap:
         4. Deploy your solution with adequate plans and preparations for responsible operation
 
 - **Further reading**
-    - [Overview of responsible AI practices for Azure OpenAI models](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview)
-    - [Microsoft Foundry Discord](https://aka.ms/azureaifoundry/discord)
-    - [Microsoft Foundry Developer Forum](https://aka.ms/azureaifoundry/forum)
+    - [Overview of responsible AI practices for Azure OpenAI models](https://learn.MS.com/en-us/legal/cognitive-services/openai/overview)
+    - [MS Foundry Discord](https://aka.ms/azureaifoundry/discord)
+    - [MS Foundry Developer Forum](https://aka.ms/azureaifoundry/forum)
 
 - **Exercise - Apply guardrails to prevent the output of harmful content**
-    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/06-Explore-content-filters.html)
-
-
-
-
-
+    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/06-Explore-content-filters.html)
 
 
 ## Develop AI agents on Azure
 
-- [`Documentação Oficial`](https://learn.microsoft.com/pt-pt/training/paths/develop-ai-agents-azure/)
+- [`Documentação Oficial`](https://learn.MS.com/pt-pt/training/paths/develop-ai-agents-azure/)
 
-- **Develop AI agents with<br/>Microsoft Foundry and<br/>Visual Studio Code**
+### 1. [Develop AI agents with MS Foundry and Visual Studio Code](https://learn.MS.com/en-us/training/modules/develop-ai-agents-azure-vs-code/)
 
-    - Microsoft Foundry Agent Service
-        - Allows
-            - Build
-            - Deploy
-            - Scale AI agents
-            - Create tailored agents
-        - Without managing
-            - Compute resources
-            - Storage resources
+- **MS Foundry Agent Service**
+    - Allows
+        - Build
+        - Deploy
+        - Scale AI agents
+        - Create tailored agents
+    - Without managing
+        - Compute resources
+        - Storage resources
 
 - **Understand AI agents and 
-    Microsoft Foundry Agent Service**
+    MS Foundry Agent Service**
 
     - AI Agent is
         1. Software service that<br/>uses generative AI to
@@ -2656,7 +2651,7 @@ markmap:
             - Scheduling meetings
             - Sending e-mails
             - Managing to-do lists
-            - Microsoft 65 Copilot
+            - MS 65 Copilot
                 - Draft documents
                 - Create presentations
                 - Analyze data
@@ -2723,7 +2718,7 @@ markmap:
         - Customizable storage solutions
         - Observability and tracing
     
-    - Fundamentals of AI Agents [&rarr; saber &plus;](https://learn.microsoft.com/en-us/training/modules/ai-agent-fundamentals/)
+    - Fundamentals of AI Agents [&rarr; saber &plus;](https://learn.MS.com/en-us/training/modules/ai-agent-fundamentals/)
 
 - **Explore development approaches**
 
@@ -2770,7 +2765,7 @@ markmap:
         - Intgrate the agent into your applications
 
     - Required Azure resources
-        - Microsoft Foundry project organizes
+        - MS Foundry project organizes
             - Agents
             - Models
             - Other assets
@@ -2780,13 +2775,13 @@ markmap:
             - Others
     
     - Optional Azure Services
-        - [Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search?tabs=indexing%2Cquickstarts)<br/> for advances knowledge retrieval when using<br/>[Foundry IQ](https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/what-is-foundry-iq?tabs=programmatic) or [File Search](https://learn.microsoft.com/en-us/agent-framework/agents/tools/file-search?pivots=programming-language-python) tools
+        - [Azure AI Search](https://learn.MS.com/en-us/azure/search/search-what-is-azure-search?tabs=indexing%2Cquickstarts)<br/> for advances knowledge retrieval when using<br/>[Foundry IQ](https://learn.MS.com/en-us/azure/foundry/agents/concepts/what-is-foundry-iq?tabs=programmatic) or [File Search](https://learn.MS.com/en-us/agent-framework/agents/tools/file-search?pivots=programming-language-python) tools
 
-        - [Azure Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-overview)<br/> for storing and managing files that agents can access
+        - [Azure Storage](https://learn.MS.com/en-us/azure/storage/blobs/storage-blobs-overview)<br/> for storing and managing files that agents can access
 
-        - [Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/)<br/>for securely managing secrets and credentials
+        - [Azure Key Vault](https://learn.MS.com/en-us/azure/key-vault/)<br/>for securely managing secrets and credentials
 
-        - [Azure Functions](https://learn.microsoft.com/en-gb/azure/azure-functions/)<br/>for custom tools implementations and business logic
+        - [Azure Functions](https://learn.MS.com/en-gb/azure/azure-functions/)<br/>for custom tools implementations and business logic
 
 - **Build your 1st agent in MS Foundry**
 
@@ -2827,7 +2822,8 @@ markmap:
             - MCP servers
 
     - Deploy the agent 
-- **VS Code for agent development**
+
+- **Set up VS Code for agent development**
 
     - Features
         - Resources
@@ -2920,7 +2916,7 @@ markmap:
             - Start simple, then iterate
             - Keep instructions focused
 
-- **Extend agent capabilities**
+- **Extend agent capabilities with tools**
     
     - Tool-calling lifecycle
         1. User sends a message to the agent
@@ -2955,7 +2951,7 @@ markmap:
             - Computer use<br/>Interact with desktop applications
             - Image generation<br/>Create images based on text descriptions
             - SharePoint<br/>Access SharePoint content and document libraries
-            - Microsoft Fabric<br/>Connect to Fabric data agents for data analytics
+            - MS Fabric<br/>Connect to Fabric data agents for data analytics
             - Deep Research<br/>Perform in-depth research across multiple sources
             - Agent-to-Agent<br/>Delegate tasks to other agents
             - Custom code interpreter<br/>Customizable code execution for specialized environments
@@ -2991,34 +2987,34 @@ markmap:
         </code>
     - <span>&#9888;</span> ==Some tools require additional parameters like connection IDs or<br/>vector stores references==
 
-- **MCP servers**
+    - MCP servers
 
-    - Types of MCP servers
-        - Remote<br/>Hosted externally and accessed over the network.<br/>Most common type for production scenarios.
-        - Local<br/>Run on local machine during development.<br/>Useful for testing custom tools befor deploying.
-        - Custom<br/>Owno MCP server implementations tailored to speecific needs.
+        - Types of MCP servers
+            - Remote<br/>Hosted externally and accessed over the network.<br/>Most common type for production scenarios.
+            - Local<br/>Run on local machine during development.<br/>Useful for testing custom tools befor deploying.
+            - Custom<br/>Owno MCP server implementations tailored to speecific needs.
 
-    - Benefits of MCP servers
-        - Standarized protocol<br/>Consistent tool communication patterns make intgration predictable and reliable.
-        - Reusable components<br/>Build tools once and use them across multiple agents and projects.
-        - Community-driven tools<br/>Acess tools built by the communities expanding capabilities without<br/>custom development.
-        - Simplified integration<br/>Consistent interfaces reduce integration complexity and<br/>maintenance burden.~
+        - Benefits of MCP servers
+            - Standarized protocol<br/>Consistent tool communication patterns make intgration predictable and reliable.
+            - Reusable components<br/>Build tools once and use them across multiple agents and projects.
+            - Community-driven tools<br/>Acess tools built by the communities expanding capabilities without<br/>custom development.
+            - Simplified integration<br/>Consistent interfaces reduce integration complexity and<br/>maintenance burden.~
 
-    - Using MCP servers on VS Code
+        - Using MCP servers on VS Code
 
-        1. Browse available MCP servers through the extension's tool registry
-        2. Add MCP servers to your agent configuration
-        3. Configure server-specific settings and parameters
-        4. Test MCP server functionality in the integrated playground
-        5. Deploy agents with MCP server integrations to production
-        - <span>&#9888;</span> ==MCP servers extend agents capabilities with specialized functions while maintaing a<br/>consistent development experience==
+            1. Browse available MCP servers through the extension's tool registry
+            2. Add MCP servers to your agent configuration
+            3. Configure server-specific settings and parameters
+            4. Test MCP server functionality in the integrated playground
+            5. Deploy agents with MCP server integrations to production
+            - <span>&#9888;</span> ==MCP servers extend agents capabilities with specialized functions while maintaing a<br/>consistent development experience==
 
-    - Tools configuration
-        - Start with built-in tools before building custom solutions.
-        - Match tools to requirements.
-        - Provide clear instructions.
-        - Keep knowledge bases current.
-        - Test tool behaviour thoroghly using playground.
+        - Tools configuration
+            - Start with built-in tools before building custom solutions.
+            - Match tools to requirements.
+            - Provide clear instructions.
+            - Keep knowledge bases current.
+            - Test tool behaviour thoroghly using playground.
 
 - **Test, deploy and integratee agents**
 
@@ -3039,7 +3035,7 @@ markmap:
         - From VS Code
             1. Open your agent in the AI Toolkit
             2. Select **Save to Foundry** to push configuration changes
-            3. For hosted agents, open the **+Build** menu in the developer tools and select **Deploy to Microsoft Foundry**
+            3. For hosted agents, open the **+Build** menu in the developer tools and select **Deploy to MS Foundry**
             4. Select your container configuration and confirm
 
     - Publishing agent version Foundry creates
@@ -3108,14 +3104,2911 @@ markmap:
             1. Agent Application endpoints currently support only the stateless Responses API. 
             2. Store conversation history in your client for multi-turn experiences.
 
+- **Key takeaways**
+    - Development & Deployment
+        - Flexible Environments
+            - Develop agents using the Foundry portal (visual designer)
+            - Develop agents using the Visual Studio Code (developer-focused extension)
+            - Allowing you to choose the environment that best fits your workflow.
+        - Seamless Integration
+            The service provides tools to generate integration code, making it easy to 
+            connect agents to existing applications and production environments.
+        - Testing Lifecycle
+            Integrated playgrounds allow for iterative testing before moving agents into production.
+
+    - Agent Architecture
+        - Two Primary Types
+            - Declarative Agents
+                Configured primarily through visual designers and YAML files.
+            - Hosted Agents
+                Built and deployed through a code-centric approach.
+
+        - Behavioral Control
+            Agents are shaped by clear instructions that define their 
+            specific personality, boundaries, and operational behavior.
+
+    - Extensibility & Capabilities
+        - Tool Catalog
+            You can transform simple chat interfaces into 
+            complex automation systems by integrating built-in tools such as:
+            - Code Interpreter for logic and calculations.
+            - File Search & Azure AI Search for data retrieval.
+            - Bing Web Search for real-time information.
+        - Automation Focus
+            These agents are designed to handle complex tasks, access real-time data, and 
+            support decision-making across various domains like customer service, 
+            research, and developer productivity.
+
+- **Further reading**
+    - [Fundamentals of AI agents](https://learn.MS.com/en-us/training/modules/ai-agent-fundamentals)
+        Deepen your understanding of agent concepts and architectures
+    - [MS Foundry documentation](https://learn.MS.com/en-us/azure/ai-foundry/)
+        Explore detailed guides and API references
+    - [GitHub Copilot fundamentals](https://learn.MS.com/en-us/training/paths/copilot/)
+        Learn about AI agent applications in software development
+
 - **Exercise - Build and deploy an AI agent**
-    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/01-build-agent-portal-and-vscode.html)
+    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-agents/Instructions/Exercises/01-build-agent-portal-and-vscode.html)
+
+
+### 2. [Integrate custom tools into your agent](https://learn.MS.com/en-us/training/modules/build-agent-with-custom-tools/)
+
+- **Introduction**
+    - Accessible AI Development
+        Build intelligent agents without requiring extensive artificial intelligence or machine learning expertise.
+    - The Power of Custom Tools
+        While built-in tools handle knowledge retrieval and code generation, custom tools (built from your own code or third-party APIs) enable agents to execute specific, complex actions that models cannot do alone.
+    - Practical Use Case (Retail Example)
+        Deploy an FAQ agent equipped with custom tools to automatically look up customer orders, reducing response delays and freeing up support teams for complex issues.
+    - Module Objectives
+        Learn to utilize custom tools to enhance productivity, improve task accuracy, and create tailored solutions for specific business needs.
+
+- **Why use custom tools**
+
+    - Why use custom tools
+        - Enhance productivity 
+            Automate repetitive tasks and streamline workflows
+        - Improve accuracy 
+            Provide precise and consistent outputs, reducing human error
+        - Tailored solutions
+            Address specific business needs and optimize processes
+        - Process of an agent choosing to use the custom tool
+            1. A user asks an agent about the 
+                weather conditions in a ski resort.
+            2. The agent determines that it has access to a 
+                tool that can use an API to get meteorological information, and calls it.
+            3. The tool returns the weather report, and the 
+                agent informs the user.
+
+    - Common scenarios for custom tools in agents
+        - Customer support automation
+            - Scenario
+                A retail company integrates a custom tool that 
+                connects the Azure AI Agent to their customer 
+                relationship management (CRM) system.
+            - Functionality
+                The AI agent can retrieve customer order 
+                histories, process refunds, and provide 
+                real-time updates on shipping statuses.
+            - Outcome
+                Faster resolution of customer queries, 
+                reduced workload for support teams, and 
+                improved customer satisfaction.
+
+        - Inventory management
+            - Scenario
+                A manufacturing company develops a 
+                custom tool to link the AI agent with their 
+                inventory management system.
+            - Functionality
+                The AI agent can check stock levels, predict restocking 
+                needs using historical data, and place orders with suppliers automatically.
+            - Outcome
+                Streamlined inventory processes and optimized supply chain operations.
+            
+        - Healthcare appointment scheduling
+            - Scenario
+                A healthcare provider integrates a custom scheduling tool with the AI agent.
+            - Functionality
+                The AI agent can access patient records, suggest available appointment slots, and 
+                send reminders to patients.
+            - Outcome
+                Reduced administrative burden, improved patient experience, and 
+                better resource utilization.
+
+        - IT Helpdesk support
+            - Scenario
+                An IT department develops a custom tool to integrate the 
+                AI agent with their ticketing and knowledge base systems.
+            -  Functionality
+                The AI agent can troubleshoot common technical issues, 
+                escalate complex problems, and track ticket statuses.
+            -  Outcome
+                Faster issue resolution, reduced downtime, and 
+                improved employee productivity.
+
+        - E-learning and training
+            - Scenario
+                An educational institution creates a custom tool to 
+                connect the AI agent with their learning management system (LMS).
+            - Functionality
+                The AI agent can recommend courses, track student progress, and 
+                answer questions about course content.
+            - Outcome
+                Enhanced learning experiences, increased student engagement, and 
+                streamlined administrative tasks.
+
+- **Options for implementing custom tools**
+
+    - Custom tool options available in 
+        MS Foundry Agent Service
+        - Custom function
+            Function calling allows you to describe the structure of custom functions to an 
+            agent and return the functions that need to be called along with their arguments. 
+            The agent can dynamically identify appropriate functions based on their definitions. 
+            This feature is useful for integrating custom logic and workflows, in a selection of 
+            programming languages, into your AI agents.
+        - Azure Functions
+            Azure Functions enable you to create intelligent, event-driven applications with minimal overhead. 
+            They support triggers and bindings, which simplify how your AI Agents interact with external 
+            systems and services.
+            Triggers determine when a function executes, while bindings facilitate streamlined connections to 
+            input or output data sources.
+        - OpenAPI specification tools
+            These tools allow you to connect your Azure AI Agent to an external API using an OpenAPI 3.0 specification.
+            This provides standardized, automated, and scalable API integrations that enhance the capabilities of your agent.
+            OpenAPI specifications describe HTTP APIs, enabling people to understand how an API works, generate client 
+            code, create tests, and apply design standards.
+        - Azure Logic Apps
+            This action provides low-code/no-code solutions to add workflows and connects apps, data, and 
+            services with the low-code Logic App.
+
+- **How to integrate custom tools**
+
+    - Function Calling
+        - Allows agents to execute predefined 
+            functions dynamically based on user input
+        - Example
+            - Define a function that the agent can call
+                <pre><code>
+                    import json
+                    def recent_snowfall(location: str) -> str:
+                        """
+                        Fetches recent snowfall totals for a given location.
+                        :param location: The city name.
+                        :return: Snowfall details as a JSON string.
+                        """
+                        mock_snow_data = {"Seattle": "0 inches", "Denver": "2 inches"}
+                        snow = mock_snow_data.get(location, "Data not available.")
+                        return json.dumps({"location": location, "snowfall": snow})
+                </code></pre>
+            - Register the function with your agent using the Azure AI SDK
+                <pre><code>
+                    # Define a function tool for the model to use
+                    function_tool = FunctionTool(
+                        name="recent_snowfall",
+                        parameters={
+                            "type": "object",
+                            "properties": {
+                                "location": {"type": "string", "description": "The city name to check snowfall for."},
+                            },
+                            "required": ["location"],
+                            "additionalProperties": False
+                        },
+                        description="Get recent snowfall totals for a given location.",
+                        strict=True,
+                    )
+                    # Add the function tool to a list of tools for the agent
+                    tools: list[Tool] = [function_tool]
+                    # Create your agent with the toolset
+                    agent = project_client.agents.create_version(
+                        name="snowfall-agent",
+                        definition=PromptAgentDefinition(
+                            model="gpt-4.1",
+                            instructions="You are a weather assistant tracking snowfall. Use the provided functions to answer questions.",
+                            tools=tools,
+                        )
+                    )
+                </code></pre>
+
+    - Azure functions
+        - Provide serverless computing capabilities for 
+            real-time processing
+        - Ideal for event-driven workflows, enabling agents to 
+            respond to triggers such as HTTP requests or 
+            queue messages
+        - Example
+            - Develop
+            - Deploy
+            - Integrate into Agent definition as 
+                an Azure Function tool
+                <pre><code>
+
+                tool = AzureFunctionTool(
+                    azure_function=AzureFunctionDefinition(
+                        input_binding=AzureFunctionBinding(
+                            storage_queue=AzureFunctionStorageQueue(
+                                queue_name="STORAGE_INPUT_QUEUE_NAME",
+                                queue_service_endpoint="STORAGE_QUEUE_SERVICE_ENDPOINT",
+                            )
+                        ),
+                        output_binding=AzureFunctionBinding(
+                            storage_queue=AzureFunctionStorageQueue(
+                                queue_name="STORAGE_OUTPUT_QUEUE_NAME",
+                                queue_service_endpoint="STORAGE_QUEUE_SERVICE_ENDPOINT",
+                            )
+                        ),
+                        function=AzureFunctionDefinitionFunction(
+                            name="queue_trigger",
+                            description="Get weather for a given location",
+                            parameters={
+                                "type": "object",
+                                "properties": {"location": {"type": "string", "description": "location to determine weather for"}},
+                            },
+                        ),
+                    )
+                )
+
+                    agent = project_client.agents.create_version(
+                        agent_name="MyAgent",
+                        definition=PromptAgentDefinition(
+                            model="gpt-4.1",
+                            instructions="You are a helpful weather assistant. Use the provided Azure Function to get weather information for a location when needed.",
+                            tools=[tool],
+                        ),
+                    )
+                </code></pre>
+
+    - OpenAPI specification
+        - OpenAPI defined tools allow agents to 
+            interact with external APIs using standardized specifications
+        - The Foundry Agent Service uses OpenAPI 3.0 specified tools
+        - <span>&#x1F4A1;</span> ==Authentication types are supported with OpenAPI 3.0 tools
+        &nbsp;&nbsp;&nbsp;&nbsp;`anonymous`, `API ke`y, and `managed identity`==
+        - Example (a JSON file &mdash; called weather_openapi.json &mdash; describing the API)
+            <pre><code>
+                {
+                    "openapi": "3.1.0",
+                    "info": {
+                        "title": "get weather data",
+                        "description": "Retrieves current weather data for a location based on wttr.in.",
+                        "version": "v1.0.0"
+                    },
+                    "servers": [
+                        {
+                        "url": "https://wttr.in"
+                        }
+                    ],
+                    "auth": [],
+                    "paths": {
+                        "/{location}": {
+                        "get": {
+                            "description": "Get weather information for a specific location",
+                            "operationId": "GetCurrentWeather",
+                            "parameters": [
+                            {
+                                "name": "location",
+                                "in": "path",
+                                "description": "City or location to retrieve the weather for",
+                                "required": true,
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            {
+                            "name": "format",
+                            "in": "query",
+                            "description": "Always use j1 value for this parameter",
+                            "required": true,
+                            "schema": {
+                                "type": "string",
+                                "default": "j1"
+                            }
+                            }
+                            ],
+                            "responses": {
+                            "200": {
+                                "description": "Successful response",
+                                "content": {
+                                "text/plain": {
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                }
+                                }
+                            },
+                            "404": {
+                                "description": "Location not found"
+                                }
+                            },
+                            "deprecated": false
+                        }
+                        }
+                    },
+                    "components": {
+                        "schemes": {}
+                    }
+                }
+            </code></pre>
+        - Example (register the OpenAPI tool in the agent defintion)
+            <pre><code>
+               from azure.ai.projects.models import OpenApiTool, OpenApiAnonymousAuthDetails
+
+                    with open(weather_asset_file_path, "r") as f:
+                        openapi_weather = cast(dict[str, Any], jsonref.loads(f.read()))
+
+                    tool = OpenApiTool(
+                        openapi=OpenApiFunctionDefinition(
+                            name="get_weather",
+                            spec=openapi_weather,
+                            description="Retrieve weather information for a location.",
+                            auth=OpenApiAnonymousAuthDetails(),
+                        )
+                    )
+
+                    agent = project_client.agents.create_version(
+                        agent_name="openapi-agent",
+                        definition=PromptAgentDefinition(
+                            model="gpt-4.1",
+                            instructions="You are a weather assistant. Use the API to fetch weather data.",
+                            tools=[openapi_tool],
+                        ),
+                    )
+            </code></pre>
+        - <span>&#x1F4A1;</span> ==One of the concepts related to agents and custom tools that developers 
+        &nbsp;&nbsp;&nbsp;&nbsp;often have difficulty with is the declarative nature of the solution.
+        &nbsp;&nbsp;&nbsp;&nbsp;You don't need to write code that explicitly calls your custom tool functions, 
+        &nbsp;&nbsp;&nbsp;&nbsp;the agent itself decides to call tool functions based on messages in prompts.
+        &nbsp;&nbsp;&nbsp;&nbsp;By providing the agent with functions that have meaningful names and 
+        &nbsp;&nbsp;&nbsp;&nbsp;well-documented parameters, the agent can "figure out" when and how to 
+        &nbsp;&nbsp;&nbsp;&nbsp;call the function all by itself!==
+
+- **Key Takeaways**
+    - Enhanced Performance & Productivity
+        Integrating custom tools optimizes internal processes to meet specific business needs, 
+        resulting in higher-quality, more accurate agent responses.
+    - Versatile Business Use Cases
+        These tool integration techniques empower businesses to effectively automate marketing 
+        material generation, streamline communications, and analyze market trends.
+    - Flexible Integration Paths
+        The AI Agent Service supports diverse integration options, including Azure Functions and 
+        OpenAPI specifications, allowing you to leverage existing code and APIs.
+    - Enterprise-Ready Architecture
+        Enables the creation of intelligent, event-driven applications that seamlessly align with
+         well-established patterns already used in modern business infrastructure.
+
+- **Further reading**
+    - [AI Agents for beginners tool use](https://github.com/MS/ai-agents-for-beginners/blob/main/04-tool-use/README.md)
+    - [MS Foundry Agent Service function calling](https://learn.MS.com/en-us/azure/ai-services/agents/how-to/tools/function-calling)
+    - [Introduction to Azure Functions](https://learn.MS.com/en-us/azure/azure-functions/functions-overview)
+    - [OpenAPI Specification](https://swagger.io/specification/)
+
+- **Exercise - Build an agent with custom tools**
+    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-agents/Instructions/Exercises/02-agent-custom-tools.html)
+
+
+### 3. [Integrate MCP Tools with Azure AI Agents](https://learn.MS.com/en-us/training/modules/connect-agent-to-mcp-tools/)
+
+- **Introduction**
+    - The Integration Challenge
+        While AI agents are highly capable, manually connecting and 
+        maintaining external dependencies (APIs, databases, and internal services) 
+        quickly becomes complex and brittle as systems scale.
+    - The MCP Solution
+        Integrating an Azure AI Agent with a Model Context Protocol (MCP) server 
+        provides an on-demand tool catalog.
+        This architectural pattern makes AI solutions significantly more robust, 
+        scalable, and easier to maintain.
+    - Real-World Scenario
+        For instance, a cosmetics retail assistant can leverage an MCP server to 
+        securely bridge the LLM with live stock databases and sales trend systems, 
+        allowing it to make real-time inventory assessments.
+    - Module Objectives
+        Learn to set up an MCP server and client infrastructure, dynamically connect 
+        external tools to an Azure AI Agent, and build a complete solution 
+        using MS Foundry Agent Service.
+
+- **Understand MCP tool discovery**
+
+    - Advantages of the Model Context Protocol for AI agents
+        - Dynamic Tool Discovery
+            AI agents can automatically receive a list of available tools from a server, 
+            along with descriptions of their functions. Unlike traditional APIs, which 
+            often require manual coding for each integration and updates whenever the API changes, 
+            MCP enables an “integrate once” approach that improves adaptability and reduces maintenance.
+        - Interoperability Across LLMs
+            MCP works seamlessly with different large language models (LLMs), allowing developers to 
+            switch or evaluate core models for improved performance without reworking integrations.
+        - Standardized Security
+            MCP provides a consistent authentication method, simplifying secure access across multiple MCP servers. 
+            This eliminates the need to manage separate keys or authentication protocols for each API, making it 
+            easier to scale AI agent deployments.
+
+    - What is dynamic tool discovery?
+        - Is a mechanism that allows an AI agent to 
+            discover available external tools without needing 
+            hardcoded knowledge of each one
+        - The agent queries a centralized Model Context Protocol (MCP) server
+        - This server acts as a live catalog, exposing tools that the 
+            agent can understand and call
+        - Means
+            - Tools can be added, updated, or removed centrally 
+                without modifying the agent code.
+            - Agents can always use the latest version of a tool, 
+                improving accuracy and reliability.
+            - The complexity of managing tools shifts away from the agent and 
+                into a dedicated service.
+
+    - How does MCP enable dynamic tool discovery?
+        - The MCP server hosts available tools exposed
+            using the `@mcp.tool` decorator
+        - The MCP client dynamically discovers the tools
+        - The Azure AI Agent uses the available tools to 
+            respond to user requests
+
+    - Why use dynamic tool discovery with MCP?
+        - Scalability
+            Easily add new tools or update existing ones without redeploying agents.
+        - Modularity
+            Agents can remain simple, focusing on delegation rather than managing tool details.
+        - Maintainability
+            Centralized tool management reduces duplication and errors.
+        - Flexibility
+            Supports diverse tool types and complex workflows by aggregating capabilities.
+        - Dynamic tool discovery is especially useful in environments where tools evolve rapidly or 
+            where many teams manage different APIs and services. 
+        - Using tools allows AI agents to adapt to changing capabilities in real time, interact with 
+            external systems securely, and perform actions that go beyond language generation.
+
+- **Integrate agent tools using an MCP server and client**
+
+    - Model Context Protocol (MCP) setup
+        - MCP server
+            Which hosts your tool catalog
+        - MCP client
+            Which fetches those tools and makes them usable by your agent
+
+    - What is the MCP Server?
+        - The MCP server acts as a registry for tools your agent can use
+        - Initialize the MCP server using FastMCP("server-name")
+        - FastMCP class uses Python type hints and document strings to 
+            automatically generate tool definitions, making it easy to create and 
+            maintain MCP tools
+        - Definitions are then served over HTTP when requested by the client
+        - Tool definitions live on the server, so update or add new tools 
+            doesn't need to modify or redeploy the agent
+
+    - What is the MCP Client?
+        - A MCP client acts as a bridge between 
+            MCP server and the Azure AI Agent Service
+        - The client initializes an MCP client session and 
+            connects to the server
+        - The client performs the following tasks
+            - Discovers available tools from the MCP server using `session.list_tools()`.
+            - Generates Python function stubs that wrap the tools.
+            - Registers those functions with your agent.
+
+    - Register tools with an Azure AI Agent
+        - An MCP tool can be invoked using `session.call_tool(tool_name, tool_args)`
+        - The tools are wrapped in an async function so that the agent is able to invoke them
+        - Those functions are bundled together and become part of the agent's toolset
+        - They are available during runtime for any user request
+        
+    - Overview of MCP agent tool integration
+        - The MCP server hosts tool definitions decorated with `@mcp.tool`.
+        - The MCP client initializes an MCP client connection to the server.
+        - The MCP client fetches the available tool definitions with `session.list_tools()`.
+        - Each tool is wrapped in an async function that invokes `session.call_tool`
+        - The tool functions are bundled into `FunctionTool` that makes them usable by the agent.
+        - The `FunctionTool` is registered to the agent's toolset.
+        - The agent can access and invoke your tools through natural language interaction
+        - <span>&#x1F4A1;</span>==Setting up the MCP server and client, you create a clean separation between 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tool management and agent logic—enabling your system to adapt quickly as 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new tools become available==
+
+- **Use Azure AI agents with MCP servers**
+
+    - Integrating remote MCP servers is needed
+        - A remote MCP server endpoint &mdash; [https://api.githubcopilot.com/mcp/](https://api.githubcopilot.com/mcp/)
+        - A MS Foundry agent configured to use the MCP tool
+        - Is possible to connect to multiple MCP servers by 
+            adding them to the agent as separate tools.
+            - Parameters for the `MCPTool`
+                - `server_label`
+                    A unique identifier for the MCP server (e.g., GitHub).
+                - `server_url`
+                    The MCP server’s URL.
+                - `allowed_tools` (optional)
+                    A list of specific tools the agent is allowed to access.
+                - `require_approval` (optional)
+                    A boolean that determines whether tool invocations require human approval. 
+                    If set to true, the agent will pause and wait for approval before invoking any 
+                    tools on the MCP server.
+            -  Custom headers
+                - Authentication keys (API keys, OAuth tokens).
+                - Other required headers for the MCP server
+
+    - Invoking tools
+        - Using the Azure MCP Tool object we don't need 
+            - Wrap function tools
+            - Invoke `session.call_tool`
+        - Tools are automatically invoked during an agent run
+        - Automatically invoke MCP tools
+            - Create the `MCPTool` object with the server label and url.
+            - Use `update_headers` to apply any headers required by the server.
+            - Use the `require_approval` parameter to determine whether approval is required. 
+                Supported values are:
+                - always
+                    A developer needs to provide approval for every call. 
+                    If you don't provide a value, this one is the default.
+                - never
+                    No approval is required.
+            - Create an agent and add the `MCPTool` object to its tools list
+            - Invoke a prompt on the agent, you should see the results of any invoked tools in the response.
+        - If the tool invoked has MCP server with approval required
+            - You get an `mcp_approval_request` in the agent response
+            - To approve use `mcp_approval_response` object with 
+                - `approval_request_id` value
+                - `approve` boolean
+
+- **Key takeaways**
+    - Dynamic Runtime Discovery
+        Connecting an agent to a Model Context Protocol (MCP) server allows it to 
+        discover and register tools dynamically at runtime.
+        This eliminates the need to hardcode APIs or redeploy the agent when underlying tools change.
+    - Automated Client-Side Mapping
+        The MCP client acts as an intelligent bridge, automatically generating function wrappers from the 
+        discovered tools and connecting them directly to the agent's execution layer.
+    - Architectural Agility & Scalability
+        This decoupled pattern ensures that AI solutions remain flexible and resilient. 
+        The agent can seamlessly adapt to evolving toolsets and scale alongside growing enterprise 
+        applications without breaking existing infrastructure.
+
+- **Further reading**
+    - [Model Context Protocol User Guide](https://modelcontextprotocol.io/introduction)
+    - [Connect to Model Context Protocol servers](https://learn.MS.com/en-us/azure/ai-foundry/agents/how-to/tools/model-context-protocol?view=foundry&preserve-view=true&pivots=python)
+
+- **Exercise - Connect MCP tools to Azure AI Agents**
+    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-agents/Instructions/Exercises/03-mcp-integration.html)
+
+
+### 4. [Build knowledge-enhanced AI agents with Foundry IQ](https://learn.MS.com/en-us/training/modules/introduction-foundry-iq/)
+
+- **Introduction**
+
+    - The Scaling Challenge
+        While organizations are eager to adopt AI agents to automate tasks, 
+        they quickly hit a fundamental wall: 
+        scaling agents beyond simple, predefined workflows.
+    - The Value of Organizational Knowledge
+        The true power of an AI agent is unlocked only when it can access 
+        internal company data—such as policies, procedures, product documentation, and domain expertise.
+    - Limitations of Traditional Agents
+        Standard agents are restricted by knowledge cutoff dates, lack access to private data, and 
+        produce generic responses or flat-out incorrect information (hallucinations) due to a lack of factual grounding.
+    - Complex Engineering Hurdles
+        Manually building knowledge-enabled agents requires teams to repeatedly tackle complex infrastructure challenges, 
+        including data ingestion, chunking strategies, vector database maintenance, and access controls.
+    - The Solution (Foundry IQ)
+        MS Foundry IQ serves as a unified knowledge platform that eliminates the need to build custom 
+        Retrieval-Augmented Generation (RAG) pipelines from scratch for every project, allowing multiple agents to 
+        securely share and instantly benefit from centralized knowledge bases.
+    - Objectives
+        - Explain how RAG solves the knowledge problem by connecting agents to real-time information
+        - Describe how Foundry IQ provides a shared knowledge platform that multiple agents can access
+        - Configure data sources for knowledge bases including Azure AI Search, Blob Storage, SharePoint, and OneLake
+        - Configure agent instructions to control retrieval behavior and ensure consistent citations
+        - Test and monitor agent retrieval to maintain quality in production
+
+- **Understanding RAG for agents**
+    - Simple AI agent limitations
+        | Limitation | Impact | Example |
+        |:- |:-|:-|
+        | Knowledge cutoff dates | No access to recent<br/> information | Can't help with newly released features or<br/> updated policies |
+        | Private data access | Generic responses only | Missing company procedures, support knowledge,<br/> product specs |
+        | Lack of context | Irrelevant advice | Ignores specific security requirements or<br/> approval workflows |
+        | Fabricated responses | Compliance and security risks | Confident-sounding but<br/> incorrect information |
+        | Scalability issues | Duplicated engineering effort | Every team rebuilds the same<br/> RAG infrastructure |
+
+    - How RAG solves these problems
+        - RAG process
+            1. Retrieve
+                System searches knowledge bases for 
+                relevant content related to the query
+            2. Augment
+                Combines retrieved content with the 
+                user's question to provide factual context
+            3. Generate
+                Agent creates response using both 
+                training data and retrieved information
+        - RAG advantages
+            - Real-time updates 
+                Keep agents current with policies and 
+                procedures without requiring retraining
+            - Source transparency
+                Shows users exactly which documents informed each
+                response to build trust and enable verification
+            - Factual grounding
+                anchors responses in actual organizational content to 
+                eliminate fabricated information and ensure compliance
+
+- **Explore Foundry IQ**
+
+    - Challenges of build a RAG system
+        - Configuring vector databases
+        - Implementing embedding pipelines
+        - Tuning retrieval algorithms
+        - Maintaining search infrastructure
+
+    - What is Foundry IQ?
+        - Is a managed knowledge platform for AI agents
+        - Is built on Azure AI Search
+        - Provides the retrieval capabilities
+        - Shared service (of  knowledge bases) that multiple agents can use
+            To agents appears as one unified knowledge source
+            For developers it means connecting data sources to knowledge bases
+
+    - How knowledge bases organize information
+        - Knowledge bases in Foundry IQ organize information by business domain
+            - Like
+                - Product Documentation
+                - HR Policies
+            - Not like
+                - SharePoint Site A
+                - Blob Container B
+        - Example of a Product Documentation knowledge base
+            - Technical specifications from SharePoint
+            - API documentation from Azure Blob Storage
+            - Usage analytics from OneLake
+            - Support tickets from your existing search index
+
+    - Connecting data sources
+        - Foundry IQ connects &mdash; once per data source &mdash; to existing 
+            storage through data source integrations
+        - There's no need to write retrieval logic or 
+            manage search infrastructure
+        - Just point at
+            - SharePoint sites
+            - Blob containers
+            - OneLake instances
+        - Foundry IQ handles automatically
+            - Indexing
+            - Embedding generation
+            - Search optimization
+
+    - Built-in retrieval intelligence
+        - When an agent queries a
+            knowledge base, Foundry IQ
+            - Analyzes the question to understand what 
+                information the agent needs. 
+                A question like "What's our return policy for damaged items?" requires 
+                different retrieval than "List all return policies."
+            - Selects retrieval strategies based on the query. 
+                Simple factual questions use keyword search. 
+                Complex questions combine semantic search with query expansion.
+            - Ranks results using relevance scoring
+                The most contextually appropriate information 
+                surfaces first, reducing the tokens needed for agent responses.
+            - Provides citations so agents can reference source documents.
+                This builds trust and lets users verify information.
+
+    - Connecting agents to knowledge
+        - Example
+            <pre><code>
+                from azure.ai.projects        import AIProjectClient
+                from azure.ai.projects.models import PromptAgentDefinition, MCPTool
+                &nbsp;
+                project_client = AIProjectClient(endpoint=project_endpoint, credential=credential)
+                &nbsp;
+                # Connect to the product documentation knowledge base
+                knowledge_tool = MCPTool(
+                    server_label="product-docs",
+                    server_url=f"{search_endpoint}/knowledgebases/product-documentation/mcp"
+                )
+                &nbsp;
+                # Create an agent with knowledge access
+                agent = project_client.agents.create_version(
+                    agent_name="product-support-agent",
+                    definition=PromptAgentDefinition(
+                        model="gpt-4o-mini",
+                        instructions="Answer product questions using the knowledge base. Always cite your sources.",
+                        tools=[knowledge_tool]
+                    )
+                )
+            </code></pre>
+
+    - The shared knowledge advantage
+        - If the organization needs
+            - A support agent answering customer questions
+            - An employee assistant helping with HR policies
+            - A developer agent explaining API usage
+        - Traditional RAG need to build and maintain three retrieval systems
+        - Foundry IQ create knowledge bases that multiple agents share
+            - The Product Documentation knowledge base serves 
+                both the support agent and developer agent
+            - The HR Policies knowledge base serves 
+                only the employee assistant
+            - Each agent accesses exactly the knowledge it needs
+        - <span>&#x1F4A1;</span>==Foundry IQ uses the Model Context Protocol (MCP) to 
+        &nbsp;&nbsp;&nbsp;&nbsp;connect agents to knowledge bases. 
+        &nbsp;&nbsp;&nbsp;&nbsp;MCP provides a standardized way for AI agents to access
+        &nbsp;&nbsp;&nbsp;&nbsp;external tools and data sources securely.==
+
+- **Configure data sources for knowledge bases**~
+
+    - Foundry IQ supports six primary data source types
+        | Data Source | Access Type | Best For |
+        |:-|:-|:-|
+        | Azure AI Search Index | Indexed | Enterprise search with custom pipelines |
+        | Azure Blob Storage | Direct | Document files in Azure Storage |
+        | Web | Real-time | Current, public information via Bing |
+        | SharePoint (Remote) | Real-time | Live SharePoint content with MS 365 governance |
+        | SharePoint (Indexed) | Indexed | Advanced search on SharePoint with custom pipelines |
+        | OneLake | Direct | Unstructured data in MS Fabric|
+
+    - Azure AI Search Index
+        - Ideal when already invested in Azure AI Search and 
+            want to use existing search indexes
+        - Connect directly to your Azure AI Search index
+        - Key benefits
+            - Semantic ranking
+                Finds contextually relevant results, not just keyword matches
+            - Custom scoring
+                Prioritizes results based on your business logic
+            - Faceted navigation
+                Filters results by categories or attributes
+            - Multi-language support
+                Handles content in different languages
+        - <span>&#x1F4A1;</span>==Learn more about [Azure AI Search](https://learn.MS.com/en-us/azure/search/search-what-is-azure-search)==
+
+    - Azure Blob Storage
+        - Retrieve documents and files directly from your blob containers
+        - Is possible organize blobs into containers based on 
+            topics or access levels
+        - Common file types
+            - PDF documents
+            - MS Word files (.docx)
+            - Text files (.txt)
+            - Markdown files (.md)
+            - HTML files
+        - <span>&#x1F4A1;</span>==Blob Storage provides a more direct path from your files to your knowledge base==
+
+    - Web
+        - Grounds your agent with real-time content 
+            from the internet via Bing
+        - Agent can search for current information 
+            when answering questions
+        - Important when users ask about
+            - Recent events or news
+            - Current pricing or availability
+            - Frequently changing information
+            - Topics outside your internal knowledge base
+        - You can combine web grounding with internal data sources, 
+            using web access as a supplementary source when 
+            internal knowledge doesn't provide an answer
+        - <span>&#9888;</span> ==With web grounding, you're relying on Bing's search results, 
+        &nbsp;&nbsp;&nbsp;&nbsp;which means less control over the specific sources your agent references. 
+        &nbsp;&nbsp;&nbsp;&nbsp;When accuracy and source verification are critical, consider using indexed, 
+        &nbsp;&nbsp;&nbsp;&nbsp;controlled data sources instead==
+
+    - MS SharePoint options
+        | Feature | Remote | Indexed |
+        |:-|:-|:-|
+        | Access method | Real-time queries | Preprocessed index |
+        | Response time | Depends on SharePoint | Faster |
+        | Maintenance | No index to maintain | Requires index updates |
+        | Advanced search | Limited | Full Azure AI Search capabilities |
+        | Data freshness | Always current | Depends on indexing schedule |
+        | Permission handling | Respects SharePoint permissions | Configured during indexing |
+
+    - SharePoint Remote
+        - Provides search capabilities with MS 365 governance
+        - Retrieves content directly from SharePoint without preindexing
+        - Agent searches SharePoint sites and libraries in real-time
+        - Benefits
+            - No index maintenance required
+            - Always accesses current SharePoint content
+            - Automatically respects existing SharePoint permissions
+            - Simpler setup and configuration
+        - <span>&#x1F4A1;</span>==Use SharePoint Remote when you need the simplest path to 
+        &nbsp;&nbsp;&nbsp;&nbsp;SharePoint data and don't require advanced search features==
+
+    - SharePoint Indexed
+        - Processes your SharePoint content in advance
+        - Preprocessing means 
+            - Faster response times
+            - More sophisticated search capabilities
+        - With indexed content
+            - Apply custom analyzers for specialized terminology
+            - Build enrichment pipelines with AI services
+            - Combine SharePoint data with other sources
+            - Create specialized search experiences
+        - <span>&#x1F4A1;</span>==Indexed SharePoint works best when you need advanced search features or 
+        &nbsp;&nbsp;&nbsp;&nbsp;when you're integrating SharePoint data with other sources in your Azure AI Search index. 
+        &nbsp;&nbsp;&nbsp;&nbsp;SharePoint data and don't require advanced search features==
+
+    - MS OneLake
+        - Provides access to unstructured data 
+            stored in your MS Fabric data lakehouse
+        - This option matters when your organization uses 
+            MS Fabric for data analytics and storage
+        - The agent can reference this information when answering 
+            business questions, providing data-driven responses grounded in 
+            your organization's analytical work
+        - Use cases
+            - Business intelligence reports
+                Reference analytical findings in agent responses
+            - Data documentation
+                Provide context about datasets and metrics
+            - Analytical findings
+                Share insights from data science work
+            - Research outputs
+                Make research accessible through conversational AI
+
+    - Choose the right data source
+        | If your data is... | And you need... | Choose... |
+        |:-|:-|:-|
+        |In SharePoint|Simple setup, always current|SharePoint Remote|
+        |In SharePoint|Advanced search, custom pipelines|SharePoint Indexed|
+        |Files in Azure|Direct file access|Azure Blob Storage|
+        |In MS Fabric|Data lakehouse content|OneLake|
+        |Already indexed|Existing Azure AI Search investment|Azure AI Search Index|
+        |Public, current information|Real-time web content|Web|
+
+    - <span>&#x1F4A1;</span>==You can combine multiple sources in a single knowledge base 
+    &nbsp;&nbsp;&nbsp;&nbsp;use internal SharePoint data as the primary knowledge base 
+    &nbsp;&nbsp;&nbsp;&nbsp;while enabling web grounding for current events or supplementary information==
+
+- **Configure retrieval with Foundry IQ**
+
+    - The retrieval behavior problem
+        - Example
+            - Question to agent
+                "What's our vacation policy?"
+            
+            - Possible behaviors
+                | Behavior | Example Response | Problem |
+                |:-|:-|:-|
+                |Answers from training data|"Most companies offer 2-3 weeks of<br/> vacation annually"|Generic information,<br/> not your actual policy|
+                |Searches but doesn't cite|"You get 15 days of PTO annually"|Correct but unverifiable,<br/> no accountability|
+                |Searches, cites, and grounds|"You receive 15 days of paid time off annually<br/>【doc_id:1†Employee Handbook 2024】"| This is what you want|
+
+    - Controlling retrieval with instructions
+        - Agent instructions determine retrieval behavior
+        - Example
+            <pre><code>
+                agent = project_client.agents.create_version(
+                    agent_name="hr-assistant",
+                    definition=PromptAgentDefinition(
+                        model="gpt-4o-mini",
+                        instructions="Answer HR questions using the knowledge base.",
+                        tools=[knowledge_tool]
+                    )
+                )
+            </code></pre>
+            - Instruction too vague
+            - Doesn't specify _when_ to use or _how_ to present results
+
+    - Writing effective retrieval instructions
+        - Effective instructions specify three critical behaviors
+            1. When to retrieve
+                Tell the agent to always use the knowledge base, never rely on training data
+            2. How to cite
+                Specify the exact format for source attribution
+            3. What to do when unsure
+                Define fallback behavior when information isn't found
+        - Example
+            <pre><code>
+                retrieval_instructions = """You are a helpful HR assistant.
+                &nbsp;
+                CRITICAL RULES:
+                - You must ALWAYS search the knowledge base before answering any question
+                - You must NEVER answer from your own knowledge or training data
+                - Every answer must include citations in this format: 【doc_id:search_id†source_name】
+                - If the knowledge base doesn't contain the answer, respond with "I don't have that information in our current documentation. Please contact HR directly at hr@company.com"
+                &nbsp;
+                Your role is to provide accurate, verifiable information from company documentation."""
+                &nbsp;
+                agent = project_client.agents.create_version(
+                    agent_name="hr-assistant",
+                    definition=PromptAgentDefinition(
+                        model="gpt-4o-mini",
+                        instructions=retrieval_instructions,
+                        tools=[knowledge_tool]
+                    )
+                )
+            </code></pre>
+        - Result
+            These instructions create consistent behavior
+            1. The agent knows exactly when to search
+            2. how to format responses
+            3. what to do when information isn't available.
+
+    - Testing retrieval behavior
+        - Setting up a test conversation
+            - Example
+                <pre><code>
+                openai_client = project_client.get_openai_client()
+                conversation = openai_client.conversations.create()
+                &nbsp;
+                # Test query that should trigger retrieval
+                response = openai_client.responses.create(
+                    conversation=conversation.id,
+                    input="How many vacation days do I get?",
+                    extra_body={"agent": {"name": agent.name, "type": "agent_reference"}}
+                )
+                &nbsp;
+                print(response.output_text)
+                </code></pre>
+
+    - What to test
+        | Query Type | Example Questions | Expected Behavior |
+        |:-|:-|:-|
+        |Straightforward factual|"What is our vacation policy?"<br/>"Where can I find the security guidelines?"|Direct retrieval with citations|
+        |Questions requiring<br/>synthesis|"What are the differences between our leave types?"<br/>"How do I request time off?"|Multiple document retrieval,<br/> synthesized answer with multiple citations|
+        |Questions outside knowledge base|"What's the weather like today?"<br/>"Tell me about machine learning"|Graceful fallback<br/>("I don't have that information...")|
+        |Ambiguous questions|"What about benefits?"<br/>"Tell me more about that"|Clarifying questions or focused search on most<br/> relevant topic|
+
+    - Evaluating response quality
+        Characteristics of good responses
+        - Grounding
+            Information comes from knowledge base, not training data
+        - Citation
+            Every factual claim includes source references
+        - Relevance
+            Retrieved content actually answers the question
+        - Completeness
+            All necessary information is provided, not just fragments
+
+    - Retrieval strategies for 
+        different agent types
+        - Customer-facing support agents
+            - Agents need high accuracy
+            - Must never provide uncertain information
+            - Example
+                <pre>
+                
+
+                    support_instructions = """You provide customer support using our product documentation.
+
+                    Rules:
+                    - Search the knowledge base for every product question
+                    - Cite documentation for all technical answers
+                    - If documentation doesn't cover a question, say "Let me connect you with a specialist" rather than guessing
+                    - Focus on official product information, not general knowledge"""
+                </pre>
+        - Internal research assistants
+            - Can synthesize across documents
+            - Provide broader context
+            - Example
+                <pre>
+                
+
+                    research_instructions = """You help employees research topics across company documentation.
+
+                    Rules:
+                    - Search all relevant knowledge bases for comprehensive answers
+                    - Synthesize information from multiple sources when helpful
+                    - Always cite all sources used
+                    - Indicate confidence level when synthesizing across documents
+                    - Suggest related topics that might be useful"""
+                </pre>
+        - Specialized domain experts
+            - Focus deeply on specific knowledge domains
+            - Example
+                <pre>
+
+
+                    compliance_instructions = """You are a compliance documentation assistant.
+
+                    Rules:
+                    - Only answer questions about compliance policies and procedures
+                    - Always cite the specific policy document and section
+                    - If a question involves interpretation or legal advice, refer to the compliance team
+                    - Keep answers strictly factual based on written policies
+                    - Note the effective date of any policy you reference"""
+                </pre>
+
+        - The pattern
+            - Define the agent's scope 
+            - Specify retrieval requirements
+            - Establish citation standards
+            - Handle edge cases explicitly
+
+    - Moving from testing to production
+        - New challenges
+            - Users ask questions differently than your test scenarios
+            - Some questions hit edge cases you didn't anticipate
+            - Others reveal gaps in your knowledge base content
+
+        - Patterns to track
+            - Citation frequency
+                Are agents consistently citing sources?
+            - Fallback frequency
+                How often do agents say "I don't know"?
+            - Query types
+                What categories of questions appear most often?
+            - Retrieval accuracy
+                Do retrieved documents actually contain answers?
+        - Use this information to
+            - Refine instructions
+            - Improve knowledge base content
+            - Adjust search configurations
+        - <span>&#x1F4A1;</span>==Retrieval quality improves through iteration based on real-world usage==
+
+
+- **Key takeaways**
+    - RAG solves the knowledge problem
+        - Connect agents to real-time knowledge sources
+        - RAG-enabled agents 
+            - Retrieve relevant information
+            - Augment queries with factual context
+            - Generate responses grounded in your organizational content
+        - This provides
+            - Real-time updates
+            - Source transparency
+            - Factual grounding
+    - Foundry IQ provides a shared knowledge platform
+        - Foundry IQ eliminates the need to b
+            build custom RAG infrastructure for every agent
+        - Create knowledge bases
+            That any agent can access them
+            - Organized by business domain
+            - Connect data sources from
+                - SharePoint
+                - Azure Blob Storage
+                - OneLake
+                - Azure AI Search indexes
+            - This shared approach scales knowledge 
+                access across your organization
+    - Data quality determines retrieval effectiveness
+        Improve retrieval through three techniques
+        - Scoring profiles
+            Boost specific fields or 
+            attributes to surface more relevant results
+        - Semantic ranking
+            Uses AI models to understand meaning and 
+            context beyond keywords
+        - Custom analyzers
+            Handle specialized content like HTML, 
+            product codes, or technical terminology
+    - Instructions control agent behavior
+        Effective agent instructions specify
+        - When to retrieve
+            Always use the knowledge base
+        - How to cite
+            Exact format for source attribution
+        - What to do when unsure
+            Graceful fallback
+    - Next steps
+        - Start with a high-value knowledge domain where accurate
+            Cited information provides immediate business impact.
+        - Build your first knowledge base
+        - Configure data quality settings
+        - Create an agent with clear retrieval instructions
+        - Test systematically before deploying to users
+
+
+
+- **Exercise - Integrate an AI agent with Foundry IQ**
+    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-agents/Instructions/09-integrate-agent-with-foundry-iq.html)
+
+
+
+
+### 5. [Integrate your agent with MS 365](https://learn.MS.com/en-us/training/modules/integrate-foundry-agent-with-m365/)
+
+- **Introduction**
+    - The User Environment Gap
+        While AI agents may perform perfectly in a testing environment like the 
+        Foundry playground, friction occurs when users have to leave their 
+        primary collaboration tools to interact with them.
+    - Native Channels Integration
+        MS Foundry solves this by providing built-in capabilities to 
+        publish custom AI agents directly into MS Teams and 
+        MS 365 Copilot.
+    - Practical Workstream Deployment
+        This allows you to surface specialized assistants—such as IT support desks, 
+        HR onboarding companions, or domain-specific advisors—exactly where your team 
+        already communicates and works.
+    - Objectives
+        Learn to navigate the publishing workflow in the Foundry portal, evaluate advanced 
+        integration paths, and utilize Work IQ to grant agents secure access to MS 365 data sources, 
+        including emails, meetings, and documents.
+
+- **Understand Foundry agent publishing options**
+
+    - Understanding agent applications
+        Afteer publishing an agent Foundry creates an 
+        **Agent Application** resource with
+        - Dedicated invocation URL
+            A stable endpoint that remains consistent as you update agent versions
+        - Agent identity
+            A distinct Microsoft Entra identity separate from your development project
+        - User data isolation
+             Inputs and interactions from one user aren't available to other users
+
+    - Publishing to Microsoft 365
+        - Creates an Azure Bot Service resource that routes messages between Microsoft 365 and your agent
+        - Generates a Microsoft 365 publishing package for distribution
+        - Registers a Microsoft Entra ID application for authentication
+        - Makes your agent discoverable in the Teams agent store
+    
+    - Direct publishing from Foundry portal
+        - Creates an Azure Bot Service resource in your subscription
+        - Registers a Microsoft Entra ID application
+        - Generates a Microsoft 365 publishing package
+        - Prepares your agent for distribution
+        - Ideal when you want to 
+            - Deploy quickly
+            - Keep your agent logic entirely within Foundry
+
+    - Microsoft 365 Agents Toolkit
+        - For complex scenarios
+        - Use the Microsoft 365 Agents Toolkit to 
+            create a proxy application that connects to your Foundry agent
+        - When you need custom single sign-on (SSO)
+        - Advanced middleware logic
+        - Multi-environment deployment pipelines
+
+    - Publish scopes
+        | Scope | Description | Best for |
+        |:-|:-|:-|
+        | Shared | Available immediately without admin approval.<br/> Appears under Your agents in Teams. | Personal testing,<br/> small team pilots |
+        | Organization | Available to everyone in your tenant under **Built by your org**.<br/> Requires admin approval. | Production deployments |
+
+    - Other publishing channels
+        - Web application preview
+            Browser-based interface for demos and stakeholder testing
+        - Stable API endpoint
+            REST API for embedding in custom applications
+        - Azure Bot Service channels
+            Slack, Telegram, Twilio (SMS), Facebook, and others
+
+    - Agent identity and permissions
+        When you publish an agent, the 
+        system creates a distinct agent identity
+        - The agent authenticates to Azure resources using its own identity
+        - Development-time permissions on your project identity don't transfer automatically
+        - Tools that access Azure services need permissions reconfigured after publishing
+
+    - Prerequisites for publishing to Microsoft 365
+        - Azure AI Project Manager role on your Foundry project
+        - Azure AI User role on the agent application scope
+        - An Azure subscription where you can create Azure Bot Service resources
+        - Permissions to register applications in Microsoft Entra ID
+        - A Microsoft 365 tenant that allows custom apps and bots
+
+- **Publish an agent from Foundry portal to Teams**
+
+    - Before begin
+        - Test your agent thoroughly
+            - Use the Foundry playground
+            - Test various user inputs
+            - Confirm any configured tools work correctly
+            - Check that responses are appropriate for your use case
+        - Verify your permissions
+            - Azure AI Project Manager role on your Foundry project to publish agents
+            - Azure AI User role to invoke or chat with published agents
+            - Permissions to create resources in your Azure subscription
+            - Permissions to register applications in Microsoft Entra ID
+        - Register the Bot Service provider
+            - Ensure the `Microsoft.BotService` provider is 
+                registered in your Azure subscription
+            - Check in the Azure portal under subscription's **Resource providers** section
+        - Prepare metadata
+            - A display name for your agent (appears in the Teams agent store)
+            - A brief description of what your agent does
+            - Small (32x32 pixels) and large (192x192 pixels) icons in PNG format
+            - Your organization's name and contact details
+            - URLs for your privacy policy and terms of use
+    
+    - Publish your agent
+        1. Select your agent version
+            - Open the [Microsoft Foundry portal](https://ai.azure.com/) and navigate to your project.
+            - Select the agent you want to publish from your agent list.
+            - Review the agent configuration to confirm it's ready for publishing.
+        2. Start the publishing process
+            - Select **Publish** to open the publishing dialog.
+            - Select **Publish** again, then choose **Publish to Teams and Microsoft 365 Copilot**.
+            - The Microsoft 365 publishing configuration window opens.
+        3. Configure Azure Bot Service
+            - The portal automatically generates an application ID and tenant ID.
+                Note these values for troubleshooting.
+            - In the Azure Bot Service dropdown, 
+                select Create an Azure Bot Service to provision a new bot resource.
+            - Wait for the portal to create the Bot Service resource in your subscription.
+        4. Complete the metadata
+            | Field | Description |
+            |:-|:-|
+            | Name | Display name for your agent in the Teams store |
+            | Description | Brief explanation of what your agent does |
+            | Icons | Upload small and large PNG icons |
+            | Publisher information | Your organization name and contact details |
+            | Privacy policy | URL to your organization's privacy policy |
+            | Terms of use | URL to your terms of service |
+        5. Choose your publish scope
+            - Shared scope
+                Agent appears under "Your agents" in the store. 
+                Available immediately. 
+                Best for testing and small teams.
+            - Organization scope
+                Agent appears under "Built by your org" in the store. 
+                Requires admin approval. 
+                Best for production deployments.
+        6. Prepare and optionally download the package
+            - Select **Prepare Agent** to start packaging your agent.
+            - Wait for the packaging process to complete (typically 1-2 minutes).
+            - When ready, you can either:
+                - **Download the package** to test locally before distribution
+                - **Continue the in-product publishing flow** for direct distribution
+
+    - Test the publishing package in Teams
+        1. Open Microsoft Teams.
+        2. Navigate to **Apps > Manage your apps > Upload an app**.
+        3. Select **Upload a custom app** and choose the downloaded .zip file.
+        4. Teams installs the app and shows it in your apps list.
+        5. Open the agent and send a test message.
+        6. Verify
+            [ ] The agent responds to messages
+            [ ] Response content is accurate and appropriate
+            [ ] Response times are acceptable
+            [ ] Any configured tools work correctly
+
+    - Request admin approval for organization scope
+        An admin must approve your agent before it's available organization-wide
+        Once approved, the agent appears in the **Built by your org** section of the Teams agent store
+        1. Direct your Microsoft 365 administrator to the Microsoft 365 admin center.
+        2. Navigate to **Agents > All > Requested**.
+        3. Find your agent in the list of pending requests.
+        4. The administrator selects **Approve request and activate**.
+
+    - Reassign permissions after publishing
+        If your agent uses tools that access Azure resources, 
+        you need to grant permissions to this new identity
+        1. In the Foundry portal, go to your published agent and note the agent application's identity information.
+        2. In the Azure portal, navigate to the resources your agent accesses 
+            (for example, Azure AI Search, storage accounts, or Cosmos DB).
+        3. Assign the appropriate RBAC roles to the published agent identity.
+
+    - Update a published agent
+        1. Make your changes in the Foundry portal.
+        2. Test the changes in the Foundry playground.
+        3. Repeat the publishing process to create a new package.
+        4. For shared scope, upload the new package to Teams.
+        5. For organization scope, the update might require re-approval depending on your organization's policies.
+
+- **Advanced - Use Microsoft 365 Agents Toolkit**
+
+    - When to consider the Agents Toolkit
+        - When the agent requires custom single sign-on (SSO) configuration
+        - When you need to add middleware logic for custom processing
+        - Logging
+        - Transformation between Teams and Foundry agent
+        - Organizations that require multi-environment 
+            deployment configurations
+        - Advanced debugging capabilities with detailed tracing
+        - Integrates with CI/CD pipelines
+            - GitHub Actions
+            - Azure DevOps
+
+    - How the Agents Toolkit approach works
+        - <pre>Teams/Copilot → Proxy App (Agents Toolkit) → Foundry Agent</pre>
+        - The proxy application receives messages from 
+            Teams or Copilot through Azure Bot Service
+        - Processes them through custom configured middleware
+        - Forwards the request to the Foundry agent
+        - Returns the response through the same path
+        - The proxy approach gives you control but 
+            adds complexity to deployment.
+
+    - Getting started with the Agents Toolkit
+        - Standalone agent
+            - Install the VS Code Microsoft 365 Agents Toolkit extension
+            - Open the extension panel and select **Create a New Agent/App**
+            - Choose **Custom Engine Agent** as the project type
+            - The wizard guides you through configuration options
+        - Connect to an existing Foundry agent
+            - Configure the project to call your Foundry agent's endpoint
+            - Set up authentication using the agent's credentials
+            - Implement any middleware logic you need
+        - Includes the Microsoft 365 Agents Playground
+        - Test
+        - Use the toolkit to provision Azure resources
+        - Deploy your proxy application
+        - Register it in Teams
+
+    - Comparison summary
+        | Aspect | Direct Foundry publishing | Agents toolkit proxy |
+        |:-|:-|:-|
+        |Setup time|Minutes|Hours to days|
+        |Code required|None|Proxy application|
+        |Customization|Limited|Extensive|
+        |Debugging|Foundry portal|Full IDE debugging|
+        |Best for|Standard deployments|Complex enterprise needs|
+
+    - Learn more
+        - [Microsoft 365 Agents Toolkit documentation](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/overview-agents-toolkit)
+        - [Create custom engine agents with the Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/create-new-toolkit-project-vsc)
+        - [Microsoft 365 Agents SDK overview](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/agents-sdk-overview)
+
+- **Access Microsoft 365 data with Work IQ**
+
+    - What is Work IQ?
+        - Is a command-line interface (CLI)
+        - Is a server that connects AI assistants to Microsoft 365 Copilot data
+        - Enables agents to query workplace information using NLP
+        - Provides rich context that helps agents give more 
+            relevant and accurate responses
+        - With Work IQ, your agents can answer
+            - "What did my manager say about the project deadline?"
+            - "Find my recent documents about Q4 planning"
+            - "Summarize today's messages in the Engineering channel"
+            - "Who is working on Project Alpha?"
+        - Work IQ accesses data across multiple Microsoft 365 services
+            | Data type | Example capabilities |
+            |:-|:-|
+            | Emails | Search messages, find communications from specific people |
+            | Meetings | Check calendar, retrieve meeting notes and decisions |
+            | Documents | Find files in SharePoint and OneDrive, search content |
+            | Teams messages | Summarize channel discussions, find specific conversations |
+            | People | Identify team members, find collaborators on projects |
+
+    - Understanding MCP servers
+        - Work IQ is built on the Model Context Protocol (MCP)
+        - An MCP server exposes capabilities that AI agents can use
+        - Work IQ is an MCP server specifically designed for Microsoft 365 data
+        - Capabilities
+            - Tools
+                Actions the agent can take, like searching for documents or sending messages
+            - Resources
+                Data sources the agent can query
+            - Prompts
+                Predefined templates for common queries
+
+    - How Work IQ operates
+        - CLI mode
+            - Example
+                <pre>workiq ask -q "What requirements did Sarah share about the authentication feature?"</pre>
+            - Useful for
+                - Quick queries during development
+                - Scripts that need to retrieve workplace information
+        - MCP server mode
+            - Work IQ integrates with AI assistants (Github Copilot VS Code)
+            - The AI assistant can automatically access workplace context when relevant
+            - Example
+                <pre>
+                    If you're implementing a feature that was discussed in a recent meeting, 
+                    your AI assistant can access that meeting context to provide more relevant suggestions
+                </pre>
+
+    - Installing Work IQ
+        - Using `npm`
+            <pre>
+            # Global installation
+            npm install -g @microsoft/workiq
+            &nbsp;
+            # Or run directly without installation
+            npx -y @microsoft/workiq mcp
+            </pre>
+        - Using GitHub Copilot CLI as a plugin
+            - Open GitHub Copilot CLI by running `copilot`.
+            - Add the plugins marketplace (one-time setup): `/plugin marketplace add github/copilot-plugins`
+            - Install Work IQ: `/plugin install workiq@copilot-plugins`
+            - Restart Copilot CLI and start querying your Microsoft 365 data.
+        - Using VS Code (as an MCP server)
+            <pre>
+            {
+                "workiq": {
+                    "command": "npx",
+                    "args": [
+                    "-y",
+                    "@microsoft/workiq",
+                    "mcp"
+                    ],
+                    "tools": [
+                    "*"
+                    ]
+                }
+            }
+            </pre>
+        - Before first use, accept the End User License Agreement
+            <pre>
+                workiq accept-eula
+            </pre>
+        
+        - Prerequisites for Work IQ
+            - Node.js installed on your machine (if using the CLI locally)
+            - A Microsoft 365 subscription with a Copilot license
+            - Administrative consent for the Work IQ application in your Microsoft Entra tenant
+        
+        - Security and data access
+            - Permission-based access
+                Work IQ can only access data you already have permission to view
+            - No data storage
+                Work IQ doesn't store your Microsoft 365 data
+                It retrieves information on-demand
+            - Enterprise security
+                All data access follows your organization's security policies
+            - Admin visibility
+                Administrators can monitor and control Work IQ usage
+            - When you query Work IQ
+I               It accesses data through Microsoft Graph<br/>with your authenticated identity
+                - You can't access documents you don't have permission to view
+                - Queries are auditable by your organization
+                - Data protection policies apply to Work IQ queries
+
+        - Using Work IQ with agent development
+            - CLI is useful
+                - For quick, ad-hoc queries during development
+                - For scripts
+                - One-off queries
+                - When you need quick answers without opening an IDE
+                - Example
+                    <pre><code>
+                    # Find project context
+                    workiq ask -q "What were the key decisions in last week's architecture review meeting?"
+                    &nbsp;
+                    # Understand requirements from documents
+                    workiq ask -q "Summarize the requirements in the user portal spec document"
+                    &nbsp;
+                    # Check team communications
+                    workiq ask -q "What has the engineering team discussed about the API changes?"
+                    </code></pre>
+
+            - MCP server approach
+                - Example
+                    - Ask Copilot: "What requirements did Sarah share about the authentication feature?"
+                    - Copilot uses Work IQ's MCP tools to query your Microsoft 365 data
+                    - You receive the answer in the chat without running any commands
+
+- **Test and iterate your integrated agent**
+
+    - Testing beyond the Foundry playground
+        - Test your agent in Microsoft Teams to verify
+            - The Teams user interface renders responses correctly
+            - Authentication flows work as expected
+            - Response times are acceptable in production
+            - The published agent identity has necessary permissions
+        - Testing with multiple users
+            - Different users phrase questions differently
+            - Fresh perspectives identify confusing responses
+            - Test across differente Teams clients
+                Reveal platform-specific issues
+        - Common troubleshooting scenarios
+            - Agent doesn't respond in Teams
+                - Possible causes
+                    - Azure Bot Service isn't running
+                    - Bot Service configuration is incorrect
+                    - Network issues between Teams and your agent
+                - Resolution
+                    - Verify the Bot Service resource exists in the Azure portal.
+                    - Check Bot Service logs for errors.
+                    - Confirm the agent is published and the package was uploaded correctly.
+            - Tools work in Foundry but fail in Teams
+                - Possible cause
+                    - The published agent identity doesn't have the required permissions.
+                - Resolution
+                    - Find the published agent's identity in the Foundry portal.
+                    - In the Azure portal, locate the resources your tools access.
+                    - Assign appropriate RBAC roles to the published agent identity.
+            - Users can't find the agent
+                - Possible causes
+                    - Wrong publish scope selected
+                    - Admin approval pending (for organization scope)
+                    - Tenant policies block custom apps
+                - Resolution
+                    - For shared scope
+                        Share the direct link with users.
+                    - For organization scope
+                        Verify admin approval in the Microsoft 365 admin center.
+                    - Check tenant settings for custom app permissions.
+            - Slow response times
+                - Possible causes
+                    - Complex agent instructions requiring extended processing
+                    - Tools that query large data sets
+                    - Network latency
+                - Resolution
+                    - Simplify agent instructions where possible.
+                    - Optimize tool configurations.
+                    - Test from different network locations to isolate network issues.
+
+        - Monitoring published agents
+            - Check Foundry metrics
+                Review these metrics regularly to<br/>spot trends that indicate problems
+                - Request volume and patterns
+                - Response times
+                - Error rates
+                - Tool invocation statistics
+            - Review Application Insights
+                - Trace individual conversations
+                - Analyze error patterns
+                - Measure end-to-end latency
+                - Set up alerts for anomalies
+            - Gather user feedback
+                - Create a Teams channel or email address for agent feedback
+                - Periodically review feedback to identify common problems
+                - Use feedback to prioritize agent improvements
+            - <span>&#x1F4A1;</span>==Keep a testing checklist specific to your agent.  
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Document the key scenarios you test before each release to  
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ensure consistent quality==
+
+- **Key takeaways**
+    - Omnipresent Deployment
+        Bringing AI agents directly into Microsoft Teams and Microsoft 365 Copilot ensures they are 
+        instantly accessible within the communication tools your users already occupy.
+    - Automated Infrastructure Provisioning
+        The direct publishing workflow inside the Foundry portal strips away backend complexity by 
+        automatically configuring the Azure Bot Service and handling Microsoft Entra ID app 
+        registrations behind the scenes.
+    - Enterprise-Grade Customization
+        While the portal handles standard deployments seamlessly, the Microsoft 365 Agents Toolkit is 
+        available as a dedicated developer alternative for highly complex enterprise integration scenarios.
+    - Targeted Distribution Scopes
+        Lifecycle management is split into strategic rollout tiers—utilizing Shared scopes for safe, 
+        localized team testing before escalating to Organization scopes for broad corporate distribution.
+    - Access Control & Identity
+    Managing agent identity properly is essential, ensuring the agent aligns perfectly with internal 
+    Role-Based Access Control (RBAC) permissions so it never accesses data it shouldn't.
+    - Contextual Grounding via Work IQ
+    By leveraging the Model Context Protocol (MCP), Work IQ securely bridges your agent to live Microsoft 365 
+    data ecosystems, giving it the operational context required to be genuinely useful.
+
+- **Further reading**
+    - [Publish agents to Microsoft 365 Copilot and Microsoft Teams](https://learn.microsoft.com/en-us/azure/ai-foundry/agents/how-to/publish-copilot)
+    - [Microsoft Work IQ documentation](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/workiq-overview)
+    - [Microsoft 365 Agents Toolkit overview](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/overview-agents-toolkit)
+    - [Agent identity concepts in Microsoft Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/agents/concepts/agent-identity)
+
+
+- **Exercise - Publish a Foundry agent to Teams**
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/05a-m365-teams-integration.html)
+
+- **Exercise - Work IQ - Workplace intelligence for AI agents**
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/05b-work-iq-integration.html)
+
+
+### 6. [Build agent-driven workflows using MS Foundry](https://learn.MS.com/en-us/training/modules/build-agent-workflows-MS-foundry/)
+
+- **Introduction**
+    - The Multi-Agent Paradigm
+        Modern AI solutions increasingly move away from isolated models 
+        toward ecosystem environments where multiple specialized agents collaborate to 
+        analyze inputs, make decisions, and take actions.
+    - Orchestration & Governance
+        Microsoft Foundry agent workflows provide the structural scaffolding needed to 
+        manage these complex interactions, combining granular control flow with 
+        essential runtime safeguards.
+    - Low-Code Visual Canvas
+        A visual workflow builder allows developers to model data movement, 
+        define agent invocation logic, and deeply inspect intermediate execution paths and 
+        runtime behaviors without writing extensive code.
+    - The Automation vs. Safety Dilemma
+        In high-volume scenarios like SaaS customer support—where manual review fails to scale but 
+        full automation risks unpredictability—workflows strike a balance by mixing multi-agent 
+        triaging, conditional routing, and human-in-the-loop escalation.
+
+- **Understand Workflows**
+    - Workflows in Foundry provide a way to orchestrate AI-driven actions 
+        using a visual, declarative approach
+    - A workflow consists of connected nodes, 
+        where each node performs a specific function
+        - Invoke agents
+        - Evaluate conditions
+        - Manage data
+        - Communicate with users
+    - These nodes form an execution path that determines 
+        how requests move through the system
+    - Arranging and configuring nodes, you control how 
+        information flows and how decisions are made
+    - Workflows has an advantage the is their ability to 
+        coordinate multiple agents
+        This orchestration enables more robust and 
+        scalable automation
+    - Workflows support patterns that balance automation with oversight
+        - Can pause execution
+        - Request human input
+        - Escalate decisions
+
+- **Identify Workflow Patterns**
+    - Sequential workflow follows a fixed, step-by-step path
+        - Works for pipelines and multi-stage processes
+            - Validating input
+            - Enriching data
+            - Generating a final response
+        - They are predictable
+        - Easy to reason about
+    - Human-in-the-loop workflow introduces pauses where user input or 
+        approval is required
+        - The workflow explicitly asks a question
+        - Waits for a response
+        - Resumes execution based on that input
+        - Useful when automation must be 
+            balanced with oversight
+            - Approvals
+            - Confirmations
+            - Situations where missing context 
+                needs to be provided by a person
+    - Group chat workflow enables more dynamic 
+        orchestration across multiple agents
+        - Control can shift between agents based on 
+            - Context
+            - Rules
+            - Intermediate results
+        - Useful for scenarios where multiple specialized agents 
+            collaborate to handle complex requests
+            - Customer support
+            - Multi-domain question answering.
+
+- **Create workflows in Microsoft Foundry**
+    - Main node types
+        - Invoke
+            - Invoke an AI agent
+            - Create a new one
+            - Agent nodes return
+                - Free text responses
+                - Structured outputs (e.g. JSON)
+            - Used for
+                - Classification
+                - Reasoning
+                - Recommendations
+                - Any AI-driven task
+        - Flow
+            - Controls the workflows execution path
+                Adapt dinamically to different inputs or situations
+            - Include
+                - If/Else
+                    Branches execution based on conditions
+                - Go To
+                    Jumps to another node in the workflow
+                - For each
+                    Loops over a list of items, performing the
+                    same action for each one
+            - Data transformation
+                Manipulates data and manags variables
+                - Include
+                    - Set Variable
+                        Assigns a value to a variable for later use
+                    - Reset Variable
+                        Clears or reinitialize a variable
+                    - Parse Value
+                        Extracts specific data from struxtured outputs or
+                        converts values to different formats
+            - Basic chat
+                Send messages to the user or
+                asks questions to collect input
+                Often paired with variables to capture responses
+            - End
+                Marks the conclusions of a workfloe
+                Can return a final result or status
+
+- **Add Agents to a Workflow**
+    - Agents are the core reasoning components within Foundry workflow
+    - Adding agents to workflow enables
+        - AI-driven decision-making
+        - Classification
+        - Response generation
+    - Each agent can be configured
+        - Specific purpose
+        - Model
+        - Prompt
+        - Set of tools
+    - Insert agents with **Invoke agent** node
+        allowing
+        - Configure tools
+        - Knowledge bases
+        - Memory
+        - Guardrails for the agent
+    - Agents can be reused across multiple
+        workflows
+    - Structured outputs are useful when agent 
+        responses drive control flow
+        - Routing logic
+        - Variable assignement
+    - Define agent's output in the _Parameters_ of the
+        **Details** tab of the **Invoke agent** editor
+    - Variables allows agents to
+        - Influence decisions
+        - Trigger conditional branches
+        - Provide input to other agents
+    - Variable storage can be configures in the **Action<br/>settings** of the **Invoke agent** node
+
+- **Apply Power Fx in Workflows**
+    - Power Fx is the low-code, 
+        Excel-like language that acts as the glue of a workflow.
+        - Allows
+            - Manipulate data
+            - Evaluate conditions
+            - Control the flow of execution
+
+    - How formulas work
+        - System variables
+            Provide contextual information about the workflow or 
+            conversation, such as the current activity, last message, or user info.
+        - Local variables
+            Store data captured or created during workflow execution and 
+            can be used in subsequent nodes
+        - Example
+            - Convert a user's input to uppercase: `Upper(Local.Input)`
+            - Check whether an agent's confidence score is above a threshold: `Local.Confidence > 0.8`
+            - Sum values in a list or a column of records: `Sum(Local.ItemList, Amount)`
+
+    - Conditions as decision points
+        - Power Fx expressions are commonly used in 
+            **If/Else** nodes to evaluate conditions and branch execution
+        - Example
+            A workflow might check an agent's confidence score to decide whether to 
+            continue processing automatically or escalate to a human.
+
+    - Loops for processing multiple items
+        - **For-each** nodes use Power Fx to iterate over collections
+        - Combining loops with variables and conditions, 
+            workflows can handle lists of inputs ithout duplicating 
+            nodes or logic
+
+    - Power Fx formula examples
+        | Purpose | Formula Example | Notes |
+        |:-|:-|:-|
+        |Convert text to<br/> uppercase|`Upper(Local.Input)`|Transforms a string to all caps|
+        |Convert text to<br/> lowercase|`Lower(Local.Input)`|Transforms a string to all lowercase|
+        |Get string length|`Len(Local.Input)`|Returns the number of characters in a string<br/>&nbsp;|
+        |Conditional check|`Local.Confidence > 0.8`|Returns true/false; used in If/Else nodes<br/>&nbsp;|
+        |If/Else logic|`If(Local.Confidence > 0.8, "Proceed", "Escalate")`|Returns one of two values depending on a condition<br/>&nbsp;|
+        |Sum a list of<br/> numbers|`Sum([10, 20, 30])`|Adds up numbers in a simple list|
+        |Sum a column in<br/> a table|`Sum(Local.ItemList, Amount)`|Adds up the Amount property of each record in a table|
+        |Count items in a table<br/> or list|`Count(Local.ItemList)`|Returns the number of items|
+        |Check if blank|`IsBlank(Local.Input)`|Returns true if variable or input is empty|
+        |Check if empty<br/> table|`IsEmpty(Local.ItemList)`|Returns true if a table has no records|
+        |Loop over items|`ForAll(Local.ItemList, Upper(Name))`|Applies a formula to each item in a list or table<br/>&nbsp;|
+        |Concatenate text|`Concatenate(Local.FirstName, " ", Local.LastName)`|Joins multiple strings into one<br/>&nbsp;|
+        
+        <br/>
+
+        <span>&#x1F4A1;</span>==For more information about the Power Fx language, visit the [Power Fx documentation](https://learn.microsoft.com/en-us/power-platform/power-fx/overview)==
+
+- **Maintain Workflows in Microsoft Foundry**
+
+    - YAML and visual representations
+        - Visual canvas for
+            - Deal for conceptual understanding
+            - Tracing execution paths
+            - Collaborating with others
+        - YAML for
+            - Advanced configuration
+            - Version tracking
+            - Integration with source control
+
+    - Versioning
+        - On save is created a new, immutable version
+        - Provides a safety net
+            - Review prior versions
+            - Compare changes
+            - Roll back to an earlier workflow 
+                If a modification introduces errors
+            - Collaboration
+                Easier to track who made changes and why
+
+    - Adding notes for maintainers
+        - Notes
+            - Provide context
+            - Explain design decisions
+            - Clarify variable usage
+
+    - Best practices for refinement
+        - Regularly reviewing workflows for unused or redundant nodes.
+        - Ensuring structured agent outputs are consistently handled.
+        - Documenting decisions and logic with notes.
+        - Leveraging version history to track changes and validate updates.
+        - By combining YAML editing, version control, and thoughtful documentation, 
+            you ensure that workflows are robust, maintainable, and ready for enterprise use
+
+- **Use workflows in code**
+
+    - Invoke a workflow
+        - Establish a connection to 
+            Foundry project using the `AIProjectClient`
+            - Handles authentication
+            - Acess to OpenAI-compatible API
+                - Executing conversations
+                - Invoking workflows
+        - Example
+            <pre><code>
+                # Reference a workflow created in the Foundry portal
+                workflow_name = "triage-workflow"
+                &nbsp;
+                # Create a conversation context for the workflow
+                conversation = openai_client.conversations.create()
+                &nbsp;
+                # Execute the workflow, passing input to drive the workflow logic
+                stream = openai_client.responses.create(
+                    conversation=conversation.id,
+                    extra_body={"agent": {"name": workflow_name, "type": "agent_reference"}},
+                    input="Users can't reset their password from the mobile app.",
+                    stream=True,
+                )
+            </code></pre>
+        - `input` parameter
+            - A user question that agents analyze and respond to
+            - A support ticket description for classification and routing
+            - A data payload that triggers processing logic
+            - An empty string that simply starts the workflow without specific input
+
+    - Process workflow events
+        - When streaming is enables, tha application
+            receives events as the workflow executes
+        - Example
+            <pre><code>
+                for event in stream:
+                    if event.type == "response.completed":
+                        print("Workflow completed:")
+                        for message in event.response.output:
+                            if message.content:
+                                for content_item in message.content:
+                                    if content_item.type == 'output_text':
+                                        print(content_item.text)
+                    if (event.type == "response.output_item.done") and event.item.type == ItemType.WORKFLOW_ACTION:
+                        print(f"Action '{event.item.action_id}' completed with status: {event.item.status}")
+            </code><pre>
+        - Common event types
+            | Event type | Description |
+            |:-|:-|
+            | `response.completed` | The workflow finished executing and returned a final response |
+            | `response.output_item.done` | An individual output item (such as a workflow action) completed |
+        - Real-Time Visibility & Event Tracking
+            Monitor workflow event streams to observe progress live or 
+            trigger external system actions dynamically based on 
+            changes in the workflow state.
+        - Flexible Consumption Options
+            Choose between streaming execution data in real time or 
+            awaiting total workflow completion to process a single, consolidated final response.
+        - Human-in-the-Loop Orchestration
+            Handle execution pauses natively when a workflow reaches a step requiring manual 
+            verification, user input, or explicit approval.
+        - Seamless Execution Resumption
+            Easily restart a paused workflow by sending targeted input messages directly back into the 
+            conversation thread to fulfill the pending request.
+
+    - Benefits of code integration
+        | Scenario | Benefit |
+        |:-|:-|
+        |Web applications|Embed AI-driven workflows directly in user-facing apps|
+        |APIs and microservices|Expose workflow capabilities through REST endpoints|
+        |Batch processing|Invoke workflows programmatically for bulk operations|
+        |Testing and validation|Automate workflow testing as part of CI/CD pipelines|
+        |Custom interfaces|Build specialized UIs tailored to specific workflow use cases|
+
+- **Key takeaways**
+    - Workflow Composition & Orchestration
+        - Node-Based Architecture
+            Workflows are structured by sequencing diverse nodes &mdash; including agents, 
+            logic, data transformation, and chat &mdash; to seamlessly orchestrate AI reasoning and 
+            user interactions.
+        - Data-Driven Decisions
+            Agents generate structured outputs captured in variables, which are 
+            then used to dynamically drive runtime routing, escalation paths, or workflow continuation.
+        - The Integration & Execution Layer
+            - Power Fx as Low-Code "Glue"
+                The platform utilizes Power Fx to transform data, 
+                evaluate complex logic conditions, and handle iterative 
+                tasks through loops without heavy coding requirements.
+            - Adaptive Intelligence
+                The fluid movement of data through variables, conditions, and 
+                loops enables the system to exhibit highly flexible and context-aware behavior at runtime.
+        - Enterprise Maintenance & Lifecycle
+            - Dual-Representation Design
+                Systems maintain a visual design canvas alongside a YAML representation, ensuring that 
+                workflows are equally accessible to business analysts and developers.
+            - Long-Term Reliability
+            Incorporating rigorous versioning practices and inline notes guarantees that complex enterprise 
+            automation solutions remain reliable, transparent, and scalable.
+        - <span>&#x1F4A1;</span>==For more information about workflows in Microsoft Foundry, visit [Create a workflow documentation.](https://learn.microsoft.com/en-us/azure/ai-foundry/agents/concepts/workflow)==
+
+- **Exercise - Create an Agent-driven Workflow**
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/06-build-workflow-ms-foundry.html)
+
+### 7. [Develop an AI agent with MS Agent Framework](https://learn.MS.com/en-us/training/modules/develop-ai-agent-with-semantic-kernel/)
+
+- **Introduction**
+
+    - Core Concepts of AI Agents
+        - Dynamic Decision-Making
+            Unlike rigid, traditional software, AI agents leverage generative AI and 
+            LLMs to interpret data, make independent decisions, and automate complex 
+            workflows with minimal human intervention.
+    - The Microsoft Agent Framework
+        - Open-Source & Multi-Provider Support
+            This open-source SDK simplifies model integration by supporting a wide array of 
+            agent ecosystems, including Microsoft Foundry, Azure OpenAI, OpenAI, 
+            Microsoft Copilot Studio, and Anthropic.
+        - Flexibility & Consistency
+            The framework adds architectural flexibility and scalability, ensuring consistency 
+            across your entire implementation if your solution requires mixing different types of agents.
+        - Multi-Agent Orchestration
+            It features built-in workflow coordination capabilities, making it the ideal foundation for 
+            building complex solutions where multiple collaborative agents must work together.
+    - Microsoft Foundry Agent Service
+        - Fully Managed Infrastructure
+            Offers an enterprise-grade platform to build, deploy, and scale agents securely. 
+            It completely removes operational overhead, meaning developers do not need to 
+            manage underlying compute or storage resources.
+        - Rapid Development
+            When combined with the Agent Framework, developers can spin up solutions with advanced 
+            natural language processing and built-in tools using just a few lines of code.
+
+    - Practical Application
+        - Functional Extensibility
+            By utilizing the framework's "tools and functions" capabilities, agents can interact directly 
+            with external APIs and retrieve external data to execute real-world tasks.
+        - End-to-End Workflow Example: A practical scenario includes an agent that automatically extracts data 
+            from submitted employee expense reports, structures the formatting correctly, and handles the email 
+            routing to appropriate recipients.
+
+- **Understand Microsoft Agent Framework AI agents**
+
+    - Microsoft Agent Framework core components
+        - Agents
+            - Provides a consistent interface
+            - Enables different features like multi-agent orchestration. 
+            - Out of the box, agents support 
+                - Function calling
+                - Multi-turn conversations with chat history, 
+                - Service-provided tools
+                - Structured outputs
+                - Streaming responses.
+        - Chat providers
+            - Provides abstractions for connecting to AI services from different providers under a common interface. 
+            - Supported providers
+                - Azure OpenAI
+                - OpenAI
+                - Anthropic
+                - Copilot
+                - More through the BaseAgent abstraction.
+        - Function tools
+            - Containers for custom functions that extend agent capabilities.
+            - Agents can automatically invoke functions to integrate with external APIs and services.
+        - Built-in tools
+            - Prebuilt capabilities
+                - Code Interpreter for Python execution
+                - File Search for document analysis
+                - Web Search for internet access.
+        - Conversation management
+            Structured message system with roles (USER, ASSISTANT, SYSTEM, TOOL) and AgentSession for persistent conversation context across interactions.
+        - Workflow orchestration
+            Supports sequential workflows, concurrent execution, group chat, and handoff patterns for complex multi-agent collaboration.
+
+    - What Is a Microsoft Foundry Agent?
+        - Enterprise-level capabilities
+            Built for Azure environments with advanced AI features 
+            including code interpreter, 
+            function tools integration, and 
+            Model Context Protocol (MCP) support.
+        - Automatic tool invocation
+            Agents can automatically call and execute tools, 
+            integrating seamlessly with Azure AI Search, 
+            Azure Functions, and other Azure services.
+        - Thread and conversation management
+            Provides built-in mechanisms for managing persistent conversation 
+            states across sessions, ensuring smooth multi-agent interactions.
+        - Secure enterprise integration
+            Enables secure and compliant AI agent development with Azure CLI 
+            authentication, RBAC, and customizable storage options.
+
+    - Agent framework core concepts
+        - BaseAgent
+            The foundation for all agents with consistent methods, 
+            providing a unified interface across all agent types.
+        - Agent session
+            Manage persistent conversation context and store conversation history 
+            across sessions using the AgentSession class.
+        - Chat messages
+            Organized structure for agent communication using role-based messaging 
+            (USER, ASSISTANT, SYSTEM, TOOL) that enables smooth communication and integration.
+        - Workflow orchestration
+            Supports sequential workflows, running multiple agents in parallel, group conversations 
+            between agents, and transferring control between specialized agents.
+        - Multi-modal support
+            Allows agents to work with text, images, and structured outputs, including vision capabilities and 
+            type-safe response generation.
+        - Function tools
+            Let you add custom capabilities to agents by including custom functions with automatic schema 
+            generation from Python functions.
+        - Authentication methods
+            Supports multiple authentication methods including Azure CLI credentials, API keys, 
+            Microsoft Authentication Library (MSAL) for Microsoft business authentication, and 
+            role-based access control.
+
+- **Create an Azure AI agent with Microsoft Agent Framework**
+
+    - Creating an Azure AI Agent
+        1. Create a Microsoft Foundry project.
+        2. Add the project connection string to your Microsoft Agent Framework application code.
+        3. Set up authentication credentials with `AzureCliCredential`.
+        4. Connect to your project client with the `AzureOpenAIResponsesClient` class.
+        5. Create an `Agent` instance with the client, instructions, and tools you want to use.
+
+    - Azure AI Agent key components
+        - AzureOpenAIResponsesClient
+            Manages the connection to your Microsoft Foundry project. 
+            This client lets you access the services and models associated with your project and 
+            provides enterprise-level authentication and security features.
+        - Agent
+            The main agent class that combines the client, instructions, and tools to create a 
+            working AI agent that can handle conversations and complete tasks.
+        - AgentSession
+            Automatically keeps track of conversation history between agents and users, and 
+            manages the conversation state.
+            You can create new threads or reuse existing ones to maintain context across interactions.
+        - Tools integration
+            Support for custom functions that extend agent capabilities. 
+            Functions are automatically registered and can be called by agents to connect with external APIs and services.
+        - Authentication credentials
+            Supports Azure CLI credentials, service principal authentication, and other Azure identity options for 
+            secure access to Foundry Tools.
+        - Thread management (AgentThread)
+            Provides flexible options for thread creation, including automatic thread creation for simple scenarios and 
+            explicit thread management for ongoing conversations.
+
+- **Add tools to Azure AI agent**
+
+    - How to use tools with Microsoft Foundry Agent
+        - Built-in tools<br/>(without any extra setup)
+            - Code Interpreter
+                Executes Python code for calculations, data analysis, and more
+            - File Search
+                Searches through and analyzes documents
+            - Web Search
+                Retrieves information from the internet
+    - Custom function tools
+        - Key concepts
+            1. Use the tool decorator
+                Create a custom function tool by defining a Python function and
+                decorating it with the `@tool` decorator from the Microsoft Agent Framework. 
+                This decorator registers your function as a tool that the AI can call. 
+                The `@tool` decorator includes parameters for providing a name and 
+                description for your tool, as well as the `approval_mode` to specify whether 
+                tool calls require approval.
+            2. Function definition and annotations
+                Create your tool by defining a regular Python function with proper type annotations. 
+                Use `Annotated` and `Field` from Pydantic to provide detailed descriptions that help the AI 
+                understand the function's purpose and how to use its parameters. 
+                The more descriptive your annotations, the better the AI can understand when and how to call your function.
+            3. Adding tools to your agent
+                Pass your custom functions to the ChatAgent during creation using the `tools` parameter. 
+                You can add a single function or a list of multiple functions. 
+                The framework automatically registers these functions and makes them available for the AI to call.
+            4. Tool invocation through conversation
+                Once your tools are registered with the agent, you don't need to manually invoke them. 
+                Instead, ask the agent questions or give it tasks that would naturally require your tool's functionality. 
+                The AI automatically determines when to call your tools based on the conversation context and 
+                the tool descriptions you provided.
+            5. Multiple tools and orchestration
+                You can add multiple tools to a single agent, and the AI automatically chooses which tool to use based on 
+                the user's request. 
+                The framework handles the orchestration, calling the appropriate functions and combining their results to 
+                provide a comprehensive response.
+
+    - Best practices for tool development
+        - Clear descriptions
+            Write clear, detailed descriptions for your functions and parameters to help the AI understand their purpose
+        - Type annotations
+            Use proper Python type hints to specify expected input and output types
+        - Error handling
+            Implement appropriate error handling in your tool functions to gracefully handle unexpected inputs
+        - Return meaningful data
+            Ensure your functions return data that the AI can effectively use in its responses
+        - Keep functions focused
+            Design each tool to handle a specific task rather than trying to do too many things in one function
+
+
+- **Exercise - Develop an Azure AI agent with the Microsoft Agent Framework SDK**
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/06-build-workflow-ms-foundry.html)
+
+### 8. [Orchestrate a multi-agent solution using the MS Agent Framework](https://learn.MS.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/)
+
+- **Introduction**
+    - A multi-agent system could consist of four 
+        specialized agents working collaboratively
+        - **Monitoring Agent** 
+            Continuously ingests logs and metrics, detects anomalies using<br/>natural language processing (NLP), and triggers alerts when issues arise.
+        - **Root Cause Analysis Agent** 
+            Correlates these anomalies with recent system changes, using<br/> machine learning models or predefined rules to pinpoint the root cause of the problem.
+        - **Automated Deployment Agent** 
+            Takes over to implement fixes or roll back problematic changes by<br/> interacting with CI/CD pipelines and executing deployment scripts.
+        - **Reporting Agent** 
+            Generates detailed reports summarizing the anomalies, root causes, and<br/> resolutions, and notifies stakeholders via email or other communication channels.
+
+- **Understand the Microsoft Agent Framework**
+    - What is the Microsoft Agent Framework?
+        Is designed to help developers build AI-powered agents that can process user inputs,
+        make decisions, and execute tasks autonomously by leveraging large language models and
+        traditional programming logic
+        - Core concepts
+            - Agents
+                Agents are intelligent, AI-driven entities capable of reasoning and 
+                executing tasks. 
+                They use large language models, tools, and conversation history to 
+                make decisions dynamically and respond to user needs.
+            - Agent orchestration
+                Multiple agents can collaborate towards a common goal using different
+                orchestration patterns.
+                The Microsoft Agent Framework supports several orchestration patterns with a 
+                unified interface for construction and invocation, allowing you to easily switch 
+                between patterns without rewriting your agent logic.
+        - Agent functionality
+            - Chat clients
+                Chat clients provide abstractions for connecting to AI services from different
+                providers under a common interface. 
+                Supported providers include Azure OpenAI, OpenAI, Anthropic, and more 
+                through the `BaseChatClient` abstraction.
+            - Tools and function integration
+                Tools enable agents to extend their capabilities through custom functions and 
+                built-in services. 
+                Agents can automatically invoke tools to integrate with external APIs, execute 
+                code, search files, or access web information. 
+                The framework supports both custom function tools and built-in tools like 
+                Code Interpreter, File Search, and Web Search.
+            - Conversation management
+                Agents can maintain conversation history across multiple interactions using 
+                `AgentSession`, allowing them to track previous interactions and adapt 
+                responses accordingly. 
+                The structured message system uses roles (USER, ASSISTANT, SYSTEM, TOOL) 
+                for persistent conversation context.
+
+    - Why you should use the Microsoft Agent Framework
+        - **Build autonomous AI agents faster**
+            Using a structured framework designed for intelligent, task-oriented workflows.
+        - **Support multi-agent collaboration**
+            Allowing specialized agents to work together on complex business processes.
+        - **Integrate agents from multiple sources**
+            Including Microsoft Foundry Agent Service and other AI ecosystems.
+        - **Enable human-in-the-loop interactions**
+            Where AI agents assist users with insights, recommendations, and automation while keeping humans in control.
+        - **Automate repetitive and operational tasks**
+            To improve efficiency and reduce manual effort.
+        - **Orchestrate sophisticated workflows**
+            By assigning different responsibilities to different agents, such as data gathering, analysis, and decision-making.
+        - **Remain provider-agnostic**
+            Making it possible to switch AI providers without rewriting application logic.
+        - **Increase flexibility and adaptability**
+            For evolving AI strategies and enterprise requirements.
+        - **Scale from simple chatbots to enterprise-grade AI systems**
+            Using the same framework architecture.
+        - **Simplify development and maintenance**
+            Through a unified platform for managing collaborative AI solutions.
+
+- **Understand agent orchestration**
+
+    - Why multi-agent orchestration matters
+        - Assign distinct skills, responsibilities, or perspectives to each agent.
+        - Combine outputs from multiple agents to improve decision-making and accuracy.
+        - Coordinate steps in a workflow so each agent’s work builds on the last.
+        - Dynamically route control between agents based on context or rules.
+
+    - Understand workflows in the Microsoft Agent Framework
+        - **Workflows**
+            Structured sequences of steps used to complete a task
+        - Can include one or more **AI agents**
+        - Can include other components
+        - Enable **multi-agent orchestration**
+        - Support **checkpointing** to save and 
+            resume workflow states
+
+    - Core Components of a Workflow
+        - Executors
+            - Executors are the main workers in a workflow
+            - Recieve input messages
+            - Perform specific actions
+            - Produce outputs that mov workflow toward
+                completing its goal
+            - Represent **AI agents** or **custom logic** components
+            - Example
+                <pre>
+                One executor could analyze a travel request, 
+                while another books the flight or hotel 
+                based on the results
+                </pre>
+        - Edges
+            - Define **how** messages flow between executors
+            - Determine the logic and order of execution
+            - Type of edges supported
+                - Direct edges
+                    - Connect one executor directly to another in sequence
+                    - Example
+                        <pre>
+                        After an AI agent gathers user input, the next executor processes the booking.
+                        </pre>
+                - Conditional Edges
+                    - Trigger only when certain conditions are met
+                    - Example
+                        <pre>
+                        If hotel rooms are unavailable, the workflow branches to an 
+                        executor that suggests alternative dates or locations
+                        </pre>
+                - Switch-Case Edges
+                    - Route messages to different executors based on 
+                        predefined conditions
+                    - Example
+                        <pre>
+                        VIP customers might be routed to a premium service executor, 
+                        while others follow the standard process
+                        </pre>
+                - Fan-Out Edges
+                    - Send a single message to multiple 
+                        executors simultaneously
+                    - Example
+                        <pre>
+                        One request could be sent to several agents -
+                        - one checking flights, another checking hotels
+                        </pre>
+                - Fan-In Edges
+                    - Combine multiple messages from different executors 
+                        into one for a final step
+                    - Example
+                        <pre>
+                        After gathering hotel and flight results, a 
+                        summary executor compiles them into a single travel itinerary
+                        </pre>
+        - Events
+            - Includes built-in events to improve **observability** and 
+                **debugging** during workflow execution
+            - Bring structure, flexibility, and transparency to agent-driven applications
+            - Help developers monitor 
+                - Progress
+                - Track errors
+                - Analyze system performance
+            - Examples
+                | Event Name | Description |
+                |:-|:-|
+                |WorkflowStartedEvent|Triggered when workflow execution begins.|
+                |WorkflowOutputEvent|Emitted when the workflow produces an output.|
+                |WorkflowErrorEvent|Occurs when an error is encountered.|
+                |ExecutorInvokeEvent|Fired when an executor starts processing a task.|
+                |ExecutorCompleteEvent|Fired when an executor finishes its work.|
+                |RequestInfoEvent|Logged when an external request is issued.|
+
+        - Supported orchestration patterns
+            - Concurrent orchestration
+                Broadcast the same task to multiple agents at once and collect their results independently. 
+                Useful for parallel analysis, independent subtasks, or ensemble decision making.
+            - Sequential orchestration
+                Pass the output from one agent to the next in a fixed order. 
+                Ideal for step-by-step workflows, pipelines, and 
+                progressive refinement.
+            - Handoff orchestration
+                Dynamically transfer control between agents based on context or rules. 
+                Great for escalation, fallback, and expert routing where one 
+                agent works at a time.
+            - Group chat orchestration
+                Coordinate a shared conversation among multiple agents (and optionally a human),
+                managed by a chat manager that chooses who speaks next.
+                Best for brainstorming, collaborative problem solving, and building consensus.
+            - Magentic orchestration
+                A manager-driven approach that plans, delegates, and adapts across specialized agents. 
+                Suited to complex, open-ended problems where the solution path evolves.
+
+    - A unified orchestration workflow
+        1. Define your agents and describe their capabilities.
+        2. Select and create an orchestration pattern, optionally adding a manager agent if needed.
+        3. Optionally configure callbacks or transforms for custom input and output handling.
+        4. Start a runtime to manage execution.
+        5. Invoke the orchestration with your task.
+        6. Retrieve results in an asynchronous, nonblocking way.
+
+- **Use concurrent orchestration**
+
+    - What is concurrent orchestration
+        - Lets multiple agents work on the same task at the same time
+        - Each agent handles the task independently
+        - Then their outputs are gathered and combined
+        - Works well when you want diverse approaches or solutions
+            - Brainstorming
+            - Group decision-making
+            - Voting
+        - When you need different approaches or ideas to solve the same problem
+        - All agents work at the same time
+        - Speeds up the process and covers the problem from many angles
+        - Usually, the results from each agent are combined to create a final answer, 
+            but this isn’t always necessary
+        - Agent can also produce its own separate result
+    
+    - When to use concurrent orchestration
+        - When tasks can run at the same time, 
+            either by using a fixed group of agents or by 
+            selecting AI agents dynamically based on what the task needs.
+        - When the task benefits from different specialized skills or 
+            approaches (for example, technical, business, or creative) that 
+            all work independently but contribute to solving the same problem.
+        - Common in multi-agent decision-making methods
+            - Brainstorming ideas
+            - Combining different reasoning methods (ensemble reasoning)
+            - Making decisions based on voting or consensus (quorum)
+            - Handling tasks where speed matters and running agents in parallel cuts down wait time
+
+    - When to avoid concurrent orchestration
+        - Agents need to build on each other's work or depend on 
+            shared context in a specific order.
+        - The task requires a strict sequence of steps or predictable, 
+            repeatable results.
+        - Resource limits, like model usage quotas, make running agents in 
+            parallel inefficient or impossible.
+        - Agents can't reliably coordinate changes to shared data or 
+            external systems while running at the same time.
+        - There's no clear way to resolve conflicts or contradictions between 
+            results from different agents.
+        - Combining results is too complicated or ends up 
+            lowering the overall quality.
+
+    - Implement concurrent orchestration
+        1. Create your chat client
+            Set up a chat client (for example, `AzureOpenAIChatClient`) with 
+            appropriate credentials to connect to your AI service provider.
+        2. Define your agents
+            Create agent instances using the chat client's `create_agent` method. 
+            Each agent should have specific instructions and a name that defines 
+            its role and expertise area.
+        3. Build the concurrent workflow
+            Use the `ConcurrentBuilder` class to create a workflow that can run 
+            multiple agents in parallel. 
+            Add your agent instances as participants using the `participants()` method, then call `build()` to create the workflow.
+        4. Run the workflow
+            Call the workflow's `run` method with the task or input you want the agents to work on. 
+            The workflow runs all agents concurrently and returns events containing the results.
+        5. Process the results
+            Extract the outputs from the workflow events using `get_outputs()`. 
+            The results contain the combined conversations from all agents, 
+            with each agent's response included in the final output.
+        6. Handle the aggregated responses
+            Process the aggregated messages from all agents. 
+            Each message includes the author name and content, allowing you to 
+            identify which agent provided each response.
+
+- **Use sequential orchestration**
+
+    - What is sequential orchestration
+        - Agents are arranged in a pipeline where each agent 
+            processes the task one after another
+        - The output from one agent becomes the input for the next
+        - Is ideal for workflows where each step depends on the previous one
+            - Document review
+            - Data transformation pipelines
+            - Multi-stage reasoning
+
+    - When to use sequential orchestration
+        - Processes made up of multiple steps that must happen in a specific order, 
+            where each step relies on the one before it.
+        - Data workflows where each stage adds something important that the next stage 
+            needs to work properly.
+        - Tasks where stages can't be done at the same time and must run one after another.
+        - Situations that require gradual improvements, like drafting, reviewing, and polishing content.
+        - Systems where you know how each agent performs and can handle delays or 
+            failures in any step without stopping the whole process.
+
+    - When to avoid sequential orchestration
+        - Stages can be run independently and in parallel without affecting quality.
+        - A single agent can perform the entire task effectively.
+        - Early stages may fail or produce poor output, and 
+            there's no way to stop or correct downstream processing based on errors.
+        - Agents need to collaborate dynamically rather than hand off work sequentially.
+        - The workflow requires iteration, backtracking, or dynamic routing based on 
+            intermediate results.
+
+    - Implement sequential orchestration
+        1. Create your chat client
+            Set up a chat client (for example, `AzureOpenAIChatClient`) with 
+            appropriate credentials to connect to your AI service provider.
+        2. Define your agents
+            Create agent instances using the chat client's `create_agent` method. 
+            Each agent should have specific instructions and a name that defines its role and 
+            expertise area in the pipeline.
+        3. Build the sequential workflow
+            Use the `SequentialBuilder` class to create a workflow that executes agents one after another. 
+            Add your agent instances as participants using the `participants()` method, then call `build()` to create the workflow.
+        4. Run the workflow
+            Call the workflow's `run_stream` method with the task or input you want the agents to work on. 
+            The workflow processes the task through all agents sequentially, with each agent's output becoming input for the next.
+        5. Process the workflow events
+            Iterate through the workflow events using an async loop. 
+            Look for `WorkflowOutputEvent` instances, which contain the results from the sequential processing.
+        6. Extract the final conversation
+            Collect the final conversation from the workflow outputs. 
+            The result contains the complete conversation history showing how each agent in the 
+            sequence contributed to the final outcome.
+
+- **Use group chat orchestration**
+
+    - What is group chat orchestration
+        - A collaborative conversation among multiple AI agents
+        - Optionally a human participant
+        - A central chat manager controls the flow
+            - Which agent responds next
+            - When to request human input
+        - Useful for
+            - Simulating meetings
+            - Debates
+            - Collaborative problem-solving
+            - Human-in-the-loop setups where a human 
+                may guide or intervene in the conversation
+            - Agents in this pattern don't directly 
+                change running systems
+
+    - When to use group chat orchestration
+        - Spontaneous or guided collaboration among agents (and possibly humans)
+        - Iterative maker-checker loops where agents take turns creating and reviewing
+        - Real-time human oversight or participation
+        - Transparent and auditable conversations since all output is collected in a single thread
+        - Common scenarios
+            - Creative brainstorming where agents build on each other's ideas
+            - Decision-making that benefits from debate and consensus
+            - Complex problems requiring cross-disciplinary dialogue
+            - Quality control and validation requiring multiple expert perspectives
+            - Content workflows with clear separation between creation and review
+
+    - When to avoid group chat orchestration
+        - Simple task delegation or straightforward linear pipelines suffice
+        - Real-time speed requirements make discussion overhead impractical
+        - Hierarchical or deterministic workflows are needed without discussion
+        - The chat manager can't clearly determine when the task is complete
+        - Managing conversation flow becomes too complex, especially with many agents 
+            (limit to three or fewer for easier control)
+
+    - Maker-checker loops
+        - One agent (the maker) proposes content or solutions
+        - Another agent (the checker) reviews and critiques them
+        - Checker can send feedback back to the maker
+        - This cycle repeats until the result is satisfactory
+        - Requires a turn-based sequence managed by the chat manager
+
+    - Implement group chat orchestration
+        1. Create your chat client
+            Set up a chat client (for example, `AzureOpenAIChatClient`) with 
+            appropriate credentials to connect to your AI service provider.
+        2. Define your agents
+            Create agent instances using the chat client's `create_agent` method. 
+            Each agent should have specific instructions and a name that defines its role and expertise area.
+        3. Build the group chat workflow
+            Use the `GroupChatBuilder` class to create a workflow that can run multiple agents in parallel. 
+            Add your agent instances as participants using the `participants()` method, then call `build()` to create the workflow.
+        4. Run the workflow
+            Call the workflow's run method with the task or input you want the agents to work on.
+            The workflow runs all agents concurrently and returns events containing the results.
+        5. Process the results
+            Extract the outputs from the workflow events using `get_outputs()`. 
+            The results contain the combined conversations from all agents, with each agent's 
+            response included in the final output.
+        6. Handle the aggregated responses
+            Process the aggregated messages from all agents. 
+            Each message includes the author name and content, allowing you to identify which agent provided each response.
+
+    - Customizing the group chat manager
+        - Create a custom group chat manager by extending the base `GroupChatManager` class
+        - Lets you control
+            - How conversation results are filtered or summarized
+            - How the next agent is selected
+            - When to request user input
+            - When to terminate the conversation
+        - Custom managers let you implement specialized logic tailored to your use case
+
+    - Group chat manager call order
+        1. `should_request_user_input`
+            Checks if human input is needed before the next agent responds.
+        2. `should_terminate`
+            Determines if the conversation should end (for example, max rounds reached).
+        3. `filter_results`
+            If ending, summarizes or processes the final conversation.
+        4. `select_next_agent`
+            If continuing, chooses the next agent to speak.
+        5. This ensures user input and termination conditions are handled before 
+            moving the conversation forward
+
+- **Use handoff orchestration**
+
+    - What is handoff orchestration
+        - Lets AI agents transfer control to one another based on the 
+            task context or user requests
+        - Is ideal for customer support, expert systems, or any situation 
+            where dynamic delegation is needed
+        - Fits scenarios where the best agent isn't known upfront or 
+            where the task requirements become clearer during processing
+
+    - When to use handoff orchestration
+        - Tasks need specialized knowledge or tools, but the number or order of agents can't be determined in advance.
+        - Expertise requirements emerge dynamically during processing, triggering task routing based on content analysis.
+        - Multiple-domain problems require different specialists working sequentially.
+        - You can define clear signals or rules indicating when an agent should transfer control and to whom.
+
+    - When to avoid handoff orchestration
+        - The involved agents and their order are known upfront and fixed.
+        - Task routing is simple and rule-based, not needing dynamic interpretation.
+        - Poor routing decisions might frustrate users.
+        - Multiple operations must run at the same time.
+        - Avoiding infinite handoff loops or excessive bouncing between agents is difficult.
+
+    - Implementing handoff orchestration
+        1. This routing is done using a switch-case structure that 
+            routes the task to different agents based on classification results
+        2. Set up data models and chat client
+            - Create your chat client for connecting to AI services
+            - Define Pydantic models for AI agents' structured JSON responses
+            - Create simple data classes for passing information between workflow steps
+            - Configure agents with specific instructions and response_format parameter for 
+            structured JSON output
+        3. Create specialized executor functions
+            - Input storage executor
+                Saves incoming data to shared state and forwards to classification agent
+            - Transformation executor
+                Converts agent's JSON response into typed routing object
+            - Handler executors
+                Separate executors for each classification outcome with guard conditions to 
+                verify correct message processing
+        4. Build routing logic
+            - Create factory functions that generate condition checkers for each classification value
+            - Design conditions to examine incoming messages and return true for specific classification results
+            - Use conditions with Case objects in switch-case edge groups
+            - Always include a Default case as fallback for unexpected scenarios
+        5. Assemble the workflow
+            - Use WorkflowBuilder to connect executors with regular edges
+            - Add switch-case edge group for routing based on classification results
+            - Configure workflow to follow first matching case or fall back to default
+            - Set up terminal executor to yield final output
+
+- **Use Magentic orchestration**
+
+    - What is magnetic orchestration
+        - Is a flexible, general-purpose multi-agent pattern designed for complex, 
+            open-ended tasks that require dynamic collaboration
+        - Uses a dedicated Magentic manager to coordinate a team of specialized agents
+        - The manager decides which agent should act next based 
+            - The evolving context
+            - Task progress
+            - Agent capabilities.
+        - Allows the system to break down complex problems, assign subtasks, and 
+            iteratively refine solutions
+        - Focuses as much on building and documenting the approach as it does on 
+            delivering the final solution
+
+    - When to use Magentic orchestration
+        - The problem is complex or open-ended with no predetermined solution path.
+        - Input and feedback from multiple specialized agents are needed to shape a valid solution.
+        - The system must generate a documented plan of approach for human review.
+        - Agents have tools that can directly interact with external systems and resources.
+        - A step-by-step, dynamically built execution plan adds value before running the tasks.
+
+    - When to avoid Magentic orchestration
+        - The solution path is fixed or deterministic.
+        - There's no need to produce a ledger or plan of approach.
+        - The task is simple enough for a more lightweight orchestration pattern.
+        - Speed is the priority, as this method emphasizes planning over fast execution.
+        - You expect frequent stalls or loops without a clear resolution path.
+
+    - Implementing Magentic orchestration
+        1. Define specialized agents
+            Create agent instances (for example, `ChatAgent`) with specific instructions and chat clients. 
+            Each agent should have a specialized role and capabilities suited for different aspects of the complex task.
+        2. Set up event handling callback
+            Define an async callback function to handle different types of events during orchestration, 
+            including orchestrator messages, agent streaming updates, agent messages, and final results.
+        3. Build the Magentic workflow
+            Use the `MagenticBuilder` class to create the orchestration. 
+            Add your agent instances as participants, configure the event callback with streaming mode, and 
+            set up the standard manager with appropriate parameters like max round count and stall limits.
+        4. Configure the standard manager
+            The standard manager coordinates agent collaboration using a chat client for planning and progress tracking. 
+            Configure parameters like maximum round count, stall count, and reset count to control the orchestration behavior.
+        5. Run the workflow
+            Call the workflow's `run_stream` method with your complex task. 
+            The workflow dynamically plans, delegates work to appropriate agents, and coordinates their collaboration to solve the problem.
+        6. Process workflow events
+            Iterate through the workflow events using an async loop. 
+            Handle different event types including `WorkflowOutputEvent`, which contains the final results from the orchestration.
+        7. Extract the final result
+            Collect the final output from the workflow events. 
+            The result contains the complete solution developed through the collaborative effort of all participating agents
+
+- **Key takeaways**
+    - Multi-agent systems offer significant advantages over single-agent architectures, 
+        especially in **scalability**, **specialization**, and **collaborative problem solving**.
+    - The Microsoft Agent Framework SDK enables the design and management of 
+        sophisticated multi-agent orchestration workflows.
+    - Different orchestration patterns serve different purposes and use cases
+        - **Concurrent orchestration** for parallel task execution
+        - **Sequential orchestration** for step-by-step workflows
+        - **Handoff orchestration** for transferring responsibility between agents
+        - **Group chat orchestration** for collaborative interactions among agents
+        - **Magnetic orchestration** for dynamic and adaptive coordination
+    - Choosing the correct orchestration pattern is essential for building efficient and maintainable AI solutions.
+    - The SDK provides a **unified interface** for
+        - Defining agents
+        - Running orchestrations
+        - Managing structured data
+        - Retrieving asynchronous results
+    - Asynchronous execution improves responsiveness and scalability in distributed AI systems.
+    - The framework helps developers build **flexible**, **reliable**, and **maintainable** enterprise-grade AI workflows.
+    - Multi-agent orchestration simplifies the implementation of complex business processes by 
+        distributing responsibilities across specialized agents.
+
+- **Further reading**
+    - [ Microsoft Agent Framework SDK documentation](https://learn.microsoft.com/en-us/agent-framework/overview/agent-framework-overview)
+
+
+- **Exercise - Develop a multi-agent solution**
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/08-agent-framework-multi-agents.html)
+
+
+### 9. [Discover Azure AI Agents with A2A](https://learn.MS.com/en-us/training/modules/discover-agents-with-a2a/)
+
+- **Introduction**
+    - AI agents are effective individually, but many real-world scenarios require **collaboration between multiple agents**.
+    -  Managing communication and coordination between distributed or remote agents manually can become **complex and inefficient**.
+    - The **Agent-to-Agent (A2A) protocol** provides a **standardized framework** for:
+        - Agent discovery
+        - Agent communication
+        - Coordinated task execution
+        - A2A enables **secure and seamless communication** between agents across different environments.
+    - The protocol allows developers to:
+        - Connect to remote agents easily
+        - Delegate tasks to the most appropriate agent
+        - Automate multi-agent workflows
+        - A routing agent can orchestrate workflows by passing outputs from one agent to another automatically.
+    - Example workflow:
+        - A title-generation agent creates blog headlines
+        - An outline-generation agent creates article structures
+        - A routing agent coordinates the interaction between both agents
+        - The module focuses on implementing the A2A protocol using Microsoft Azure AI Agents.
+    - Key practical skills covered include:
+        - Configuring routing agents
+        - Registering remote agents
+        - Building coordinated multi-agent workflows
+        - A2A improves the scalability, interoperability, and maintainability of collaborative AI systems.
+
+- **Define an A2A agent**
+
+    - What is Agent-to-Agent (A2A) protocol
+        - Is a standardized way for AI agents to communicate and 
+            collaborate with each other
+        - It defines
+            - How agents can share context
+            - Invoke each other's capabilities
+            - Exchange information securely
+        - Agents from different vendors or platforms can work together seamlessly, 
+            enabling more complex and integrated AI solutions
+        - Agent needs to explain what it can do
+            Agent Skills and how other agents or clients can discover those 
+            capabilities are exposed through an Agent Cardt
+
+    - Advantages of the Agent-to-Agent (A2A) protocol
+        - Enhanced Collaboration
+            A2A enables agents from different vendors and platforms to **share context and work together**, 
+            allowing seamless automation across systems that are traditionally disconnected.
+        - Flexible Model Selection
+            Each A2A agent can choose which large language model (LLM) to use for handling requests, 
+            enabling optimized or fine-tuned models per agent, unlike some MCP scenarios that rely on a 
+            single LLM connection.
+        - Integrated Authentication
+            Authentication is built into the A2A protocol, providing a robust security framework for 
+            secure agent-to-agent communication.
+
+    - Agent Skills
+        - Describes a specific capability or function that the agent can perform
+        - Key elements
+            - ID
+                A unique identifier for the skill.
+            - Name
+                A human-readable name describing the skill.
+            - Description
+                A detailed explanation of what the skill does.
+            - Tags
+                Keywords for categorization and easier discovery.
+            - Examples
+                Sample prompts or use cases to illustrate the skill in action.
+            - Input/Output Modes
+                Supported data formats or media types (for example, text, JSON).
+        - When defining a skill consider
+            - The tasks it should perform
+            - How to describe them clearly
+            - How other agents or clients might use them
+            - Example
+                <pre>
+                A simple "Hello World" skill could return a basic greeting in text format, 
+                whereas a blog-writing skill might accept a topic and return a suggested title or outline.
+                </pre>
+
+    - Agent Card
+        - Is like a digital business card for your agent
+        - It's a structured document that a routing agent or client can 
+            retrieve to discover your agent’s capabilities and how to interact with it
+        - Key elements
+            - Identity Information
+                Name, description, and version of the agent.
+            - Endpoint URL
+                Where the agent’s A2A service can be accessed.
+            - Capabilities
+                Supported A2A features such as streaming or push notifications.
+            - Default Input/Output Modes
+                The primary media types the agent can handle.
+            - Skills
+                A list of the agent’s skills that other agents can invoke.
+            - Authentication Support
+                Indicates if the agent requires credentials for access.
+        - Ensure it accurately represents your agent’s skills and endpoints
+
+    - Putting it together
+        - Once an agent defines its skills and publishes an Agent Card
+            - Other agents or clients can discover the agent automatically.
+            - Requests can be routed to the agent’s appropriate skill.
+            - Responses are returned in supported formats, enabling smooth collaboration across multiple agents.
+        - Example
+            <pre>
+            In a technical writer workflow, 
+            one agent could define skills for generating article titles, and 
+            another for creating outlines.
+            The routing agent retrieves each agent’s card to discover these capabilities and 
+            orchestrates a workflow where a title generated by one agent feeds into the 
+            outline agent, producing a cohesive final response.
+            </pre>
+
+- **Implement an agent executor**
+
+    - What is the Agent Executor
+        - Is a core component of an A2A agent
+        - Defines 
+            - How your agent processes incoming requests
+            - Generates responses
+            - Communicates with clients or other agents
+        - Is the bridge between the A2A protocol and 
+            your agent's specific business logic
+
+    - Understand the Agent Executor
+        - The `AgentExecutor` interface handles all 
+            incoming requests sent to your agent.
+        - Key responsibilities
+            - Execute tasks requested by users or other agents.
+                `RequestContext` to understand the incoming request
+            - Stream responses or send individual messages back to the client.
+                `EventQueue` to communicate results or events back to the client
+            - Handle task cancellation if supported.
+
+    - Implement the interface
+        - Execute
+            - Processes incoming requests and generates responses.
+            - Accesses request details (for example, user input, task context).
+            - Sends results back via an event queue, which may include messages, 
+                task updates, or artifacts.
+        - Cancel
+            - Handles requests to cancel an ongoing task.
+            - May not be supported for simple agents.
+
+    - Request handling flow
+        (Consider a "Hello World" agent workflow)
+        - The agent has a small helper class that implements its core logic (for example, returning a string).
+        - The executor receives a request and calls the agent’s logic.
+        - The executor wraps the result as an event and places it on the event queue.
+        - The routing mechanism sends the event back to the requester.
+        - A basic agent might only indicate that cancellation isn't supported
+
+- **Host an A2A server**
+
+    - Hosting an agent allows
+        - Expose its capabilities through its **Agent Card**, 
+            which clients and other agents can discover.
+        - Receive incoming A2A requests and forward them to 
+            **Agent Executor** for processing.
+        - Manage task lifecycles, including streaming responses and 
+            stateful interactions.
+        - The server acts as a bridge between your agent’s logic and 
+            the external world
+        - Hosting an A2A agent combines 
+            - The Agent Card
+            - Request handler
+            - Agent executor to make it available for 
+                client and agent interactions
+
+    - Core components of the agent server
+        - Agent Card
+            - Describes the agent’s capabilities, skills, and 
+                input/output modes.
+            - Exposed at a standard endpoint (typically `/.well-known/agent-card.json`) so 
+                clients and other agents can discover your agent.
+            - Can include multiple versions or an "extended" card for authenticated users.
+        - Request Handler
+            - Routes incoming requests to the appropriate methods on 
+                your **Agent Executor** (for example, execute or cancel).
+            - Manages the task lifecycle using a **Task Store**, which tracks tasks, 
+                streaming data, and resubscriptions.
+            - Even simple agents require a task store to handle interactions reliably.
+        - Server Application
+            - Built using a web framework (Starlette in Python) to handle HTTP requests.
+            - Combined with an Asynchronous Server Gateway Interface (ASGI) 
+                server &mdash; like Uvicorn &mdash; to start listening on a network interface and port.
+            - Exposes the agent card and request handler endpoints, enabling clients to 
+                interact with your agent.
+
+    - Set up the A2A agent server
+        1. Define your agent’s skills and Agent Card.
+        2. Initialize a request handler that links your Agent Executor with a Task Store.
+        3. Set up the server application, providing the Agent Card and request handler.
+        4. Start the server using an ASGI server (Uvicorn) to make it accessible on the network.
+        5. Once running, the agent listens for incoming requests and responds according to its defined skills. 
+
+- **Connect to your A2A agent**
+
+    - How a client can interact with A2A server
+        - A client acts as the bridge between the
+            application and the agent server
+        - Client responsibilities
+            - Discovering the Agent Card, which contains metadata about the 
+                agent and its endpoints.
+            - Sending requests to the agent for processing.
+            - Receiving and interpreting the agent's responses, which can be 
+                either direct messages or task-based results.
+
+    - Connect to your agent server
+        - The client must know the base URL of the server.
+        - The client typically retrieves the Agent Card from a 
+            well-known endpoint on the server.
+        - Once the Agent Card is obtained, the client can be 
+            initialized with it, establishing a connection ready to send messages.
+
+    - Send requests to the agent
+        - Non-Streaming Requests
+            The client sends a message and waits for a complete response. 
+            This type of request is suitable for simple interactions or 
+            when a single response is expected.
+        - Streaming Requests
+            The client sends a message and receives responses incrementally as the 
+            agent processes the request. 
+            This type of request is useful for long-running tasks or when you want to 
+            update the user in real-time.
+        - Requests usually include a role (for example, user) and the message content
+
+    - Handle the agent response
+        - Direct messages
+            Immediate outputs from the agent, such as text or structured content.
+        - Task-based responses
+            Objects representing ongoing tasks, which may require follow-up calls to 
+            check status or retrieve results.
+
+    - Interacting with the agent
+        - Each request should be uniquely identifiable, 
+            often using a generated ID.
+        - Streaming responses are asynchronous and 
+            may provide partial results before the final output.
+        - Simple agents may return messages directly, 
+            while more advanced agents may manage multiple tasks simultaneously.
+
+- **Key takeaways**
+    - The A2A Ecosystem
+        Connecting Python clients to Azure AI Agents relies on running an Agent-to-Agent (A2A) server, 
+        establishing a standard framework for cross-agent communication.
+    - Dynamic Discovery & Agent Cards
+        Agents utilize an Agent Card mechanism to be discovered and communicated with dynamically at 
+        runtime, eliminating rigid, hardcoded network configurations.
+    - Request Handling via Executors
+        Executors act as the core processing engine, managing and fulfilling incoming agent requests 
+        within the network.
+    - Bi-Directional Message Flow
+        The architecture natively supports both streaming and non-streaming message delivery patterns 
+        between clients and agents to accommodate different latency and data requirements.
+    - Distributed Task Delegation
+        Mastering these components allows developers to construct decentralized, flexible agent networks 
+        that can seamlessly delegate tasks and respond to complex requests across distributed environments.
+
+
+- **Exercise - Connect to remote Azure AI Agents with the A2A protocol**
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/09-multi-remote-agents-with-a2a.html)
+
+
+
+
+
+
 
 ## Develop natural language solutions in Azure
 
-- [`Documentação Oficial`](https://learn.microsoft.com/en-gb/training/paths/develop-language-solutions-azure-ai/)
 
-- **Azure Language in Microsoft Foundry Tools**
+- [`Documentação Oficial`](https://learn.MS.com/en-gb/training/paths/develop-language-solutions-azure-ai/)
+
+### 1. [Analyze text with Azure Language in Foundry Tools](https://learn.MS.com/en-us/training/modules/analyze-text-ai-language/)
+- **Azure Language in MS Foundry Tools**
 
     - Azure Language can be used for tasks like
         1. Language detection<br/>Determining the language in which text is written
@@ -3206,13 +6099,13 @@ markmap:
         5. Address
         6. Email
         7. URL
-        8. [Others](https://learn.microsoft.com/en-us/azure/ai-services/language-service/named-entity-recognition/concepts/named-entity-categories?tabs=ga-api)
+        8. [Others](https://learn.MS.com/en-us/azure/ai-services/language-service/named-entity-recognition/concepts/named-entity-categories?tabs=ga-api)
     
     - Example input for NER
         <pre><code>
             # Example text to analyze
-            documents = ["Microsoft was founded on April 4, 1975 by Bill Gates and Paul Allen in Albuquerque, New Mexico.",
-                        "Satya Nadella became CEO of Microsoft on February 4, 2014."]
+            documents = ["MS was founded on April 4, 1975 by Bill Gates and Paul Allen in Albuquerque, New Mexico.",
+                        "Satya Nadella became CEO of MS on February 4, 2014."]
             # Extract named entities
             response = client.recognize_entities(documents=documents)
             for doc in response:
@@ -3224,7 +6117,7 @@ markmap:
     - Response
         <pre>
             Entities in document 0:
-                Microsoft (Organization)
+                MS (Organization)
                 April 4, 1975 (DateTime)
                 Bill Gates (Person)
                 Paul Allen (Person)
@@ -3233,7 +6126,7 @@ markmap:
             Entities in document 1:
                 Satya Nadella (Person)
                 CEO (PersonType)
-                Microsoft (Organization)
+                MS (Organization)
                 February 4, 2014 (DateTime)
         </pre>
     
@@ -3296,6 +6189,8 @@ markmap:
         </pre>
 
 - **Exercise - Analyze text**
-    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-language/Instructions/Exercises/01-analyze-text.html)
+    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-language/Instructions/Exercises/01-analyze-text.html)
 
-- [`Documentação Language Service`](https://learn.microsoft.com/en-us/azure/ai-services/language-service/)
+- [`Documentação Language Service`](https://learn.MS.com/en-us/azure/ai-services/language-service/)
+
+## Extract insights from visual data on Azure
