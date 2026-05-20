@@ -9617,7 +9617,57 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
             A single-service resource used only with Document Intelligence.
         - <span>&#x1F4A1;</span> ==Create a Foundry resource if you plan to access multiple Foundry 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools under a single endpoint and key.
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For Document Intelligence access only, create a dedicated DIb resource.==
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For Document Intelligence access only, create a dedicated DI resource.==
+
+    - Input requirements
+        - Format must be
+            (The read model also accepts Microsoft Office file formats)
+            - JPEG
+            - PNG
+            - BMP
+            - PDF (text or scanned)
+            - TIFF
+        - File size must be 
+            - Less than 500 MB for the standard tier 
+            - 4 MB for the free tier.
+        - Image dimensions must be between 50 x 50 pixels and 10,000 x 10,000 pixels.
+        - PDF documents must have dimensions less than 17 x 17 inches (A3 paper size).
+        - PDF documents must not be password-protected.
+
+    - Learn more
+        - [What is Azure Document Intelligence?](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview)
+        - [Azure Document Intelligence model overview](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/model-overview)
+
+- **Use the Document Intelligence Studio**
+
+    - What is Document Intelligence Studio
+        - Is an online tool for visually exploring, understanding, and 
+            integrating features from the Document Intelligence service
+        - Use to 
+            - Analyze form layouts
+            - Extract data from prebuilt models
+            - Train custom models
+        - Access at [documentintelligence.ai.azure.com](https://documentintelligence.ai.azure.com/)
+
+    - Studio capabilities
+        - Document analysis models
+            Test the read and layout models against your own documents to see extracted text, 
+            tables, and structure.
+        - Prebuilt models
+            Analyze documents using any available prebuilt model, such as invoices, receipts,
+            ID documents, and tax forms.
+        - Custom models
+            Build, label, train, and test custom extraction models and custom classifiers.
+
+    - Analyze documents with prebuilt models
+        1. Create an Azure Document Intelligence or Foundry Tools resource in the Azure portal.
+        2. Open the Document Intelligence Studio and select a prebuilt model 
+            (for example, Invoice, Receipt, or ID Document).
+        3. Provide your resource endpoint and key.
+        4. Upload or provide a URL to the document you want to analyze.
+        5. Review the extracted fields and their confidence scores.
+
+
 
 
 ### 8. [Create a knowledge mining solution with Azure AI Search](https://learn.microsoft.com/en-us/training/modules/ai-knowldge-mining/)
