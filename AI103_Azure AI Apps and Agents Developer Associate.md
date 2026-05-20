@@ -8123,30 +8123,1501 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Extract insights from visual data on Azure
+
+### 1. [Develop a vision-enabled generative AI application](https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-vision-apps/)
+
+- **Introduction**
+    - Generative AI models are transforming how intelligent chat-based applications are developed.
+    - Modern AI systems can reason over user input and generate context-aware responses.
+    - Traditionally, generative AI relied mainly on **text-based prompts** for interaction.
+    - Advances in multimodal AI now allow models to process and understand **both text and visual content**.
+    - Vision-enabled generative AI expands the possibilities for creating richer and more interactive applications.
+    - Microsoft Foundry provides tools and services for building multimodal generative AI solutions.
+    - Developers can create applications that respond to prompts containing a combination of **text and image data**.
+    - Multimodal AI enables more natural, intuitive, and intelligent human-computer interactions.
+
+- **Use a vision-capable model in the Microsoft Foundry portal**
+
+    - Testing multimodal models with image-based prompts
+        - _Multimodal_ generative AI model supports inputs
+            - Text-based
+            - Image-based
+            - Audio-based
+        - Multimodels available in Foundry
+            - Microsoft Phi-4-multimodal-instruct
+            - OpenAI gpt-4.1
+            - OpenAI gpt-4.1-mini
+        - After deploying a multimodal model, you can test it in the 
+            chat playground
+        - In the chat playground, you can upload an image from a local file and 
+            add text to the message to elicit a response from a multimodal model.
+        - <span>&#x1F4A1;</span>==To learn more about available models in Microsoft Foundry, see the
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Microsoft Foundry Models overview](https://learn.microsoft.com/en-us/azure/foundry/concepts/foundry-models-overview)article in the Microsoft Foundry documentation.==
+
+- **Develop a vision-based chat app**
+
+    - Submit an image-based prompt using the **Responses API**
+        - Can use the same basic techniques 
+            used for text-based chats 
+        - Require a connection to the endpoint where the 
+            model is deployed
+        - Use that endpoint to submit prompts
+        - Prompts for a vision-based chat
+            - Include multi-part user messages
+            - Contain a _text_ content
+            - Contain a _image_ content
+        - Example
+            (submit an image in a prompt using the Responses API)
+            <pre><code>
+            # Read the image data from a local file
+            image_path = Path("dragon-fruit.jpeg")
+            image_format = "jpeg"
+            with open(image_path, "rb") as image_file:
+                image_data = base64.b64encode(image_file.read()).decode("utf-8")
+            &nbsp;
+            data_url = f"data:image/{image_format};base64,{image_data}" # You can also use a web URL
+            &nbsp;
+            # Send the image data in a prompt to the model
+            response = client.responses.create(
+                model="gpt-4.1",
+                input=[
+                    {"role": "developer", "content": "You are an AI assistant for chefs planning recipes."},
+                    {"role": "user", "content": [  
+                        { "type": "input_text", "text": "What desserts could I make with this?"},
+                        { "type": "input_image", "image_url": data_url}
+                    ] } 
+                ]
+            )
+            print(response.output_text)
+            </code><pre>
+
+    - Submit an image-based prompt using the **ChatCompletions API**
+        - Submit prompts to models that don't 
+            support the Responses API
+        - Example
+            <pre><code>
+            # Read the image data from a local file
+            image_path = Path("orange.jpeg")
+            image_format = "jpeg"
+            with open(image_path, "rb") as image_file:
+                image_data = base64.b64encode(image_file.read()).decode("utf-8")
+            &nbsp;
+            data_url = f"data:image/{image_format};base64,{image_data}" # You can also use a web URL
+            &nbsp;
+            # Send the image data in a prompt to the model
+            response = client.chat.completions.create(
+                model="Phi-4-multimodal-instruct",
+                messages=[
+                    {"role": "system", "content": "You are an AI assistant for chefs planning recipes."},
+                    { "role": "user", "content": [  
+                        { "type": "text", "text": "What can I make with this fruit?"},
+                        { "type": "image_url", "image_url": {"url": data_url}}
+                    ] }
+                ]
+            )
+            print(response.choices[0].message.content)
+            </code></pre>
+
+- **Further reading**
+    - [Images and vision](https://developers.openai.com/api/docs/guides/images-vision?format=url#analyze-images?azure-portal=true)
+
+- **Exercise - Develop a vision-enabled chat app**
+[&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-vision/Instructions/Exercises/01-gen-ai-vision.html)
+
+### 2. [Generate images with AI](https://learn.microsoft.com/en-us/training/modules/generate-images-azure-openai/)
+
+- **Introduction**
+    - Microsoft Foundry enables developers to use language models to generate content from natural language prompts.
+    - Generative AI is evolving beyond text generation to support the creation of visual and graphical content.
+    - Models such as OpenAI gpt-image-1 can generate original images based on descriptive prompts.
+    - AI-powered image generation allows users to transform ideas and descriptions into visual assets automatically.
+    - Generated graphics can range from illustrations to highly realistic photorealistic images.
+    - AI image generation has multiple business and creative applications, including
+        - Marketing and advertising materials
+        - Article and presentation illustrations
+        - Product and company logo creation
+        - Custom creative design assets
+    - Generative AI simplifies and accelerates the creative process by reducing the need for manual graphic design work.
+    - Natural language prompting makes image creation more accessible to users without advanced design skills.
+
+- **What are image-generation models?**
+
+    - Models that are capable of generating images
+        - The OpenAI gpt-image-1 series of models.
+        - The Black Forest Labs FLUX series of models.
+        - <span>&#x1F4A1;</span>==View the [Model catalog](https://ai.azure.com/catalog/models) for the full set of models available in Microsoft Foundry.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the Foundry portal you can filter by inference task to find _text to image_ models.==
+        - Image generation models are generative AI model that can 
+            create graphical data from natural language input.
+        - The images generated are original
+        - The model generates new images based on the 
+            data on which it was trained
+
+- **Explore image-generation models in Microsoft Foundry portal**
+
+    - How to explore
+        - Create a Microsoft Foundry project
+        - Use the model playground
+            - To submit prompts
+            - View the resulting generated images
+        - Can specify the resolution (size) of the 
+            generated images
+        - Can include a reference image for the 
+            model to base it's output on
+
+- **Create a client application that uses an image generation model**
+
+    - How to create a client app
+        - Use a language-specific SDK
+            (for example, the OpenAI Python SDK or the 
+            Azure OpenAI .NET SDK)
+        - Example
+            (usingthe OpenAI Images API)
+            <pre><code>
+            # Generate an image
+            img_results = client.images.generate(
+                model="FLUX.1-Kontext-pro",
+                prompt="A robot eating a cheeseburger.",
+                n=1,
+                size="1024x1024",
+            )
+            &nbsp;
+            # Save the generated image
+            image_data = base64.b64decode(img_results.data[0].b64_json)
+            with open("image.png", "wb") as image_file:
+                image_file.write(image_data)
+            </code></pre>
+            - Result
+                Binary stream containing the requested image
+
+
+- **Exercise - Generate images with AI**
+[&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-vision/Instructions/Exercises/02-generate-image.html)
+
+
+
+### 3. [Generate videos with Microsoft Foundry](https://learn.microsoft.com/en-us/training/modules/generate-video-with-foundry/)
+
+- **Introduction**
+    - Generative AI is rapidly evolving from text and image generation to **AI-powered video creation**.
+    - Microsoft Foundry integrates advanced video-generation capabilities through Sora 2.
+    - Sora 2 can generate realistic and creative video scenes using:
+        - Text prompts
+        - Reference images
+        - Existing videos for remixing and transformation
+    - AI-generated video enables faster and more accessible content creation for creative and business use cases.
+    - Effective prompt engineering plays a key role in producing high-quality and accurate video outputs.
+    - Developers can deploy and integrate Sora 2 into custom applications and workflows.
+    - The module demonstrates how to build video-generation solutions programmatically using the OpenAI SDK and Python.
+    - AI video generation opens opportunities for:
+        - Marketing and advertising content
+        - Storytelling and entertainment
+        - Educational media
+        - Creative prototyping and visualization
+    - Programmatic video generation enables automation, scalability, and integration into enterprise applications.
+
+- **Deploy a video generating model**
+
+    - Prerequisites
+        - Sora 2 is an AI model from OpenAI that 
+            creates realistic and imaginative video scenes from
+            - Text instructions
+            - Input images
+            - Existing videos
+        - Before deploying
+            - An Azure subscription
+            - Access to the Microsoft Foundry portal
+            - Foundry project where you have 
+                permissions to deploy models
+
+    - Deploy the Sora 2 model
+        1. Go to the [Microsoft Foundry portal](https://ai.azure.com/) and sign in with your credentials.
+        2. From the Foundry landing page, create or select a project.
+        3. Select **Build** from the navigation pane on the right.
+        4. Select **Models** from the left-hand menu to view the model catalog.
+        5. Use the search bar or filter options to find the **Sora-2** video generation model.
+        6. Select the **Sora-2** model then select **Deploy** and choose the appropriate deployment settings.
+        7. <span>&#x1F4A1;</span>==To learn more about available models in Microsoft Foundry, see the
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Model catalog and collections in Microsoft Foundry portal](https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/model-catalog-overview) article in the 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Microsoft Foundry documentation.==
+
+    - Sora 2 capabilities
+        | Feature | Description |
+        |:-|:-|
+        |Text to video|Generate videos from natural language text prompts|
+        |Image to video|Transform existing images into video content|
+        |Video remix|Make targeted adjustments to existing videos without<br/>regenerating from scratch|
+        |Audio generation|Supports audio generation in output videos|
+        |Multiple resolutions|Supports portrait (720×1280) and<br/>landscape (1280×720) formats|
+        |Variable duration|Generate videos of 4, 8, or 12 seconds|
+
+- **Generate video from a prompt**
+
+    - Video generation parameters
+        | Parameter | Description | Supported Values
+        |:-|:-|:-|
+        |prompt|Natural language description of<br/>your video|Text string (required)|
+        |model|The model to use|`sora-2` or `sora-2-pro`|
+        |size|Output resolution|`1280x720` (landscape),<br/>`720x1280` (portrait)|
+        |seconds|Video duration|`4`, `8`, or<br/>`12` (default: 4)|
+        |input_reference|Reference image for the first frame|JPEG, PNG, or<br/>WebP file|
+        |remix_video_id|ID of a previous video to remix|Video ID string|
+
+        <br/>
+
+        <span>&#x1F4A1;</span>==The model follows instructions more reliably in shorter clips. 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For best results, consider generating two 4-second clips and
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stitching them together rather than a single 8-second clip.==
+
+    - Test video generation in the playground
+        1. Navigate to your deployed Sora 2 model in the Foundry portal.
+        2. Select the **Playground** tab to access the video generation interface.
+        3. Enter your prompt into the text box describing the video you want to generate.
+        4. Configure video settings such as resolution and duration.
+        5. Select **Generate** to start video creation.
+        6. Video generation typically takes 1 to 5 minutes depending on your settings.
+        7. Can also view cURL code samples that are prefilled according to your settings
+        8. Select the View code button at the top of the playground to 
+            access sample code you can use in your applications.
+        9. <span>&#x1F4A1;</span>==The content generation APIs include a content moderation filter. 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If Azure OpenAI recognizes your prompt as harmful content, 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it won't return a generated video.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For more information, see [Content filtering](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/content-filter).==
+
+    - Writing effective prompts
+        - Prompt anatomy
+            - The more specific you are about what the shot should achieve~
+                the more control and consistency you'll get
+            - Camera framing
+                Specify the shot type (wide, medium, close-up) and angle
+            - Subject description
+                Anchor your subject with distinctive details
+            - Action
+                Describe movement in beats—small steps, gestures, or pauses
+            - Lighting and palette
+                Set the mood with lighting direction and color anchors
+            - Style
+                Establish the aesthetic early (for example, "1970s film" or "handheld documentary")
+
+        - Weak vs. strong prompts
+            | Weak prompt | Strong prompt |
+            |:-|:-|
+            |"A beautiful street at night"|"Wet asphalt, zebra crosswalk, neon signs reflecting in puddles"|
+            |"Person moves quickly"|"Cyclist pedals three times, brakes, and stops at crosswalk"|
+            |"Cinematic look"|"Anamorphic 2.0x lens, shallow DOF, volumetric light"|
+        
+        - Example prompt
+            <pre>
+            In a 90s documentary-style interview, an old Swedish man sits in a study 
+            and says, "I still remember when I was young."
+            </pre>
+            - Why it works
+                - "90s documentary" 
+                    sets the style, so the model chooses 
+                    appropriate camera, lighting, and color
+                - "old Swedish man sits in a study" 
+                    describes subject and setting while allowing 
+                    creative interpretation
+                - The dialogue gives the model specific words to 
+                    sync with the character
+
+    - Using reference images
+        - For more control over composition and style
+            use the `input_reference` parameter
+        - The model uses the image as an anchor for the 
+            first frame
+        - The prompt defines what happens next
+        - Requirements
+            - The image resolution must match the 
+                target video size (`1280x720` or `720x1280`)
+            - Supported formats
+                - JPEG
+                - PNG
+                - WebP
+
+    - Remixing existing videos
+        - The remix feature lets you modify specific aspects of an 
+            existing video while preserving its core elements
+            - Scene transitions
+            - Visual layout
+            - Overall structure
+        - To remix a video
+            1. Generate a video and note its video ID from the completed job
+            2. Call the remix endpoint with the original video ID and an updated prompt
+            3. Describe only the changes you want &mdash; keep modifications focused
+        - For best results
+            - Limit changes to one clearly articulated adjustment
+            - Be specific about what to change
+                - "same shot, switch to 85mm lens"
+                - "same lighting, new palette: teal, sand, rust"
+            - Narrow, precise edits retain greater fidelity to the source material
+
+    - Tips for better results
+        - Keep it simple
+            Each shot should have one clear camera move and one clear subject action
+        - Use beats for timing
+            Instead of "actor walks across the room," 
+            try "actor takes four steps to the window, pauses, and pulls the curtain"
+        - Be consistent
+            Reuse phrasing for characters across shots to maintain continuity
+        - Iterate
+            Small changes to camera, lighting, or 
+            action can shift outcomes dramatically &dash;
+            &dash; treat each generation as a creative variation
+
+- **Generate video in Python**
+
+    - Generate a video
+        - Video generation is an 
+            asynchronous process
+            - Submit a job
+            - Poll for completion
+            - Download the result
+        - Example
+            <pre><code>
+            import time
+            &nbsp;
+            # Create the video generation job
+            video = client.videos.create(
+                model="sora-2",
+                prompt="A robot walks through a rainy city street at dusk, neon signs reflecting in puddles",
+                size="1280x720",
+                seconds="4",
+            )
+            &nbsp;
+            print(f"Video creation started. ID: {video.id}")
+            &nbsp;
+            # Poll for completion
+            while video.status not in ["completed", "failed", "cancelled"]:
+                print(f"Status: {video.status}. Waiting...")
+                time.sleep(20)
+                video = client.videos.retrieve(video.id)
+            &nbsp;
+            # Download when complete
+            if video.status == "completed":
+                content = client.videos.download_content(video.id, variant="video")
+                content.write_to_file("output.mp4")
+                print("Video saved to output.mp4")
+            </code></pre>
+
+    - Generate video from a reference image
+        - To use an image as a starting frame, 
+            pass it to the `input_reference` parameter
+        - The image resolution must match the 
+            target video size
+        - Example
+            <pre><code>
+                video = client.videos.create(
+                    model="sora-2",
+                    prompt="The camera slowly pans across the landscape as clouds drift overhead",
+                    size="1280x720",
+                    seconds="4",
+                    input_reference=open("landscape.png", "rb"),
+                )
+            </code><pre>
+        - <span>&#x1F4A1;</span>==Reference images containing human faces are currently rejected. 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use images of landscapes, objects, or animated characters instead.==
+
+    - Remix an existing video
+        - Used to modify an existing video 
+            while preserving its structure
+            (use the original video's ID)
+        - Example
+            <pre><code>
+            video = client.videos.remix(
+                video_id="video_abc123",
+                prompt="Change the color palette to warm sunset tones",
+            )
+            </code></pre>
+
+    - Handle job states
+        | Status | Description |
+        |:-|:-|
+        |`queued`|Job is waiting to be processed|
+        |`in_progress`|Video is being generated|
+        |`completed`|Video is ready for download|
+        |`failed`|Generation failed (check `video.error` for details<br/>about what went wrong) |
+        |`cancelled`|Job was canceled|
+
+    - Key considerations
+        - Rate limits
+            You can run up to two video creation jobs simultaneously
+        - Job expiration
+            Completed videos are available for download for 24 hours
+        - Resolution requirements
+            Reference images must match the target video resolution exactly
+        - Content filtering
+            Prompts are subject to content moderation; harmful content won't generate
+
+- **Key takeaways**
+    - Deploy a Sora 2 video generation model in Microsoft Foundry
+    - Write effective prompts that describe camera framing, subject details, action, and lighting
+    - Use the Video playground to test video generation with different settings
+    - Generate videos from reference images and remix existing videos
+    - Build a Python application that creates videos programmatically using the OpenAI SDK
+
+- **Further reading**
+    - [Video generation with Sora](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/video-generation)
+
+- **Exercise - Generate video with Sora 2 in Microsoft Foundry**
+[&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-vision/Instructions/Exercises/03-generate-video.html)
+
+
+### 4. [Analyze images with Content Understanding](https://learn.microsoft.com/en-us/training/modules/analyze-images-with-content-understanding/)
+
+- **Introduction**
+    - Images, documents, and other unstructured content often 
+        contain valuable business information that is difficult to process automatically.
+    - Microsoft Azure Content Understanding uses generative AI to 
+        analyze and interpret unstructured data.
+    - The service transforms raw content into **structured and usable information**.
+    - Developers can define a custom **schema** that specifies the exact data to 
+        extract from documents and images.
+    - Azure Content Understanding automatically identifies and extracts the 
+        requested information based on the defined schema.
+    - Structured outputs can be integrated directly into:
+        - Automation workflows
+        - Analytics platforms
+        - Search applications
+        - Enterprise business processes
+    - Generative AI simplifies the extraction of insights from complex visual and 
+        document-based content.
+    - The platform helps organizations improve efficiency, reduce manual data 
+        processing, and accelerate decision-making.
+    - Content Understanding enables scalable document and image processing for 
+        modern AI-powered applications.
+
+- **What is Content Understanding?**
+
+    - Why use Content Understanding?
+        - Is a Foundry Tool that uses generative AI to 
+            process and extract insights from many types of content
+            - Documents
+            - Images
+            - Videos
+            - Audio
+        - Transforms unstructured data into structured, 
+            actionable output that you can integrate into 
+            automation and analytical workflows
+        - Key benifits
+            - Simplified workflows
+                Standardizes extraction and classification of content from 
+                various content types into a unified process
+            - Easy field extraction
+                Define a schema to extract, classify, or generate field values 
+                without complex prompt engineering
+            - Enhanced accuracy
+                Uses multiple AI models to analyze and cross-validate 
+                information simultaneously
+            - Confidence scores and grounding
+                Ensures accuracy of extracted values while minimizing the 
+                cost of human review
+            - Content classification
+                Categorize document types to streamline processing and 
+                route content to appropriate analyzers
+    
+    - Content Understanding components
+        | Components | Description |
+        |:-|:-|
+        |Inputs|Source content including documents, images,<br/>video, and audio|
+        |Analyzer|Defines how content is processed, including<br/>extraction settings and field schema|
+        |Content<br/>extraction|Transforms unstructured input into normalized text and<br/>metadata using OCR, speech transcription, and layout detection|
+        |Field<br/>extraction|Generates structured key-value pairs based on your defined schema|
+        |Confidence scores|Provides reliability estimates from 0 to 1 for<br/>each extracted field value|
+        |Grounding|Identifies specific regions in content where<br/>each value was extracted|
+        |Structured output|Final result as Markdown for search scenarios or<br/>JSON for automation workflows|
+
+    - Analyzers
+        - Content Understanding offers two types
+            - Prebuilt analyzers
+                Ready-to-use analyzers designed for common scenarios like
+                invoice processing, receipt extraction, and call center analytics
+            - Custom analyzers
+                Tailored analyzers you create with your own field schema for 
+                specific business needs
+        - Configurations
+            - The base analyzer type (document, image, audio, or video)
+            - The AI models to use for processing
+            - The field schema that defines what data to extract
+            - Options like confidence scoring and content segmentation
+
+    - Use cases
+        | Use cases | Description |
+        |:-|:-|
+        |Intelligent document<br/>processing|Convert unstructured documents into structured data for invoice processing,<br/>contract analysis, and claims management|
+        |Search and RAG|Ingest multimodal content into search indexes with figure<br/>descriptions and layout analysis|
+        |Agentic applications|Transform messy file inputs into predictable, standardized<br/>inputs for AI agents|
+        |Analytics and<br/>reporting|Extract field outputs to gain insights and make informed decisions|
+
+    - Content restrictions
+        - Content Understanding includes built-in **Responsible AI** protectionsy
+        - Integrates** Azure AI Content Safety** to detect and prevent harmful content
+        - Guidelines
+            - Content is filtered for harmful material including violence, 
+                hate speech, and exploitation
+            - Face description capabilities can identify facial attributes in 
+                video and image content
+            - Biometric data processing requires appropriate notice and 
+                consent from data subjects
+
+- **Analyze images with Content Understanding**
+
+    - Supported image formats
+        - Content Understanding can analyze images to 
+            - Extract structured data
+            - Identify visual elements
+            - Generate descriptions
+        - Image input types
+            | Format | Description |
+            |:-|:-|
+            |JPEG|Standard photographic images|
+            |PNG|Images with transparency support|
+            |BMP|Bitmap images|
+            |TIFF|High-quality scanned documents|
+            |HEIF|High-efficiency image format|
+            |PDF|Single or multi-page documents with embedded images|
+
+    - Prebuilt image analyzers
+        - prebuilt-image
+            General-purpose image analysis with content extraction and figure description
+        - prebuilt-receipt
+            Extract vendor names, items, totals, and dates from receipt images
+        - prebuilt-invoice
+            Extract invoice details including line items, amounts, and vendor information
+        - prebuilt-idDocument
+            Extract information from identity documents like driver's licenses and passports
+
+    - Define a field schema for images
+        - To extract specific information from images, 
+            define a field schema that describes the data you want
+        - Each field can use one of
+            | Method | Description | Example |
+            |:-|:-|:-|
+            |extract|Pull values directly as they appear in the image|Extract text from a label or sign|
+            |classify|Categorize content from predefined options|Classify image as "damaged" or "undamaged"|
+            |generate|Create values based on image analysis|Generate a description of the scene|
+        - Example
+            <pre><code>
+            {
+                "description": "Product image analyzer",
+                "baseAnalyzerId": "prebuilt-image",
+                "fieldSchema": {
+                    "fields": {
+                    "ProductName": {
+                        "type": "string",
+                        "method": "extract",
+                        "description": "Name of the product visible in the image"
+                    },
+                    "Condition": {
+                        "type": "string",
+                        "method": "classify",
+                        "description": "Condition of the product",
+                        "enum": ["new", "used", "damaged"]
+                    },
+                    "Description": {
+                        "type": "string",
+                        "method": "generate",
+                        "description": "Brief description of what the image shows"
+                    }
+                    }
+                }
+            }
+            </code></pre>
+
+    - Analyze an image
+        - Install Python SDK, with `pip`
+            <pre>
+            pip install azure-ai-contentunderstanding
+            </pre>
+    - Example
+        (To submit a request to the analyze endpoint)
+        <pre><code>
+        from azure.ai.contentunderstanding import ContentUnderstandingClient
+        from azure.ai.contentunderstanding.models import AnalysisInput, AnalysisResult
+        from azure.core.credentials import AzureKeyCredential # for key-based authentication
+        from azure.identity import DefaultAzureCredential # for Entra ID authentication
+        &nbsp;
+        # Get a client
+        credential = AzureKeyCredential(key)
+        client = ContentUnderstandingClient(endpoint={FOUNDRY_ENDPOINT},
+                                            credential={KEY_OR_IDENTITY},
+                                            api_version="2025-11-01")
+        &nbsp;
+        # Analyze an image file
+        with open("my_image.png", "rb") as f:
+                    file_bytes = f.read()
+        &nbsp;
+        try:
+            poller = client.begin_analyze(
+                analyzer_id={ANALYSER_ID},
+                inputs=[AnalysisInput(data=file_bytes)],
+            )
+            # Get results asynchronously from poller
+            result: AnalysisResult = poller.result()
+        &nbsp;
+            # Display results
+            result_str = json.dumps(result.as_dict(), indent=2)
+            print (result_str)
+        &nbsp;
+        except Exception as ex:
+            print(f"[Unexpected Error]: {ex}")
+            sys.exit(1)
+        </code></pre>
+        - Result
+            (include the extracted content)
+            <pre><code>
+            {
+                "contents": [
+                    {
+                    "markdown": "Product label showing 'Contoso Widget Pro' with serial number...",
+                    "fields": {
+                        "ProductName": {
+                        "type": "string",
+                        "valueString": "Contoso Widget Pro",
+                        "confidence": 0.95,
+                        "source": "D(1,100,50,300,50,300,80,100,80)"
+                        },
+                        "Condition": {
+                        "type": "string",
+                        "valueString": "new",
+                        "confidence": 0.89
+                        },
+                        "Description": {
+                        "type": "string",
+                        "valueString": "A silver electronic device in retail packaging with product label visible"
+                        }
+                    }
+                    }
+                ]
+            }
+            </code></pre>
+
+            <br/>
+
+            - markdown
+                A text representation of the image content, useful for search and RAG scenarios
+            - fields
+                Extracted field values matching your schema, each with a confidence score
+            - source
+                Grounding information showing where in the image each value was found
+            
+    - Use confidence scores
+        - Each extracted field includes a 
+            confidence score from 0 to 1
+            - High confidence (0.9+)
+                Value can be trusted for automated processing
+            - Medium confidence (0.7-0.9)
+                Consider human review for critical applications
+            - Low confidence (<0.7)
+                Recommend manual verification
+        - Use confidence scores to 
+            build automation workflows that route
+            - Low-confidence extractions to human reviewers
+            - Processing high-confidence results automatically
+
+    - Tips for better image analysis
+        - Image quality matters
+            Higher resolution images produce more accurate extractions
+        - Lighting and contrast
+            Ensure text and visual elements are clearly visible
+        - Single focus
+            Images with one clear subject yield better results than cluttered scenes
+        - Consistent orientation
+            Upright images are processed more reliably than rotated ones
+
+- **Further reading**
+    - [What is Azure Content Understanding?](https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/overview)
+
+- **Exercise - Analyze images with Content Understanding**
+[&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-vision/Instructions/Exercises/04-content-understanding.html)
+
+### 5. [Create a multimodal analysis solution with Azure Content Understanding](https://learn.microsoft.com/en-us/training/modules/analyze-content-ai/)
+
+- **Introduction**
+
+    - Modern organizations store valuable information across multiple types of content, 
+        including documents, images, videos, and audio recordings.
+    - Extracting meaningful information from unstructured content is often complex, time-consuming, and resource-intensive.
+    - Traditional content analysis solutions frequently require multiple technologies to 
+        process different file formats and media types.
+    - Microsoft Azure Content Understanding simplifies content analysis through a 
+        unified multimodal AI service.
+    - The platform can analyze and extract information from content in 
+        **practically any format**.
+    - Azure Content Understanding enables the creation of AI-powered analyzers without the 
+        need for separate tools for each media type.
+    - Multimodal AI capabilities improve efficiency by centralizing document, image, video, and 
+        audio analysis into a single solution.
+    - Organizations can accelerate automation, search, analytics, and 
+        knowledge extraction processes using structured outputs from unstructured content.
+    - The service reduces development complexity while improving scalability and 
+        maintainability for enterprise AI solutions.
+
+- **What is Azure Content Understanding?**
+
+    - Multimodal content analysis
+        - Azure Content Understanding is a generative AI service that you can 
+            use to extract insights and data from multiple kinds of content
+        - Need to provision a Microsoft Foundry resource in 
+            Azure subscription
+        - Can develop and manage
+            - In the Microsoft Foundry portal
+            - In Content Understanding Studio
+            - Using the Content Understanding API
+        - Documents and forms
+            - Can analyze documents and forms and 
+                retrieve specific field values
+            - Example
+                Extract key data values from an invoice to 
+                automate payment processing
+        - Images
+            - Can analyze images to 
+                infer information from visuals 
+                - Charts
+                - Identify physical defects in products or other items
+                - Detect the presence of specific objects or people
+                - Determine other information visually
+        - Audio
+            - Enables to automate tasks
+                - Summarizing conference calls
+                - Determining sentiment of recorded 
+                    customer conversations
+                - Extracting key data from telephone messages
+        - Video
+            - Can analyze and extract 
+                insights from video to
+                -  Extract key points from video conference recordings
+                - Summarize presentations
+                - Detect the presence of specific activity in security footage
+
+- **Create a Content Understanding analyzer**
+
+    - What is an _analyzer_?
+        - Solutions are based on the creation of an _analyzer_
+        - Trained to **extract specific information** from a 
+            particular **type of content** based on a 
+            user defined **schema**
+        - Process for creating a Content Understanding solution
+            1. Create a Foundry resource.
+            2. Define a Content Understanding schema for the information to be extracted. 
+                This can be based on a content sample and an analyzer template.
+            3. Build an analyzer based on the completed schema.
+            4. Use the analyzer to extract or generate fields from new content.
+            5. Can use minimal training data to define a schema by example
+
+    - Creating an analyzer with 
+        Content Understanding Studio
+        - Provides a visual interface to create a project
+        - Define a Content Understanding schema
+        - Build and test an analyzer
+        - <span>&#x1F4A1;</span>==Only certain prebuilt models are available for use 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directly in the Microsoft Foundry portal.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For custom analyzer creation and testing, 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use [Content Understanding Studio](https://ai.azure.com/contentunderstanding).==
+
+    - Creating a Content Understanding project
+        - Resources needed
+            - Storage a
+            - Key vault resource to store
+                - Credentials
+                - Keys
+        - <span>&#x1F4A1;</span>==Content Understanding schemas can only be created in 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Azure locations where the service is supported.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For more information, see [Content Understanding region and language support](https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/language-region-support).==
+
+    - Defining a schema
+        -  For the content the analyzer will process, and 
+            the information it will extract
+        - Use schema editor interface
+        - Upload a file
+            - Document
+            - Image
+            - Audio
+            - Video
+        - Apply an appropriate schema template
+        - Define the specific fields you want
+            the analyzer to identify
+        - <span>&#x1F4A1;</span>==The templates and field types available in a schema depend on the 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content type of the file on which the schema is based.  
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Some content types support additional optional functionality, such as 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extracting barcodes and formulae from text in documents.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For more information about using Content Understanding with different 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content types, see the following articles in the product documentation:
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Content Understanding document solutions](https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview)
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Content Understanding image solutions](https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/image/overview)
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Content Understanding audio solutions](https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/audio/overview)
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Content Understanding video solutions](https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/video/overview)==
+
+    - Testing
+        - Running analysis on the sample file used to 
+            define the schema or other uploaded files
+        - Results include the extracted field values and the 
+            JSON format output returned by the analyzer to 
+            client applications
+
+    - Building an analyzer
+        - Building an analyzer makes it accessible to client applications 
+            through the endpoint for the Microsoft Foundry resource 
+            associated with your project
+        - Can continue to test it in Content Understanding Studio, and 
+            refine the schema to create new named versions 
+            with different capabilities
+
+- **Use the Content Understanding API**
+
+    - Using the API to analyze content
+        - How to use
+            - Client application submits HTTP calls to the 
+                Content Understanding endpoint for Foundry resource
+            - Passing one of the authorization keys in the header
+            - Obtain the endpoint and keys in 
+                - Azure portal
+                - Microsoft Foundry portal
+        - Common uses of the API is 
+            - Submit content to an existing analyzer that 
+                you have previously built
+            - Retrieve the results of analysis
+            - Analysis request returns an operation ID value 
+                that represents an asynchronous task
+            - Client application must then use another request to 
+                pass the operation ID back to the endpoint
+            - Retrieve the operation status
+            - Results are returned in JSON format
+        - Example
+            <pre><code>
+            POST {endpoint}/contentunderstanding/analyzers/{analyzer}:analyze?api-version=2025-11-01
+            {
+            "inputs": [
+                {
+                "url": "https://host.com/doc.pdf"
+                }
+            ]
+            }
+            </code></pre>
+            - <span>&#x1F4A1;</span>==You can specify a URL for the content file location as shown here. 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To submit binary file data directly, use the `analyzeBinary` 
+            operation instead.==
+            - Response
+                <pre><code>
+                Operation-Id: 1234abcd-1234-abcd-1234-abcd1234abcd
+                Operation-Location: {endpoint}/contentunderstanding/analyzerResults/1234abcd-1234-abcd-1234-abcd1234abcd?api-version=2025-11-01
+                {
+                "id": "1234abcd-1234-abcd-1234-abcd1234abcd",
+                "status": "NotStarted"
+                }
+                </code></pre>
+            - Check status
+                <pre><code>
+                GET {endpoint}/contentunderstanding/analyzerResults/1234abcd-1234-abcd-1234-abcd1234abcd?api-version=2025-11-01
+                </code></pre>
+            - Success operation
+                - The response contains a JSON payload 
+                    representing the results of the analysis
+            - <span>&#x1F4A1;</span>==For more information about the Content Understanding API,
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;see the [reference documentation](https://learn.microsoft.com/en-us/rest/api/contentunderstanding/operation-groups).==
+
+- **Further reading**
+    - [Azure Content Understanding documentation](https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/)
+
+- **Exercise - Extract information from multimodal content**
+[&rarr;     saber &plus;](https://microsoftlearning.github.io/mslearn-ai-information-extraction/Instructions/Exercises/01-content-understanding.html)
+
+### 6. [Create an Azure Content Understanding client application](https://learn.microsoft.com/en-us/training/modules/analyze-content-ai-api/)
+
+- **Introduction**
+    -  Microsoft Azure Content Understanding is a multimodal AI service 
+        designed to extract information from various content formats.
+    - The platform supports analysis of
+        - Documents
+        - Images
+        - Audio files
+        - Videos
+    - Azure Content Understanding simplifies the development of AI-powered 
+        content analyzers for enterprise applications.
+    - Developers can integrate the service into custom applications using
+        - The Python SDK
+        - REST APIs
+    - The module focuses on building client applications that interact 
+        programmatically with Azure Content Understanding services.
+    - Using the Python SDK and REST API, developers can:
+        - Submit content files for analysis
+        - Retrieve structured results
+        - Process extracted information automatically
+    - The service enables automation of content processing workflows and 
+        reduces manual data extraction efforts.
+    - Multimodal analysis capabilities help organizations unlock insights from 
+        unstructured data across multiple media types.
+    - Programmatic integration supports scalable, flexible, and 
+        maintainable AI-driven solutions.
+
+- **Prepare to use the AI Content Understanding API**
+
+    - How to start
+        - Create a **Microsoft Foundry resource** 
+            in the Azure portal.
+        - Create a **Microsoft Foundry project**, 
+            which includes a Microsoft Foundry resource by default.
+        - After provisioned a Microsoft Foundry resource
+            - The Microsoft Foundry resource _endpoint_
+            - One of the API _keys_ associated with the endpoint
+            - Mcrosoft Azure Portal > Resource Management > Keys and Endpoint > Content Understanding (tab)
+
+    - Installing the Python SDK
+        - To use the Python SDK
+            <pre>
+            pip install azure-ai-contentunderstanding
+            </pre>
+        - <span>&#9872;</span> ==The Python SDK requires Python 3.9 or later.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also use the REST API directly from any 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;language that supports HTTP requests.==
+        - <span>&#9888;</span> ==Before using the Content Understanding API, you must set up 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default model deployments for your Microsoft Foundry resource.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Content Understanding requires `GPT-4.1`, `GPT-4.1-mini`, and 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`text-embedding-3-large` model deployments.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can configure these in the Azure portal or by using the API.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For more information, see [Set up model deployments](https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/how-to/migration-preview-to-ga#prerequisites).==
+        - <span>&#x1F4A1;</span> ==To learn more about programming with the Microsoft Foundry SDK,
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;complete the[ Develop an AI app with the Microsoft Foundry SDK](https://learn.microsoft.com/en-us/training/modules/ai-foundry-sdk/) module.==
+
+- **Create a Content Understanding analyzer**
+
+    - Defining a schema for an analyzer
+        - Analyzers are based on schemas that define the fields
+        - Schema is a set of fields, which can be 
+            specified in a JSON document
+        - Example
+            <pre><code>
+            {
+                "description": "Simple business card",
+                "baseAnalyzerId": "prebuilt-document",
+                "config": {
+                    "returnDetails": true
+                },
+                "fieldSchema": {
+                    "fields": {
+                        "ContactName": {
+                            "type": "string",
+                            "method": "extract",
+                            "description": "Name on business card"
+                        },
+                        "EmailAddress": {
+                            "type": "string",
+                            "method": "extract",
+                            "description": "Email address on business card"
+                        }
+                    }
+                },
+                "models": {
+                    "completion": "gpt-4.1",
+                    "embedding": "text-embedding-3-large"
+                }
+            }
+            </code></pre>
+            - Decoding
+                - Custom analyzer schema
+                - Based on the pre-built document analyzer
+                - Describes two fields that would expect to 
+                    find on a business card
+                    - _ContactName_
+                        - Defined as string data types
+                        - Expected to be _extracted_ from a document
+                    - _EmailAddress_
+                        - Defined as string data types
+                        - Expected to be _extracted_ from a document
+                - The `models` object specifies the generative models that the 
+                analyzer uses for processing
+                - <span>&#9872;</span> ==example is deliberately simple, with the minimal information 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;needed to create a working analyzer.
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In reality, the schema would likely include more fields of different types,
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and the analyzer definition would include more configuration settings.
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The JSON might even include a sample document.
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;See the [Azure Content Understanding API documentation](https://learn.microsoft.com/en-us/rest/api/contentunderstanding/content-analyzers/create-or-replace) for more details.==
+
+
+    - Using the Python SDK to create an analyzer
+        - With your analyzer definition in place,
+            can use the Python SDK to create the analyzer
+        - `ContentUnderstandingClient` class provides a `begin_create_analyzer` method that 
+            handles the asynchronous creation process
+        - Example
+            <pre><code>
+            from azure.ai.contentunderstanding  import ContentUnderstandingClient
+            from azure.core.credentials         import AzureKeyCredential
+            &nbsp;
+            # Authenticate the client
+            endpoint = "<YOUR_ENDPOINT>"
+            credential = AzureKeyCredential("<YOUR_API_KEY>")
+            client = ContentUnderstandingClient(endpoint=endpoint, credential=credential)
+            &nbsp;
+            # Define the analyzer
+            analyzer_name = "business_card_analyser"
+            analyzer_definition = {
+                "description": "Simple business card",
+                "baseAnalyzerId": "prebuilt-document",
+                "config": {"returnDetails": True},
+                "fieldSchema": {
+                    "fields": {
+                        "ContactName": {
+                            "type": "string",
+                            "method": "extract",
+                            "description": "Name on business card"
+                        },
+                        "EmailAddress": {
+                            "type": "string",
+                            "method": "extract",
+                            "description": "Email address on business card"
+                        }
+                    }
+                },
+                "models": {
+                    "completion": "gpt-4.1",
+                    "embedding": "text-embedding-3-large"
+                }
+            }
+            &nbsp;
+            # Create the analyzer and wait for completion
+            poller = client.begin_create_analyzer(analyzer_name, body=analyzer_definition)
+            result = poller.result()
+            print(f"Analyzer created: {result.analyzer_id}")
+            </code></pre>
+
+    - Using the REST API to create an analyzer
+        - Can use the REST API directly
+        - The JSON data is submitted as a `PUT` request to the 
+            endpoint with the API key in the request header to 
+            start the analyzer creation operation
+        - The response from the `PUT` request includes a **Operation-Location** in the 
+            header, which provides a _callback_ URL that you can use to check on the 
+            status of the request by submitting a `GET` request.
+        - Example
+            <pre><code>
+            import json
+            import requests
+            &nbsp;
+            # Get the business card schema
+            with open("card.json", "r") as file:
+                schema_json = json.load(file)
+            &nbsp;
+            # Use a PUT request to submit the schema for a new analyzer
+            analyzer_name = "business_card_analyser"
+            &nbsp;
+            headers = {
+                "Ocp-Apim-Subscription-Key": "<YOUR_API_KEY>",
+                "Content-Type": "application/json"}
+            &nbsp;
+            url = f"{<YOUR_ENDPOINT>}/contentunderstanding/analyzers/{analyzer_name}?api-version=2025-11-01"
+            &nbsp;
+            response = requests.put(url, headers=headers, data=json.dumps(schema_json))
+            &nbsp;
+            # Get the response and extract the ID assigned to the operation
+            callback_url = response.headers["Operation-Location"]
+            &nbsp;
+            # Use a GET request to check the status of the operation
+            result_response = requests.get(callback_url, headers=headers)
+            &nbsp;
+            # Keep polling until the operation is complete
+            status = result_response.json().get("status")
+            while status == "Running":
+                result_response = requests.get(callback_url, headers=headers)
+                status = result_response.json().get("status")
+            &nbsp;
+            print("Done!")
+            </code></pre>
+
+- **Analyze content**
+
+    - Using the Python SDK
+        - To analyze the contents of a file, you can use the 
+            Azure Content Understanding API to submit it to the endpoint
+        - Can specify the content as a URL
+            (for a file hosted in an Internet-accessible location)
+        - Can upload binary file data directly 
+            (for example, a `.pdf` document, a `.png` image, 
+            an `.mp3` audio file, or an `.mp4` video file)
+        - The analysis request includes the analyzer to be used.
+        - Analysis is an asynchronous operation
+        - After submitting the request
+            - Receive an operation ID
+                - Use to check the status
+                - Retrieve the results when the 
+                    operation is complete
+        - Example
+            <pre><code>
+            from azure.ai.contentunderstanding          import ContentUnderstandingClient
+            from azure.ai.contentunderstanding.models   import AnalysisInput
+            from azure.core.credentials                 import AzureKeyCredential
+            &nbsp;
+            # Authenticate the client
+            endpoint = "<YOUR_ENDPOINT>"
+            credential = AzureKeyCredential("<YOUR_API_KEY>")
+            client = ContentUnderstandingClient(endpoint=endpoint, credential=credential)
+            &nbsp;
+            # Analyze the business card using the custom analyzer
+            analyzer_name = "business_card_analyser"
+            poller = client.begin_analyze(
+                analyzer_id=analyzer_name,
+                inputs=[AnalysisInput(url="https://host.com/business-card.png")]
+            )
+            &nbsp;
+            # Wait for the operation to complete and get the results
+            result = poller.result()
+            &nbsp;
+            # Extract field values from the results
+            content = result.contents[0]
+            if content.fields:
+                for field_name, field_data in content.fields.items():
+                    if field_data.type == "string":
+                        print(f"{field_name}: {field_data.value}")
+            </code></pre>
+
+            <br/>
+
+            <span>&#x1F4A1;</span> ==The SDK's `begin_analyze` method returns a poller object.
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calling `.result()` on the poller automatically handles 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;polling until the operation completes, so you don't need to 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write your own polling loop.==
+
+    - Using the REST API
+        - Client application submits HTTP calls to the 
+            Content Understanding endpoint, passing an API key in the header
+        - Example
+            <pre><code>
+            import json
+            import requests
+            &nbsp;
+            ## Use a POST request to submit the file URL to the analyzer
+            analyzer_name = "business_card_analyser"
+            &nbsp;
+            headers = {
+                    "Ocp-Apim-Subscription-Key": "<YOUR_API_KEY>",
+                    "Content-Type": "application/json"}
+            &nbsp;
+            url = f"{<YOUR_ENDPOINT>}/contentunderstanding/analyzers/{analyzer_name}:analyze?api-version=2025-11-01"
+            &nbsp;
+            request_body = {
+                "inputs": [
+                    {
+                        "url": "https://host.com/business-card.png"
+                    }
+                ]
+            }
+            &nbsp;
+            response = requests.post(url, headers=headers, json=request_body)
+            &nbsp;
+            # Get the response and extract the ID assigned to the analysis operation
+            response_json = response.json()
+            id_value = response_json.get("id")
+            &nbsp;
+            # Use a GET request to check the status of the analysis operation
+            result_url = f"{<YOUR_ENDPOINT>}/contentunderstanding/analyzerResults/{id_value}?api-version=2025-11-01"
+            &nbsp;
+            result_response = requests.get(result_url, headers=headers)
+            &nbsp;
+            # Keep polling until the analysis is complete
+            status = result_response.json().get("status")
+            while status == "Running":
+                    result_response = requests.get(result_url, headers=headers)
+                    status = result_response.json().get("status")
+            &nbsp;
+            # Get the analysis results
+            if status == "Succeeded":
+                result_json = result_response.json()
+            </code></pre>
+
+            <br/>
+
+            <span>&#x1F4A1;</span> ==You can specify a URL for the content file location as shown here.
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To submit binary file data directly, use the `analyzeBinary` operation instead.==
+
+    - Processing analysis results
+        - Results depend on
+            - The kind of content the analyzer is designed to 
+                analyze (for example, document, video, image, or audio).
+            - The schema for the analyzer.
+            - The contents of the file that was analyzed.
+        - The response from the document-based business 
+            card analyzer contain
+            - The extracted fields
+            - The optical character recognition (OCR) layout of the document, 
+                including locations of lines of text, individual words, and 
+                paragraphs on each page.
+
+    - Using the Python SDK
+        - The `AnalysisResult` object provides typed 
+            access to the results
+        - The `contents` property contains a list of 
+            content objects with
+            - Fields
+            - Markdown
+            - Metadata
+        - Example
+            (extracting string field values)
+            <pre><code>
+            # (continued from previous SDK code example)
+            &nbsp;
+            content = result.contents[0]
+            if content.fields:
+                for field_name, field_data in content.fields.items():
+                    if field_data.type == "string":
+                        print(f"{field_name}: {field_data.value}")
+            </code></pre>
+
+    - Using the REST API
+        - The response is a JSON payload that 
+            the application must parse
+        - Example
+            <pre><code>
+            {
+                "id": "00000000-0000-0000-0000-a00000000000",
+                "status": "Succeeded",
+                "result": {
+                    "analyzerId": "biz_card_analyser_2",
+                    "apiVersion": "2025-11-01",
+                    "createdAt": "2025-05-16T03:51:46Z",
+                    "warnings": [],
+                    "contents": [
+                        {
+                            "markdown": "John Smith\nEmail: john@contoso.com\n",
+                            "fields": {
+                                "ContactName": {
+                                    "type": "string",
+                                    "valueString": "John Smith",
+                                    "spans": [
+                                        {
+                                            "offset": 0,
+                                            "length": 10
+                                        }
+                                    ],
+                                    "confidence": 0.994,
+                                    "source": "D(1,69,234,333,234,333,283,69,283)"
+                                },
+                                "EmailAddress": {
+                                    "type": "string",
+                                    "valueString": "john@contoso.com",
+                                    "spans": [
+                                        {
+                                            "offset": 18,
+                                            "length": 16
+                                        }
+                                    ],
+                                    "confidence": 0.998,
+                                    "source": "D(1,179,309,458,309,458,341,179,341)"
+                                }
+                            },
+                            "kind": "document",
+                            "startPageNumber": 1,
+                            "endPageNumber": 1,
+                            "unit": "pixel",
+                            "pages": [
+                                {
+                                    "pageNumber": 1,
+                                    "angle": 0.03410444,
+                                    "width": 1000,
+                                    "height": 620,
+                                    "spans": [
+                                        {
+                                            "offset": 0,
+                                            "length": 35
+                                        }
+                                    ],
+                                    "words": [
+                                        {
+                                            "content": "John",
+                                            "span": {
+                                                "offset": 0,
+                                                "length": 4
+                                            },
+                                            "confidence": 0.992,
+                                            "source": "D(1,69,234,181,234,180,283,69,283)"
+                                        },
+                                        {
+                                            "content": "Smith",
+                                            "span": {
+                                                "offset": 5,
+                                                "length": 5
+                                            },
+                                            "confidence": 0.998,
+                                            "source": "D(1,200,234,333,234,333,282,200,283)"
+                                        },
+                                        {
+                                            "content": "Email:",
+                                            "span": {
+                                                "offset": 11,
+                                                "length": 6
+                                            },
+                                            "confidence": 0.995,
+                                            "source": "D(1,75,310,165,309,165,340,75,340)"
+                                        },
+                                        {
+                                            "content": "john@contoso.com",
+                                            "span": {
+                                                "offset": 18,
+                                                "length": 16
+                                            },
+                                            "confidence": 0.977,
+                                            "source": "D(1,179,309,458,311,458,340,179,341)"
+                                        }
+                                    ],
+                                    "lines": [
+                                        {
+                                            "content": "John Smith",
+                                            "source": "D(1,69,234,333,233,333,282,69,282)",
+                                            "span": {
+                                                "offset": 0,
+                                                "length": 10
+                                            }
+                                        },
+                                        {
+                                            "content": "Email: john@contoso.com",
+                                            "source": "D(1,75,309,458,309,458,340,75,340)",
+                                            "span": {
+                                                "offset": 11,
+                                                "length": 23
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "paragraphs": [
+                                {
+                                    "content": "John Smith Email: john@contoso.com",
+                                    "source": "D(1,69,233,458,233,458,340,69,340)",
+                                    "span": {
+                                        "offset": 0,
+                                        "length": 34
+                                    }
+                                }
+                            ],
+                            "sections": [
+                                {
+                                    "span": {
+                                        "offset": 0,
+                                        "length": 34
+                                    },
+                                    "elements": [
+                                        "/paragraphs/0"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+            </code></pre>
+        - Example
+            (code extracts all of the string values)
+            <pre><code>
+            # (continued from previous code example)
+            &nbsp;
+            # Iterate through the fields and extract the names and type-specific values
+            contents = result_json["result"]["contents"]
+            for content in contents:
+                if "fields" in content:
+                    fields = content["fields"]
+                    for field_name, field_data in fields.items():
+                        if field_data['type'] == "string":
+                            print(f"{field_name}: {field_data['valueString']}")
+            </code></pre>
+            - Output
+                <pre>
+                ContactName: John Smith
+                EmailAddress: john@contoso.com
+                </pre>
+
+- **Further reading**
+    - [Azure Content Understanding documentation](https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/)
+
+- **Exercise - Develop a Content Understanding client application**
+[&rarr;     saber &plus;](https://microsoftlearning.github.io/mslearn-ai-information-extraction/Instructions/Exercises/01-content-understanding.html)
+
+
+### 7. [Extract data with Azure Document Intelligence](https://learn.microsoft.com/en-us/training/modules/extract-data-with-document-intelligence/)
+
+- **Introduction**
+    - Forms and documents play a critical role in daily business operations across all industries.
+    - Many organizations still rely on **manual data extraction**, which can be time-consuming, costly, and error-prone.
+    - Automating document processing helps improve operational efficiency, accuracy, and scalability.
+    - Microsoft Azure Document Intelligence provides AI-powered tools for extracting data from forms and documents automatically.
+    - The service is part of Microsoft Foundry and leverages:
+        - Optical Character Recognition (OCR)
+        - Deep learning models
+    - Azure Document Intelligence can extract:
+        - Text
+        - Key-value pairs
+        - Tables
+        - Structured document data
+    - The platform includes prebuilt models for common document types such as invoices, receipts, and tax forms.
+    - Developers can also create **custom models** tailored to specific business forms and workflows.
+    - AI-powered document analysis reduces manual effort and accelerates business processes such as:
+        - Claims processing
+        - Patient enrollment
+        - Expense management
+        - Financial operations
+     Azure Document Intelligence enables organizations to build scalable and intelligent document automation solutions.
+
+- **What is Azure Document Intelligence?**
+
+    - What is Azure Document Intelligence (ADI)
+        - ADI is a cloud-based AI service that uses OCR and 
+            deep learning models to extract 
+            - Text
+            - Key-value pairs
+            - Selection marks
+            - Tables from documents.
+        - OCR captures document structure by creating bounding boxes 
+            around detected objects in an image
+        - The locations of the bounding boxes are recorded as 
+            coordinates in relation to the rest of the page
+        - Returns bounding box data and other information in a 
+            structured JSON format
+        - Preserves the relationships from the original document
+        - ADI provides underlying models already trained on 
+            thousands of form examples
+
+    - Document Intelligence service components
+        - Document analysis models
+            - Extract text, structure, tables, and selection marks from documents
+            - The read model extracts text and detects languages
+            - The layout model adds table and structure extraction
+        - Prebuilt models
+            - Extract information from common document types
+                without any training required 
+                - Invoices
+                - Receipts
+                - Tax forms
+                - ID documents
+                - And more
+        - Custom models
+            - Extract data from forms specific to your business 
+                using your own labeled datasets. 
+            - Options
+                - Custom template models
+                    fast and cost-effective for fixed layouts
+                - Custom neural models
+                    higher accuracy for varying layouts
+                - Composed models
+                - Custom classifiers
+
+    - Access Document Intelligence (DI) services
+        - REST API
+            Call the service directly using HTTP requests.
+        - Client library SDKs
+            Use SDKs for Python, C#, Java, and JavaScript.
+        - Document Intelligence Studio
+            An online tool for visually exploring, testing, and building DI solutions.
+        - Microsoft Foundry portal
+            Integrate DI with other Foundry tools.
+
+    - Create a Document Intelligence resource
+        - A Foundry resource
+            A multi-service subscription that provides access to multiple AI 
+            services under a single endpoint and key.
+        - An Azure Document Intelligence resource
+            A single-service resource used only with Document Intelligence.
+        - <span>&#x1F4A1;</span> ==Create a Foundry resource if you plan to access multiple Foundry 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools under a single endpoint and key.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For Document Intelligence access only, create a dedicated DIb resource.==
+
+
+### 8. [Create a knowledge mining solution with Azure AI Search](https://learn.microsoft.com/en-us/training/modules/ai-knowldge-mining/)
