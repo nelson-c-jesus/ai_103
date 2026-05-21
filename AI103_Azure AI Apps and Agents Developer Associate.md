@@ -1880,9 +1880,9 @@ markmap:
                     <br/>
                     | &nbsp; | No persona | With persona |
                     |-|-|-|
-                    |System message|None|You're a seasoned marketing professional<br/>writing for technical customers.|
-                    |User prompt|Write a one-sentence description of a<br/>CRM product.|Write a one-sentence description of a<br/>CRM product.|
-                    |Response|A CRM product is a software tool<br/>designed tomanage a company's<br/>interactions with customers.|Experience seamless customer relationship<br/>management with our CRM, designed to streamline<br/>operations and drive sales growth with robust analytics.|
+                    |System message|None|You're a seasoned marketing professional<br/>writing for technical customers|
+                    |User prompt|Write a one-sentence description of a<br/>CRM product|Write a one-sentence description of a<br/>CRM product|
+                    |Response|A CRM product is a software tool<br/>designed tomanage a company's<br/>interactions with customers|Experience seamless customer relationship<br/>management with our CRM, designed to streamline<br/>operations and drive sales growth with robust analytics|
                 
                 - Format template
                     <pre>
@@ -5359,12 +5359,12 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
             - Examples
                 | Event Name | Description |
                 |:-|:-|
-                |WorkflowStartedEvent|Triggered when workflow execution begins.|
-                |WorkflowOutputEvent|Emitted when the workflow produces an output.|
-                |WorkflowErrorEvent|Occurs when an error is encountered.|
-                |ExecutorInvokeEvent|Fired when an executor starts processing a task.|
-                |ExecutorCompleteEvent|Fired when an executor finishes its work.|
-                |RequestInfoEvent|Logged when an external request is issued.|
+                |WorkflowStartedEvent|Triggered when workflow execution begins|
+                |WorkflowOutputEvent|Emitted when the workflow produces an output|
+                |WorkflowErrorEvent|Occurs when an error is encountered|
+                |ExecutorInvokeEvent|Fired when an executor starts processing a task|
+                |ExecutorCompleteEvent|Fired when an executor finishes its work|
+                |RequestInfoEvent|Logged when an external request is issued|
 
         - Supported orchestration patterns
             - Concurrent orchestration
@@ -6238,10 +6238,10 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
     - Azure Language MCP server capabilities
         | Capability | Description |
         |:-|:-|
-        |Language Detection|Identifies the language in which text is written.|
-        |Named Entity<br/>Recognition|Identifies and categorizes entities in text, such as<br/>people, places, organizations, dates, and quantities.|
-        |PII Redaction|Detects and redacts personally identifiable information (PII) such as<br/>names, addresses, and phone numbers.|
-        |Text Analytics for<br/>Health|Extracts and labels medical entities, such as<br/>diagnoses, medications, and symptoms from clinical text.|
+        |Language Detection|Identifies the language in which text is written|
+        |Named Entity<br/>Recognition|Identifies and categorizes entities in text, such as<br/>people, places, organizations, dates, and quantities|
+        |PII Redaction|Detects and redacts personally identifiable information (PII) such as<br/>names, addresses, and phone numbers|
+        |Text Analytics for<br/>Health|Extracts and labels medical entities, such as<br/>diagnoses, medications, and symptoms from clinical text|
         
         <br/>
 
@@ -6837,8 +6837,8 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
     - Azure Speech MCP server capabilities
         | Capability | Description |
         |:-|:-|
-        |Speech-to-text<br/>(Recognize)|Converts audio files to text using advanced speech recognition.<br/>Supports WAV, MP3, OGG, FLAC, MP4, M4A, AAC, and other common audio formats.<br/>Includes options for language selection, phrase hints for improved accuracy, profanity filtering, and<br/>detailed or simple output formats.|
-        |Text-to-speech<br/>(Synthesize)|Converts text input into natural-sounding audio files using neural text-to-speech voices.<br/>Supports multiple languages and voices (for example, en-US-JennyNeural or en-GB-SoniaNeural), and<br/>generates output in WAV, MP3, or other formats.|
+        |Speech-to-text<br/>(Recognize)|Converts audio files to text using advanced speech recognition.<br/>Supports WAV, MP3, OGG, FLAC, MP4, M4A, AAC, and other common audio formats.<br/>Includes options for language selection, phrase hints for improved accuracy, profanity filtering, and<br/>detailed or simple output formats|
+        |Text-to-speech<br/>(Synthesize)|Converts text input into natural-sounding audio files using neural text-to-speech voices.<br/>Supports multiple languages and voices (for example, en-US-JennyNeural or en-GB-SoniaNeural), and<br/>generates output in WAV, MP3, or other formats|
 
         <br/>
 
@@ -9529,7 +9529,7 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
     - [Azure Content Understanding documentation](https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/)
 
 - **Exercise - Develop a Content Understanding client application**
-[&rarr;     saber &plus;](https://microsoftlearning.github.io/mslearn-ai-information-extraction/Instructions/Exercises/01-content-understanding.html)
+[&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-information-extraction/Instructions/Exercises/01-content-understanding.html)
 
 
 ### 7. [Extract data with Azure Document Intelligence](https://learn.microsoft.com/en-us/training/modules/extract-data-with-document-intelligence/)
@@ -9667,7 +9667,655 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
         4. Upload or provide a URL to the document you want to analyze.
         5. Review the extracted fields and their confidence scores.
 
+    - Build custom model projects
+        - The Studio generates the required
+            files automatically 
+            - `ocr.json`
+            - `labels.json`
+            - `fields.json`
+        - High-level workflow
+            1. Create an Azure Document Intelligence or Foundry resource.
+            2. Upload at least 5-6 sample forms to an Azure Blob Storage container.
+            3. Configure cross-origin resource sharing (CORS) so the Studio can access your storage container.
+            4. Create a custom model project in the Studio, linking your storage container and Document Intelligence resource.
+            5. Label fields in your sample documents using the Studio's visual interface.
+            6. Train your model and review accuracy metrics.
+            7. Test the model against a new document that wasn't used during training.
+    - Add-on capabilities
+        | Capability | Description |
+        |:-|:-|
+        |High resolution extraction|Extract text from high-resolution documents with greater accuracy|
+        |Formula extraction|Detect and extract mathematical formulas from documents|
+        |Font property extraction|Extract font information such as style, weight, and color|
+        |Barcode extraction|Detect and read barcodes in documents|
+        |Searchable PDF|Convert scanned documents into searchable PDF files|
+        |Query fields|Use natural language queries to extract specific fields from documents|
+        |Key-value pairs|Extract key-value pair relationships from documents using the layout model|
+        
+        <br/>
 
+        <span>&#x1F4A1;</span> ==Some add-on capabilities are premium features that incur extra costs.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Check the [pricing page](https://azure.microsoft.com/pricing/details/ai-document-intelligence/) for details.==
+
+    - Learn more
+        - [Document Intelligence Studio](https://documentintelligence.ai.azure.com/)
+        - [Document Intelligence add-on capabilities](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept-add-on-capabilities)
+
+- **Use prebuilt models**
+
+    - Document analysis models
+        - Prebuilt models in Azure Document Intelligence enables to 
+            extract data from common form types without training your own models
+        - Read model
+            - Extracts printed and handwritten text from documents and images
+            - Detects the language of each text line
+            - Classifies whether text is handwritten or printed
+            - Is the foundation for text extraction in all other Document Intelligence models
+            - Multi-page PDF or TIFF files use the `pages` parameter in 
+                request to specify a page range for analysis
+            - Ideal to extract words and lines from documents 
+                with no fixed or predictable structure
+        - Layout model
+            - Extends the read model's text
+                extraction with
+                - Detection of selection marks
+                - Tables
+                - Document structure information 
+                - Supports `keyValuePairs` feature to 
+                    extract key-value pairs
+                - Can handle
+                    - Angled documents
+                    - Tables with complex structures
+                        - Merged cells
+                        - Incomplete rows
+                - Each table cell is 
+                    extracted with
+                    - Its content
+                    - Bounding box position
+                    - Row/column indexes
+                - Selection marks 
+                    (checkboxes and radio buttons) are extracted
+                    - Bounding box
+                    - Confidence level
+                    - Whether they're selected.
+                - <span>&#x1F4A1;</span> ==The _general document model_ was available in earlier versions of Document Intelligence,
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;but was deprecated in the `2023-10-31-preview` release.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Its functionality for key-value pair and entity extraction has been incorporated into the 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layout model and other features.==
+
+    - Prebuilt models for specific document types
+        - Financial and legal documents
+            | Model | Description |
+            |:-|:-|
+            |Invoice|Extracts customer name, vendor details, purchase order number,<br/>invoice and due dates, billing and shipping addresses, line items, and totals|
+            |Receipt|Extracts merchant details, transaction date and time, line items,<br/>and totals. Supports single-page hotel receipt processing|
+            |Bank<br/>statement|Extracts account information, beginning and ending balances, and<br/>transaction details|
+            |Check|Extracts payee, amount, date, and other relevant information|
+            |Pay stub|Extracts wages, hours, deductions, net pay, and<br/>other common pay stub fields|
+            |Credit card|Extracts payment card information|
+            |Contract|Extracts agreement and party details|
+        - US tax documents
+            | Model | Description |
+            |:-|:-|
+            |Unified US tax|A single model that extracts from any supported US tax form type|
+            |W-2|Extracts taxable compensation detail|
+            |1098 and variations|Extracts mortgage interest and related details|
+            |1099 and variations|Extracts income from various sources|
+            |1040 and variations|Extracts individual income tax return details|
+        - US mortgage documents
+            | Model | Description |
+            |:-|:-|
+            |1003 (URLA)|Extracts loan application details.|
+            |1004 (URAR)|Extracts information from property appraisals.|
+            |1005|Extracts validation-of-employment information.|
+            |1008|Extracts loan transmittal details.|
+            |Closing disclosure|Extracts final closing loan terms.|
+        - Personal identification documents
+            | Model | Description |
+            |:-|:-|
+            |ID document|Extracts details from US driver's licenses, European Union IDs and<br/>driver's licenses, and international passports. Includes names, dates of birth,<br/>document numbers, and endorsements or restrictions.|
+            |Health<br/>insurance card|Extracts common fields from US health insurance cards.|
+            |Marriage<br/>certificate|Extracts certified marriage information.|
+
+            <br/>
+
+            <span>&#9888;</span>==The ID document model extracts personal information covered by data protection laws in 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;most jurisdictions.
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ensure you have the individual's permission to store their data and that you comply 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with all applicable legal requirements.==
+    
+    - Features of prebuilt models
+        - Text extraction
+            All prebuilt models extract lines and words from handwritten and printed text.
+        - Key-value pairs
+            Spans of text that identify a label and its response. 
+            For example, Weight and 31 kg.
+        - Selection marks
+            - Checkboxes
+            - Radio buttons
+            - Whether they're selected or not.
+        - Tables
+            - Data in cells
+            - Number of columns and row
+            - Column and row headings
+            - Merged cells.
+        - Fields
+            Models trained for a specific form type identify a fixed set of fields. 
+            For example, the invoice model extracts `CustomerName` and `InvoiceTotal`.
+
+    - When to use prebuilt vs. custom models
+        (Custom model)
+        - Industry-specific
+        - Unique form type
+        - Require time and sample data to train
+        - Always check whether a prebuilt model 
+            exists for your scenario
+
+    - Learn more
+        - [Azure Document Intelligence prebuilt models](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/model-overview)
+        - [Azure Document Intelligence read model](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/read)
+        - [Azure Document Intelligence layout model](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/layout)
+        - [Azure Document Intelligence invoice model](Azure Document Intelligence invoice model)
+        - [Azure Document Intelligence receipt model](Azure Document Intelligence receipt model)
+        - [Azure Document Intelligence ID document model](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/id-document)
+
+- **Train and use custom models**
+
+    - Custom model types
+        - Custom template models
+            (extraction model)
+            - Rely on a consistent visual template to 
+                extract labeled data
+            -  Work best for structured forms where the 
+                layout is static from one document 
+                instance to the next
+                - Questionnaires
+                - Applications
+                - Standard government forms
+        - Template models extract
+            - Labeled key-value pairs
+            - Selection marks
+            - Tables
+            - Regions
+            - Signatures
+            - Training takes only a few minutes
+            - More than 100 languages supported
+            - Fast to train
+            - Cost-effective to run
+            - Good starting point when
+                documents have a uniform visual layout
+
+    - Custom neural models
+        - Use deep learning and are 
+            fine-tuned on your labeled data
+        - Combine layout and language 
+            features to extract fields from
+            - Structured
+            - Semi-structured
+            - Unstructured documents
+        - Neural models support
+            - Overlapping fields
+            - Signature detection
+            - Table, row, and cell level confidence
+        - Deliver higher accuracy than 
+            template models for
+            - Semi-structured 
+            - Unstructured documents
+        - Take longer to train
+        - Consume more resources
+
+    - Choose between template and neural models
+        | Factor | Custom template | Custom neural |
+        |:-|:-|:-|
+        |Best for|Structured forms with a consistent<br/>visual layout|Semi-structured or unstructured documents<br/>with varying layouts|
+        |Training time|Minutes|Longer<br/>(depends on dataset size)|
+        |Training cost|Lower|Higher|
+        |Accuracy|High for fixed-layout forms;<br/>decreases when layout varies|Higher overall, especially for documents<br/>with format variation|
+        |Language support|100+ languages|Fewer languages<br/>(check [documentation](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/language-support/custom) for current support)|
+        |Feature support|Key-value pairs, selection marks,<br/>tables, regions, signatures|Overlapping fields, signature detection,<br/>table/row/cell confidence|
+
+        <br/>
+
+        <span>&#x1F4A1;</span> ==Start with a custom template model if your forms have a consistent 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;visual layout. It's faster and cheaper to train.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If accuracy is insufficient or your documents vary in format, switch to a 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;custom neural model.==
+
+    - Custom classifiers
+        - Identify the type of a document 
+            before invoking an extraction model
+        - Use a classifier to route incoming 
+            documents to the appropriate extraction model
+
+    - Train a custom model
+        1. Store sample forms in an Azure blob container, 
+            along with JSON files containing layout and label field information:
+            - An `ocr.json` file for each sample form (generated using the Analyze document function).
+            - A single `fields.json` file describing the fields you want to extract.
+            - A `labels.json` file for each sample form, mapping fields to their location in the form.
+        2. Generate a shared access signature (SAS) URL for the container.
+        3. Use the Build model REST API function or the equivalent SDK method.
+        4. Use the Get model REST API function to retrieve the trained model ID.
+        <br/>
+        <span>&#x1F4A1;</span> ==Use at least five to six sample forms for training. 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A larger and more varied dataset produces more accurate models.==
+
+    - Use a custom model
+        - Call the **Analyze document** function with your model ID
+        - Example
+            <pre><code>
+            endpoint = "YOUR_DOC_INTELLIGENCE_ENDPOINT"
+            key = "YOUR_DOC_INTELLIGENCE_KEY"
+            &nbsp;
+            model_id = "YOUR_CUSTOM_BUILT_MODEL_ID"
+            formUrl = "YOUR_DOCUMENT"
+            &nbsp;
+            document_analysis_client = DocumentAnalysisClient(
+                endpoint=endpoint, credential=AzureKeyCredential(key)
+            )
+            &nbsp;
+            task = document_analysis_client.begin_analyze_document_from_url(model_id, formUrl)
+            result = task.result()
+            </code></pre>
+            - Result
+                - Successful response contains an 
+                    `analyzeResult` object
+                - Extracted content
+                - An array of pages containing 
+                    information about the document
+
+    - Composed models
+        - Combine multiple custom models 
+            into a single **composed model**
+        - Submit a document to a composed model
+        - DI classifies it to determine the
+            appropriate component model
+        - Returns the extraction results 
+           from that model
+        
+    - Learn more
+        - [Document Intelligence custom models](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/train/custom-model)
+        - [Custom neural models](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/train/custom-neural)
+        - [Custom template models](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/train/custom-template)
+        - [Composed models](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/train/composed-models)
+
+- **Further reading**
+    - [What is Azure Document Intelligence?](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview)
+    - [Azure Document Intelligence model overview](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/model-overview)
+    - [Document Intelligence custom models](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/train/custom-model)
+    - [Document Intelligence Studio](https://documentintelligence.ai.azure.com/)
+    - [Language support for Azure Document Intelligence](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/language-support)
+
+- **Exercise -  Analyze documents with Document Intelligence**
+[&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-information-extraction/Instructions/Exercises/03-document-intelligence.html)
 
 
 ### 8. [Create a knowledge mining solution with Azure AI Search](https://learn.microsoft.com/en-us/training/modules/ai-knowldge-mining/)
+
+- **Introduction**
+    - Microsoft Azure AI Search is a cloud-based service designed for 
+        intelligent search and knowledge mining solutions.
+    - The platform enables organizations to extract, enrich, and 
+        explore information from multiple data sources.
+    - Azure AI Search helps transform raw and unstructured data 
+        into searchable and actionable insights.
+    - Core capabilities include
+        - Connecting to diverse data sources
+        - Creating search indexes
+        - Managing searchable content efficiently
+    - The indexing process organizes data to support fast and 
+        accurate search experiences.
+    - AI enrichment features enhance data with additional insights such as
+        - Language detection
+        - Key phrase extraction
+        - Image analysis
+    - AI skills improve the quality and intelligence of 
+        search results by adding contextual understanding to content.
+    - Azure AI Search supports powerful querying and 
+        filtering through full-text search capabilities.
+    - The knowledge store feature allows enriched data to be persisted for
+        - Advanced analytics
+        - Reporting
+        - Integration with external systems
+    - Azure AI Search enables the development of scalable, AI-powered 
+        applications that improve information discovery and decision-making.
+
+- **What is Azure AI Search?**
+
+    - Provides a cloud-based solution for 
+        indexing and querying a wide range of data sources
+    - Create comprehensive and high-scale search solutions
+    - Can
+        - Index documents and data from a range of sources
+        - Use AI skills to enrich index data.
+        - Store extracted insights in a knowledge store for 
+            analysis and integration.
+    - Insights extracted from data
+        - Text inferred
+        - OCR from images
+        - Entities and key phrases detection through **text analytics**
+    - Applications
+        - Implementing an enterprise search solution to help employees or 
+            customers find information in websites or applications.
+        - Supporting retrieval augmented generation (RAG) in generative AI 
+            applications by using vector-based indexes for prompt grounding data.
+        - Creating knowledge mining solutions in which the indexing process is 
+            used to infer insights and extract granular data assets from documents to 
+            support data analytics.
+
+- **Extract data with an indexer**
+
+    - Concepts
+        - The indexing process begins with a **data source**, which stores the 
+            original content to be processed and searched.
+        - Data sources can include:
+            - Azure Blob Storage containers
+            - Databases
+            - Other structured or unstructured storage systems
+        - An **Indexer** automates the extraction and processing of 
+            data from the source content.
+        - The indexing workflow uses an **enrichment pipeline** to transform raw 
+            content into searchable information.
+        - Document cracking techniques are applied to extract text and 
+            content from documents automatically.
+        - The enrichment process incrementally builds a hierarchical **JSON-based document structure** 
+            aligned with the index definition.
+        - Processed and enriched data is stored in a searchable index for 
+            efficient retrieval.
+        - The resulting index enables fast querying and filtering of 
+            documents based on specific search criteria.
+        - Automated indexing improves scalability, reduces manual 
+            data preparation, and enhances search accuracy.
+        - Microsoft Azure AI Search simplifies the creation of intelligent and 
+            searchable data solutions.
+
+    - How documents are constructed during indexing
+        - Process works by creating a 
+            document for each indexed entity
+        - An _enrichment pipeline_ iteratively builds the documents
+        - Combine metadata from the data source with enriched 
+            fields extracted or generated by _skills_
+        - Structure of text document
+            - Document
+                - metadata_storage_name
+                - metadata_author
+                - content
+        - Documents in the data 
+            source contain images
+            - Document
+                - metadata_storage_name
+                - metadata_author
+                - content
+                - normalized_images
+                    (collection)
+                    - image0
+                    - image1
+        - Each skill adds fields to the **document**
+        - Skill detects _language_ used in document
+            - Document
+                - metadata_storage_name
+                - metadata_author
+                - content
+                - normalized_images
+                    (collection)
+                    - image0
+                    - image1
+                - language
+        - Document is structured hierarchically
+        - Skills are applied to a 
+            specific context within the hierarchy
+        - Optical character recognition (OCR) skill
+            - document
+                - metadata_storage_name
+                - metadata_author
+                - content
+                - normalized_images
+                    - image0
+                        - Text
+                    - image1
+                        - Text
+                - language
+        - Output fields from each skill can be used as 
+            inputs for other skills later in the pipeline
+        - _Merge skill_
+            (combine the original text content with the text extracted from each image)
+            - document
+                - metadata_storage_name
+                - metadata_author
+                - content
+                - normalized_images
+                    - image0
+                        - Text
+                    - image1
+                        - Text
+                - language
+                - merged_content
+                    (new field)
+        - Mapping fields by indexer
+            - Fields extracted directly from the 
+                source data are all mapped to index fields. 
+                - Implicit mapping
+                    (fields are automatically mapped to in fields with the 
+                    same name in the index)
+                - Explicit mapping 
+                    (a mapping is defined to match a source field to an index field, 
+                    often to rename the field to something more useful or to 
+                    apply a function to the data value as it is mapped).
+            - Output fields from the skills in the skillset are 
+                explicitly mapped from their hierarchical location in the 
+                output to the target field in the index.
+
+- **Enrich extracted data with AI skills**
+
+    - Built-in skills
+        - The enrichment pipeline uses a skillset of 
+            AI skills to create AI-enriched fields
+        - Indexer applies each skill in order, 
+            refining the index document at each step
+        - Skills
+            - Detecting the language that text is written in.
+            - Detecting and extracting places, locations, and 
+                other entities in the text.
+            - Determining and extracting key phrases within a body of text.
+            - Translating text.
+            - Identifying and extracting (or removing) personally identifiable 
+                information (PII) within the text.
+            - Extracting text from images.
+            - Generating captions and tags to describe images.
+        - To use the built-in skills, indexer must have 
+            access to a Foundry Tools resource
+        - Can
+            - Use a restricted Azure AI search resource
+                (limited to indexing 20 or fewer documents)
+            - Attach a Foundry Tools resource in your Azure subscription
+                (must be in the same region as your Azure AI Search resource)
+
+    - Custom skills.
+        - Perform custom logic on input 
+            data from your index document
+        - Are "wrappers" around services that are 
+            specifically designed to extract data from documents
+        - Example
+            - Implement a custom skill as an Azure Function
+            - Use it to pass data from your index document to an 
+                Azure Document Intelligence model
+            - Can extract fields from a form
+        - <span>&#x1F4A1;</span> ==To learn more about using custom skills with Azure AI Search, 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;see [Add a custom skill to an Azure AI Search enrichment pipeline](https://learn.microsoft.com/en-us/azure/search/cognitive-search-custom-skill-interface)
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in the Azure AI Search documentation.==
+
+- **Search an index**
+
+    - What is an index
+        - Index is the searchable result of the 
+            indexing process
+        - It's a collection of JSON documents
+        - Documents that contain fields that contain
+            the values extracted during indexing
+        - Client applications can query the index to retrieve, 
+            filter, and sort information
+        - Each index field can have the
+            following attributes
+            - key
+                Fields that define a unique key for index records.
+            - searchable
+                Fields that can be queried using full-text search.
+            - filterable
+                Fields that can be included in filter expressions to return 
+                only documents that match specified constraints.
+            - sortable
+                Fields that can be used to order the results.
+            - facetable
+                Fields that can be used to determine values for facets 
+                (user interface elements used to filter the results based on a 
+                list of known field values).
+            - retrievable
+                Fields that can be included in search results 
+                (by default, all fields are retrievable unless 
+                this attribute is explicitly removed).
+
+    - Full-text search
+        -  Describes search solutions that parse text-based 
+            document contents to find query terms
+        - Are based on the Lucene query syntax
+        - Azure AI Search supports two variants
+            - Simple
+                An intuitive syntax that makes it easy to perform basic 
+                searches that match literal query terms submitted by a user.
+            - Full
+                An extended syntax that supports complex filtering, 
+                regular expressions, and other more sophisticated queries.
+        - Parameters submitted with a query
+            - search
+                A search expression that includes the terms to be found.
+            - queryType
+                The Lucene syntax to be evaluated (_simple_ or _full_).
+            - searchFields
+                The index fields to be searched.
+            - select
+                The fields to be included in the results.
+            - searchMode
+                Criteria for including results based on multiple search terms. 
+                - Example
+                    Suppose you search an index of travel-related documents for comfortable hotel. 
+                    A `searchMode` value of _Any_ returns documents that contain 
+                    "comfortable", "hotel", or both; 
+                    while a `searchMode` value of _All_ restricts results to documents that 
+                    contain both "comfortable" and "hotel".
+        - Query processing
+            1. Query parsing
+                - Search expression is evaluated and reconstructed as a 
+                    tree of appropriate subqueries. 
+                - Subqueries might include
+                    - Term queries 
+                        (finding specific individual words in the search expression - for example hotel)
+                    - Phrase queries 
+                        (finding multi-term phrases specified in quotation marks in the search expression - for example, "free parking")
+                    - Prefix queries 
+                        (finding terms with a specified prefix - for example air*, which would match airway, air-conditioning, and airport).
+            2. Lexical analysis
+                - Query terms are analyzed and refined based on linguistic rules. 
+                    For example, text is converted to lower case and nonessential stopwords 
+                    (such as "the", "a", "is", and so on) are removed. 
+                - Words are converted to their root form 
+                (for example, "comfortable" might be simplified to "comfort")
+                - Composite words are split into their constituent terms.
+            3. Document retrieval
+                - Query terms are matched against the indexed terms
+                - Set of matching documents is identified.
+            4. Scoring
+                A relevance score is assigned to each result based on a 
+                term frequency/inverse document frequency (TF/IDF) calculation.
+
+                <br/>
+
+                <span>&#x1F4A1;</span> ==For more information about querying an index, and details about simple and full syntax,
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;see [Query types and composition in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-query-overview) in the Azure AI Search documentation.==
+    
+    - Filtering results
+        - Apply filters by
+            - Including filter criteria in a _simple_ **search** expression.
+            - Providing an OData filter expression as a `$filter` parameter 
+                with a full syntax search expression.
+        - Can apply a filter to any filterable field in the index
+        - Example
+            -  Find documents containing the text _London_ that have an 
+                **author** field value of _Reviewer_
+
+            - Search expression
+                <pre><code>
+                search=London+author='Reviewer'
+                queryType=Simple
+                </code></pre>
+            - OData filter in a `$filter` parameter with a 
+            _full_ Lucene search expression
+                <pre><code>
+                search=London
+                $filter=author eq 'Reviewer'
+                queryType=Full
+                </code></pre>
+                
+                <br/>
+
+                <span>&#9872;</span> ==OData $filter expressions are case-sensitive!==
+
+    - Filtering with facets
+        - Work best when a field has a 
+            small number of discrete values
+        - Must specify facetable fields for which you want to 
+            retrieve the possible values in an initial query
+        - Example
+            (use the following parameters to return all of the 
+            possible values for the author field)
+            <pre>
+            search=*
+            facet=author
+            </pre>
+        - Example
+            (subsequent query)
+            <pre>
+            search=*
+            $filter=author eq 'selected-facet-value-here'
+        </pre>
+
+    - Sorting results
+        - By default, results are sorted based on the 
+            relevancy score assigned by the query process
+        - Can override this sort order by including an OData `orderby` parameter
+            that specifies one or more _sortable_ fields and a sort order (_asc_ or _desc_)
+        - Example
+
+            <pre><code>
+            search=*
+            $orderby=last_modified desc
+            </code></pre>
+            <br/>
+
+            <span>&#x1F4A1;</span> ==For more information about using filters, see 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Filters in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-filters) in the Azure AI Search documentation.==
+
+- **Persist extracted information in a knowledge store**
+
+    - How to use enriched data
+        - Since the index is essentially a collection of JSON objects, 
+            each representing an indexed record, it might be useful to export the 
+            objects as JSON files for integration into a data orchestration process for 
+            extract, transform, and load (ETL) operations.
+        - You may want to normalize the index records into a relational schema of 
+            tables for analysis and reporting.
+        - Having extracted embedded images from documents during the 
+            indexing process, you might want to save those images as files.
+        - Azure AI Search supports these scenarios by enabling you to 
+            define a _knowledge store_ in the skillset
+        - Knowledge store consists of projections of the enriched data
+            - JSON objects
+            - Tables
+            - Image files
+        - <span>&#x1F4A1;</span> ==To learn more about using a knowledge store, see 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Knowledge store in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/knowledge-store-concept-intro) in the Azure AI Search documentation.==
+
+- **Further reading**
+    - [Azure AI Search documentation](https://learn.microsoft.com/en-us/azure/search/)
+    
+- **Exercise -  Create a knowledge mining solution**
+[&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-information-extraction/Instructions/Exercises/04-knowledge-mining.html)
