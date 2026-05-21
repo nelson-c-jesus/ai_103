@@ -4,13 +4,13 @@ markmap:
   spacingVertical: 30
 ---
 
-# [AI 103](https://learn.MS.com/en-us/training/courses/ai-103t00#course-syllabus)
+# [AI 103](https://learn.microsoft.com/en-gb/training/courses/ai-103t00#course-syllabus)
 
 ## Develop generative AI apps in Azure
 
-### [Documentação Oficial](https://learn.MS.com/en-us/training/paths/develop-generative-ai-apps/)
+### [Documentação Oficial](https://learn.microsoft.com/en-gb/training/paths/develop-generative-ai-apps/)
 
-### 1. [Plan and prepare to develop AI solutions on Azure](https://learn.MS.com/en-us/training/modules/prepare-azure-ai-development/)
+### 1. [Plan and prepare to develop AI solutions on Azure](https://learn.microsoft.com/en-gb/training/modules/prepare-azure-ai-development/)
 
 - **Introduction**
     - Develop comprehensive AI Solutions that combine:
@@ -91,23 +91,23 @@ markmap:
             analyze natural language text and perform tasks 
             such as entity extraction, sentiment analysis, and
             summarization.
-        - Overview [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/ai-services/language-service/overview)
+        - Overview [&rarr; saber &plus;](https://learn.microsoft.com/en-gb/azure/ai-services/language-service/overview)
         - Features
             
         - Use cases
             
         - Resources 
         - FAQ
-    2. Azure speech [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/ai-services/speech-service/overview)
-    3. Azure translator [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/ai-services/translator/overview)
-    4. Azure document intelligence [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)
+    2. Azure speech [&rarr; saber &plus;](https://learn.microsoft.com/en-gb/azure/ai-services/speech-service/overview)
+    3. Azure translator [&rarr; saber &plus;](https://learn.microsoft.com/en-gb/azure/ai-services/translator/overview)
+    4. Azure document intelligence [&rarr; saber &plus;](https://learn.microsoft.com/en-gb/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)
     5. Azure content understanding
         - Summary
             Provides multi-modal content analysis 
             capabilities that enable you to build 
             models to extract data from forms and 
             documents, images, videos, and audio streams.
-        - Overview [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/ai-services/content-understanding/overview)
+        - Overview [&rarr; saber &plus;](https://learn.microsoft.com/en-gb/azure/ai-services/content-understanding/overview)
         - Features
             - Multimodal data ingestion
                 - Documents
@@ -166,11 +166,11 @@ markmap:
             - Java
             - Others
         2. SDKs
-            -  MS Foundry [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/foundry/how-to/develop/sdk-overview?pivots=programming-language-python)
-            - Foundry Tools [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/ai-services/reference/sdk-package-resources)
+            -  MS Foundry [&rarr; saber &plus;](https://learn.microsoft.com/en-gb/azure/foundry/how-to/develop/sdk-overview?pivots=programming-language-python)
+            - Foundry Tools [&rarr; saber &plus;](https://learn.microsoft.com/en-gb/azure/ai-services/reference/sdk-package-resources)
         3. APIs
-            - The OpenAI API [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/foundry/openai/latest)
-            - REST APIs (Foundry Tools) [&rarr; saber &plus;](https://learn.MS.com/en-us/rest/api/aifoundry/aiproject)
+            - The OpenAI API [&rarr; saber &plus;](https://learn.microsoft.com/en-gb/azure/foundry/openai/latest)
+            - REST APIs (Foundry Tools) [&rarr; saber &plus;](https://learn.microsoft.com/en-gb/rest/api/aifoundry/aiproject)
 
 - **Responsible AI**
     <br/>
@@ -181,7 +181,7 @@ markmap:
     the system makes incorret or un fair decisions
     this aldo creates potential harm to users.
     Responsible AI principles
-    [&rarr; saber &plus;](https://learn.MS.com/en-us/azure/machine-learning/concept-responsible-ai?wt.mc_id=AZ-MVP-5003638)
+    [&rarr; saber &plus;](https://learn.microsoft.com/en-gb/azure/machine-learning/concept-responsible-ai?wt.mc_id=AZ-MVP-5003638)
     
     1. Fairness [&rarr; saber &plus;](docs/AI103_aux_texts/fairness.md)
     2. Reliability and Safety [&rarr; saber &plus;](docs/AI103_aux_texts/reliability_safety.md)
@@ -198,7 +198,7 @@ markmap:
     [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/01-Explore-ai-studio.html)
 
 
-### 2. [Select, deploy and evaluate MS Foundry models](https://learn.MS.com/en-us/training/modules/model-catalog-evaluate/)
+### 2. [Select, deploy and evaluate MS Foundry models](https://learn.microsoft.com/en-gb/training/modules/model-catalog-evaluate/)
 
 - **Introduction**
 
@@ -684,7 +684,7 @@ markmap:
     [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/02-model-catalog-evaluation.html)
 
 
-### 3. [Develop a generative AI chat app with MS Foundry](https://learn.MS.com/en-us/training/modules/foundry-sdk/)
+### 3. [Develop a generative AI chat app with MS Foundry](https://learn.microsoft.com/en-gb/training/modules/foundry-sdk/)
 
 - **Explore with the model playground**
 
@@ -1273,8 +1273,8 @@ markmap:
     - Generate responses with the Responses and ChatCompletions APIs and manage conversations
 
 - **Further reading**
-    - [MS Foundry SDK overview](https://learn.MS.com/en-us/azure/ai-foundry/how-to/develop/sdk-overview)
-    - [Responses API documentation](https://learn.MS.com/en-us/azure/ai-foundry/openai/how-to/responses)
+    - [MS Foundry SDK overview](https://learn.microsoft.com/en-gb/azure/ai-foundry/how-to/develop/sdk-overview)
+    - [Responses API documentation](https://learn.microsoft.com/en-gb/azure/ai-foundry/openai/how-to/responses)
     - [MS Foundry Discord](https://aka.ms/azureaifoundry/discord)
     - [MS Foundry Developer Forum](https://aka.ms/azureaifoundry/forum)
 
@@ -1283,7 +1283,7 @@ markmap:
 
 
 
-### 4. [Develop generative AI apps that use tools](https://learn.MS.com/en-us/training/modules/use-generative-ai-tools/)
+### 4. [Develop generative AI apps that use tools](https://learn.microsoft.com/en-gb/training/modules/use-generative-ai-tools/)
 
 - **Introduction**
     - Tools enable GenAI apps
@@ -1626,7 +1626,7 @@ markmap:
         - <span>&#9888;</span> ==For enterprise-scale agents that need to access large quantities of 
         &nbsp;&nbsp;&nbsp;&nbsp;data in multiple data stores, you should consider using the 
         &nbsp;&nbsp;&nbsp;&nbsp;Foundry IQ knowledge store solution with a MS Foundry agent
-        &nbsp;&nbsp;&nbsp;&nbsp;Build knowledge-enhanced AI agents with Foundry IQ [&rarr; saber &plus;](https://learn.MS.com/en-us/training/modules/introduction-foundry-iq)==
+        &nbsp;&nbsp;&nbsp;&nbsp;Build knowledge-enhanced AI agents with Foundry IQ [&rarr; saber &plus;](https://learn.microsoft.com/en-gb/training/modules/introduction-foundry-iq)==
 
 - **Use the `function` tool**
 
@@ -1795,7 +1795,7 @@ markmap:
     [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/04a-use-own-data.html)
 
 
-### 5. [Optimize generative AI model performance with MS Foundry](https://learn.MS.com/en-us/training/modules/optimize-generative-ai-model-performance/)
+### 5. [Optimize generative AI model performance with MS Foundry](https://learn.microsoft.com/en-gb/training/modules/optimize-generative-ai-model-performance/)
 
 
 - **Introduction**
@@ -2064,7 +2064,7 @@ markmap:
 
     - Implement RAG with the Azure AI Foundry SDK
         - Create an Azure AI Search index
-            - [MS Learn](https://learn.MS.com/en-us/azure/search/search-how-to-create-search-index?tabs=portal)
+            - [MS Learn](https://learn.microsoft.com/en-gb/azure/search/search-how-to-create-search-index?tabs=portal)
             - [YouTube](https://www.youtube.com/watch?v=pNFNpf_ejRw)
         - Connect to a model through Foundry project
         - With the `azure-ai-projects` SDK 
@@ -2113,7 +2113,7 @@ markmap:
         without managing search infrastructure, 
         consider Foundry IQ — a managed knowledge store that 
         simplifies grounding for AI agents.
-        Build knowledge-enhanced AI agents with Foundry IQ [&rarr; saber &plus;](https://learn.MS.com/en-us/training/modules/introduction-foundry-iq/)==
+        Build knowledge-enhanced AI agents with Foundry IQ [&rarr; saber &plus;](https://learn.microsoft.com/en-gb/training/modules/introduction-foundry-iq/)==
 
 - **Fine-tune a model for consistent behavior**
 
@@ -2382,20 +2382,20 @@ markmap:
     - Consider fine-tuning when you need consistent style and format that prompt engineering alone can't reliably achieve
 
 - **Further reading**
-    - [Getting started with customizing a large language model (LLM)](https://learn.MS.com/en-us/azure/ai-foundry/openai/concepts/customizing-llms)
-    - [Prompt engineering techniques](https://learn.MS.com/en-us/azure/ai-foundry/openai/concepts/prompt-engineering)
-    - [System message design](https://learn.MS.com/en-us/azure/ai-foundry/openai/concepts/advanced-prompt-engineering)
-    - [Retrieval Augmented Generation in MS Foundry](https://learn.MS.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
-    - [Customize a model with fine-tuning](https://learn.MS.com/en-us/azure/ai-foundry/openai/how-to/fine-tuning)
-    - [MS Foundry fine-tuning considerations](https://learn.MS.com/en-us/azure/ai-foundry/openai/concepts/fine-tuning-considerations)
-    - [Augment large language models with RAG or fine-tuning](https://learn.MS.com/en-us/azure/developer/ai/augment-llm-rag-fine-tuning)
+    - [Getting started with customizing a large language model (LLM)](https://learn.microsoft.com/en-gb/azure/ai-foundry/openai/concepts/customizing-llms)
+    - [Prompt engineering techniques](https://learn.microsoft.com/en-gb/azure/ai-foundry/openai/concepts/prompt-engineering)
+    - [System message design](https://learn.microsoft.com/en-gb/azure/ai-foundry/openai/concepts/advanced-prompt-engineering)
+    - [Retrieval Augmented Generation in MS Foundry](https://learn.microsoft.com/en-gb/azure/ai-foundry/concepts/retrieval-augmented-generation)
+    - [Customize a model with fine-tuning](https://learn.microsoft.com/en-gb/azure/ai-foundry/openai/how-to/fine-tuning)
+    - [MS Foundry fine-tuning considerations](https://learn.microsoft.com/en-gb/azure/ai-foundry/openai/concepts/fine-tuning-considerations)
+    - [Augment large language models with RAG or fine-tuning](https://learn.microsoft.com/en-gb/azure/developer/ai/augment-llm-rag-fine-tuning)
 
 - **Exercise - Optimize generative AI model performance**
     [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/04b-finetune-model.html)                        
 
 
 
-### 6. [Implement a responsible generative AI solution in MS Foundry](https://learn.MS.com/en-us/training/modules/responsible-ai-studio/)
+### 6. [Implement a responsible generative AI solution in MS Foundry](https://learn.microsoft.com/en-gb/training/modules/responsible-ai-studio/)
 
 - **Introduction**
 
@@ -2421,11 +2421,11 @@ markmap:
         - Generating content that is offensive, pejorative, or discriminatory.
         - Generating content that contains factual inaccuracies.
         - Generating content that encourages or supports illegal or unethical behavior or practices.
-        - Azure OpenAI Service includes a [transparency note](https://learn.MS.com/en-us/legal/cognitive-services/openai/transparency-note)
+        - Azure OpenAI Service includes a [transparency note](https://learn.microsoft.com/en-gb/legal/cognitive-services/openai/transparency-note)
         - Model developers may provide documentation such as the [OpenAI system card for the GPT-4 model](https://cdn.openai.com/papers/gpt-4-system-card.pdf)
         - Review the guidance in the [MS Responsible AI Impact Assessment Guide](https://msblogs.thesourcemediaassets.com/sites/5/2022/06/MS-RAI-Impact-Assessment-Guide.pdf)
         - To document potential harms can use [MS Responsible AI Impact Assessment template](https://msblogs.thesourcemediaassets.com/sites/5/2022/06/MS-RAI-Impact-Assessment-Template.pdf)
-        - Review the [information and guidelines](https://learn.MS.com/en-us/azure/ai-services/responsible-use-of-ai-overview) for the resources you use to help identify potential harms
+        - Review the [information and guidelines](https://learn.microsoft.com/en-gb/azure/ai-services/responsible-use-of-ai-overview) for the resources you use to help identify potential harms
 
     2. Prioritize the harms
         - This prioritization will enable to focus on finding and 
@@ -2452,7 +2452,7 @@ markmap:
             - A team of testers deliberately probes the solution for weaknesses and 
             attempts to produce harmful results
             - To learn more about Red Teaming for generative AI solutions, see 
-                [Introduction to red teaming large language models (LLMs)](https://learn.MS.com/en-us/azure/cognitive-services/openai/concepts/red-teaming) in
+                [Introduction to red teaming large language models (LLMs)](https://learn.microsoft.com/en-gb/azure/cognitive-services/openai/concepts/red-teaming) in
                 the Azure OpenAI Service documentation.
 
     4. Document and share details of harms
@@ -2517,18 +2517,18 @@ markmap:
                     - Foundry includes support for **guardrails** that apply criteria to 
                         suppress prompts and responses based on **content filters** that 
                         classify content into 
-                        - [Severity levels](https://learn.MS.com/en-us/azure/foundry/openai/concepts/content-filter-severity-levels?tabs=warning) (4)
+                        - [Severity levels](https://learn.microsoft.com/en-gb/azure/foundry/openai/concepts/content-filter-severity-levels?tabs=warning) (4)
                             1. Safe
                             2. Low
                             3. Medium
                             4. High
-                        - [Categories of potential harm](https://learn.MS.com/en-us/azure/foundry/openai/concepts/content-filter-severity-levels?tabs=warning) (5)
+                        - [Categories of potential harm](https://learn.microsoft.com/en-gb/azure/foundry/openai/concepts/content-filter-severity-levels?tabs=warning) (5)
                             1. Hate and fairness
                             2. Sexual
                             3. Violence
                             4. Self-harm
                             5. Task-adherence
-                        - [Prompt shields](https://learn.MS.com/en-us/azure/foundry/openai/concepts/content-filter-prompt-shields)
+                        - [Prompt shields](https://learn.microsoft.com/en-gb/azure/foundry/openai/concepts/content-filter-prompt-shields)
                             - Use detection algorithms to determine if the 
                                 solution is being systematically abused
         
@@ -2603,7 +2603,7 @@ markmap:
         4. Deploy your solution with adequate plans and preparations for responsible operation
 
 - **Further reading**
-    - [Overview of responsible AI practices for Azure OpenAI models](https://learn.MS.com/en-us/legal/cognitive-services/openai/overview)
+    - [Overview of responsible AI practices for Azure OpenAI models](https://learn.microsoft.com/en-gb/legal/cognitive-services/openai/overview)
     - [MS Foundry Discord](https://aka.ms/azureaifoundry/discord)
     - [MS Foundry Developer Forum](https://aka.ms/azureaifoundry/forum)
 
@@ -2615,7 +2615,7 @@ markmap:
 
 - [`Documentação Oficial`](https://learn.MS.com/pt-pt/training/paths/develop-ai-agents-azure/)
 
-### 1. [Develop AI agents with MS Foundry and Visual Studio Code](https://learn.MS.com/en-us/training/modules/develop-ai-agents-azure-vs-code/)
+### 1. [Develop AI agents with MS Foundry and Visual Studio Code](https://learn.microsoft.com/en-gb/training/modules/develop-ai-agents-azure-vs-code/)
 
 - **MS Foundry Agent Service**
     - Allows
@@ -2718,7 +2718,7 @@ markmap:
         - Customizable storage solutions
         - Observability and tracing
     
-    - Fundamentals of AI Agents [&rarr; saber &plus;](https://learn.MS.com/en-us/training/modules/ai-agent-fundamentals/)
+    - Fundamentals of AI Agents [&rarr; saber &plus;](https://learn.microsoft.com/en-gb/training/modules/ai-agent-fundamentals/)
 
 - **Explore development approaches**
 
@@ -2775,11 +2775,11 @@ markmap:
             - Others
     
     - Optional Azure Services
-        - [Azure AI Search](https://learn.MS.com/en-us/azure/search/search-what-is-azure-search?tabs=indexing%2Cquickstarts)<br/> for advances knowledge retrieval when using<br/>[Foundry IQ](https://learn.MS.com/en-us/azure/foundry/agents/concepts/what-is-foundry-iq?tabs=programmatic) or [File Search](https://learn.MS.com/en-us/agent-framework/agents/tools/file-search?pivots=programming-language-python) tools
+        - [Azure AI Search](https://learn.microsoft.com/en-gb/azure/search/search-what-is-azure-search?tabs=indexing%2Cquickstarts)<br/> for advances knowledge retrieval when using<br/>[Foundry IQ](https://learn.microsoft.com/en-gb/azure/foundry/agents/concepts/what-is-foundry-iq?tabs=programmatic) or [File Search](https://learn.microsoft.com/en-gb/agent-framework/agents/tools/file-search?pivots=programming-language-python) tools
 
-        - [Azure Storage](https://learn.MS.com/en-us/azure/storage/blobs/storage-blobs-overview)<br/> for storing and managing files that agents can access
+        - [Azure Storage](https://learn.microsoft.com/en-gb/azure/storage/blobs/storage-blobs-overview)<br/> for storing and managing files that agents can access
 
-        - [Azure Key Vault](https://learn.MS.com/en-us/azure/key-vault/)<br/>for securely managing secrets and credentials
+        - [Azure Key Vault](https://learn.microsoft.com/en-gb/azure/key-vault/)<br/>for securely managing secrets and credentials
 
         - [Azure Functions](https://learn.MS.com/en-gb/azure/azure-functions/)<br/>for custom tools implementations and business logic
 
@@ -3140,18 +3140,18 @@ markmap:
             research, and developer productivity.
 
 - **Further reading**
-    - [Fundamentals of AI agents](https://learn.MS.com/en-us/training/modules/ai-agent-fundamentals)
+    - [Fundamentals of AI agents](https://learn.microsoft.com/en-gb/training/modules/ai-agent-fundamentals)
         Deepen your understanding of agent concepts and architectures
-    - [MS Foundry documentation](https://learn.MS.com/en-us/azure/ai-foundry/)
+    - [MS Foundry documentation](https://learn.microsoft.com/en-gb/azure/ai-foundry/)
         Explore detailed guides and API references
-    - [GitHub Copilot fundamentals](https://learn.MS.com/en-us/training/paths/copilot/)
+    - [GitHub Copilot fundamentals](https://learn.microsoft.com/en-gb/training/paths/copilot/)
         Learn about AI agent applications in software development
 
 - **Exercise - Build and deploy an AI agent**
     [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-agents/Instructions/Exercises/01-build-agent-portal-and-vscode.html)
 
 
-### 2. [Integrate custom tools into your agent](https://learn.MS.com/en-us/training/modules/build-agent-with-custom-tools/)
+### 2. [Integrate custom tools into your agent](https://learn.microsoft.com/en-gb/training/modules/build-agent-with-custom-tools/)
 
 - **Introduction**
     - Accessible AI Development
@@ -3479,15 +3479,15 @@ markmap:
 
 - **Further reading**
     - [AI Agents for beginners tool use](https://github.com/MS/ai-agents-for-beginners/blob/main/04-tool-use/README.md)
-    - [MS Foundry Agent Service function calling](https://learn.MS.com/en-us/azure/ai-services/agents/how-to/tools/function-calling)
-    - [Introduction to Azure Functions](https://learn.MS.com/en-us/azure/azure-functions/functions-overview)
+    - [MS Foundry Agent Service function calling](https://learn.microsoft.com/en-gb/azure/ai-services/agents/how-to/tools/function-calling)
+    - [Introduction to Azure Functions](https://learn.microsoft.com/en-gb/azure/azure-functions/functions-overview)
     - [OpenAPI Specification](https://swagger.io/specification/)
 
 - **Exercise - Build an agent with custom tools**
     [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-agents/Instructions/Exercises/02-agent-custom-tools.html)
 
 
-### 3. [Integrate MCP Tools with Azure AI Agents](https://learn.MS.com/en-us/training/modules/connect-agent-to-mcp-tools/)
+### 3. [Integrate MCP Tools with Azure AI Agents](https://learn.microsoft.com/en-gb/training/modules/connect-agent-to-mcp-tools/)
 
 - **Introduction**
     - The Integration Challenge
@@ -3666,13 +3666,13 @@ markmap:
 
 - **Further reading**
     - [Model Context Protocol User Guide](https://modelcontextprotocol.io/introduction)
-    - [Connect to Model Context Protocol servers](https://learn.MS.com/en-us/azure/ai-foundry/agents/how-to/tools/model-context-protocol?view=foundry&preserve-view=true&pivots=python)
+    - [Connect to Model Context Protocol servers](https://learn.microsoft.com/en-gb/azure/ai-foundry/agents/how-to/tools/model-context-protocol?view=foundry&preserve-view=true&pivots=python)
 
 - **Exercise - Connect MCP tools to Azure AI Agents**
     [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-agents/Instructions/Exercises/03-mcp-integration.html)
 
 
-### 4. [Build knowledge-enhanced AI agents with Foundry IQ](https://learn.MS.com/en-us/training/modules/introduction-foundry-iq/)
+### 4. [Build knowledge-enhanced AI agents with Foundry IQ](https://learn.microsoft.com/en-gb/training/modules/introduction-foundry-iq/)
 
 - **Introduction**
 
@@ -3859,7 +3859,7 @@ markmap:
                 Filters results by categories or attributes
             - Multi-language support
                 Handles content in different languages
-        - <span>&#x1F4A1;</span>==Learn more about [Azure AI Search](https://learn.MS.com/en-us/azure/search/search-what-is-azure-search)==
+        - <span>&#x1F4A1;</span>==Learn more about [Azure AI Search](https://learn.microsoft.com/en-gb/azure/search/search-what-is-azure-search)==
 
     - Azure Blob Storage
         - Retrieve documents and files directly from your blob containers
@@ -4196,7 +4196,7 @@ markmap:
 
 
 
-### 5. [Integrate your agent with MS 365](https://learn.MS.com/en-us/training/modules/integrate-foundry-agent-with-m365/)
+### 5. [Integrate your agent with MS 365](https://learn.microsoft.com/en-gb/training/modules/integrate-foundry-agent-with-m365/)
 
 - **Introduction**
     - The User Environment Gap
@@ -4668,7 +4668,7 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
     [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/05b-work-iq-integration.html)
 
 
-### 6. [Build agent-driven workflows using MS Foundry](https://learn.MS.com/en-us/training/modules/build-agent-workflows-MS-foundry/)
+### 6. [Build agent-driven workflows using MS Foundry](https://learn.microsoft.com/en-gb/training/modules/build-agent-workflows-MS-foundry/)
 
 - **Introduction**
     - The Multi-Agent Paradigm
@@ -5006,7 +5006,7 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
 - **Exercise - Create an Agent-driven Workflow**
     [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/06-build-workflow-ms-foundry.html)
 
-### 7. [Develop an AI agent with MS Agent Framework](https://learn.MS.com/en-us/training/modules/develop-ai-agent-with-semantic-kernel/)
+### 7. [Develop an AI agent with MS Agent Framework](https://learn.microsoft.com/en-gb/training/modules/develop-ai-agent-with-semantic-kernel/)
 
 - **Introduction**
 
@@ -5203,7 +5203,7 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
 - **Exercise - Develop an Azure AI agent with the Microsoft Agent Framework SDK**
     [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/06-build-workflow-ms-foundry.html)
 
-### 8. [Orchestrate a multi-agent solution using the MS Agent Framework](https://learn.MS.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/)
+### 8. [Orchestrate a multi-agent solution using the MS Agent Framework](https://learn.microsoft.com/en-gb/training/modules/orchestrate-semantic-kernel-multi-agent-solution/)
 
 - **Introduction**
     - A multi-agent system could consist of four 
@@ -5734,7 +5734,7 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
     [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/08-agent-framework-multi-agents.html)
 
 
-### 9. [Discover Azure AI Agents with A2A](https://learn.MS.com/en-us/training/modules/discover-agents-with-a2a/)
+### 9. [Discover Azure AI Agents with A2A](https://learn.microsoft.com/en-gb/training/modules/discover-agents-with-a2a/)
 
 - **Introduction**
     - AI agents are effective individually, but many real-world scenarios require **collaboration between multiple agents**.
@@ -6001,7 +6001,7 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
 
 - [`Documentação Oficial`](https://learn.MS.com/en-gb/training/paths/develop-language-solutions-azure-ai/)
 
-### 1. [Analyze text with Azure Language in Foundry Tools](https://learn.MS.com/en-us/training/modules/analyze-text-ai-language/)
+### 1. [Analyze text with Azure Language in Foundry Tools](https://learn.microsoft.com/en-gb/training/modules/analyze-text-ai-language/)
 
 - **Azure Language in MS Foundry Tools**
 
@@ -6094,7 +6094,7 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
         5. Address
         6. Email
         7. URL
-        8. [Others](https://learn.MS.com/en-us/azure/ai-services/language-service/named-entity-recognition/concepts/named-entity-categories?tabs=ga-api)
+        8. [Others](https://learn.microsoft.com/en-gb/azure/ai-services/language-service/named-entity-recognition/concepts/named-entity-categories?tabs=ga-api)
     
     - Example input for NER
         <pre><code>
@@ -6186,7 +6186,7 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
 - **Exercise - Analyze text**
     [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-language/Instructions/Exercises/01-analyze-text.html)
 
-- [`Documentação Language Service`](https://learn.MS.com/en-us/azure/ai-services/language-service/)
+- [`Documentação Language Service`](https://learn.microsoft.com/en-gb/azure/ai-services/language-service/)
 
 ### 2. [Develop a text analysis agent with the Azure Language MCP server](https://learn.microsoft.com/en-us/training/modules/develop-text-analysis-agent-language-mcp/)
 
