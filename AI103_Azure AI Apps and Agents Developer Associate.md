@@ -8125,6 +8125,8 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
 
 ## Extract insights from visual data on Azure
 
+- [`Documentação oficial`](https://learn.microsoft.com/en-us/training/paths/insight-visual-data/)
+
 ### 1. [Develop a vision-enabled generative AI application](https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-vision-apps/)
 
 - **Introduction**
@@ -10316,6 +10318,6 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
 
 - **Further reading**
     - [Azure AI Search documentation](https://learn.microsoft.com/en-us/azure/search/)
-    
+
 - **Exercise -  Create a knowledge mining solution**
 [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-information-extraction/Instructions/Exercises/04-knowledge-mining.html)
