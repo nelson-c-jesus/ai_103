@@ -195,7 +195,7 @@ markmap:
     - [Azure AI](https://azure.MS.com/solutions/ai)
 
 - **Exercise - Prepare for an AI development project**
-    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/01-Explore-ai-studio.html)
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/01-Explore-ai-studio.html)
 
 
 ### 2. [Select, deploy and evaluate MS Foundry models](https://learn.microsoft.com/en-gb/training/modules/model-catalog-evaluate/)
@@ -681,7 +681,7 @@ markmap:
             - Multiple metrics
 
 - **Exercise - Select, deploy, and evaluate models**
-    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/02-model-catalog-evaluation.html)
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/02-model-catalog-evaluation.html)
 
 
 ### 3. [Develop a generative AI chat app with MS Foundry](https://learn.microsoft.com/en-gb/training/modules/foundry-sdk/)
@@ -1279,7 +1279,7 @@ markmap:
     - [MS Foundry Developer Forum](https://aka.ms/azureaifoundry/forum)
 
 - **Exercise - Create a generative AI chat app**
-    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/03-foundry-sdk.html)
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/03-foundry-sdk.html)
 
 
 
@@ -1792,7 +1792,7 @@ markmap:
     - [OpenAI developers Guide: Function calling](https://developers.openai.com/api/docs/guides/function-calling)
 
 - **Exercise - Create a generative AI chat app that uses tools**
-    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/04a-use-own-data.html)
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/04a-use-own-data.html)
 
 
 ### 5. [Optimize generative AI model performance with MS Foundry](https://learn.microsoft.com/en-gb/training/modules/optimize-generative-ai-model-performance/)
@@ -2391,7 +2391,7 @@ markmap:
     - [Augment large language models with RAG or fine-tuning](https://learn.microsoft.com/en-gb/azure/developer/ai/augment-llm-rag-fine-tuning)
 
 - **Exercise - Optimize generative AI model performance**
-    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/04b-finetune-model.html)                        
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/04b-finetune-model.html)                        
 
 
 
@@ -2608,7 +2608,7 @@ markmap:
     - [MS Foundry Developer Forum](https://aka.ms/azureaifoundry/forum)
 
 - **Exercise - Apply guardrails to prevent the output of harmful content**
-    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-studio/Instructions/Exercises/06-Explore-content-filters.html)
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-studio/Instructions/Exercises/06-Explore-content-filters.html)
 
 
 ## Develop AI agents on Azure
@@ -3148,7 +3148,7 @@ markmap:
         Learn about AI agent applications in software development
 
 - **Exercise - Build and deploy an AI agent**
-    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-agents/Instructions/Exercises/01-build-agent-portal-and-vscode.html)
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/01-build-agent-portal-and-vscode.html)
 
 
 ### 2. [Integrate custom tools into your agent](https://learn.microsoft.com/en-gb/training/modules/build-agent-with-custom-tools/)
@@ -3484,7 +3484,7 @@ markmap:
     - [OpenAPI Specification](https://swagger.io/specification/)
 
 - **Exercise - Build an agent with custom tools**
-    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-agents/Instructions/Exercises/02-agent-custom-tools.html)
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/02-agent-custom-tools.html)
 
 
 ### 3. [Integrate MCP Tools with Azure AI Agents](https://learn.microsoft.com/en-gb/training/modules/connect-agent-to-mcp-tools/)
@@ -3669,7 +3669,7 @@ markmap:
     - [Connect to Model Context Protocol servers](https://learn.microsoft.com/en-gb/azure/ai-foundry/agents/how-to/tools/model-context-protocol?view=foundry&preserve-view=true&pivots=python)
 
 - **Exercise - Connect MCP tools to Azure AI Agents**
-    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-agents/Instructions/Exercises/03-mcp-integration.html)
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/03-mcp-integration.html)
 
 
 ### 4. [Build knowledge-enhanced AI agents with Foundry IQ](https://learn.microsoft.com/en-gb/training/modules/introduction-foundry-iq/)
@@ -4191,7 +4191,7 @@ markmap:
 
 
 - **Exercise - Integrate an AI agent with Foundry IQ**
-    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-agents/Instructions/09-integrate-agent-with-foundry-iq.html)
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/09-integrate-agent-with-foundry-iq.html)
 
 
 
@@ -6184,7 +6184,7 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
         </pre>
 
 - **Exercise - Analyze text**
-    [&rarr; saber &plus;](https://MSlearning.github.io/mslearn-ai-language/Instructions/Exercises/01-analyze-text.html)
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-language/Instructions/Exercises/01-analyze-text.html)
 
 - [`Documentação Language Service`](https://learn.microsoft.com/en-gb/azure/ai-services/language-service/)
 
