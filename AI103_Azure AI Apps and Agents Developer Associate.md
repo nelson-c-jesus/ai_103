@@ -8,7 +8,7 @@ markmap:
 
 ## Develop generative AI apps in Azure
 
-### [Documentação Oficial](https://learn.microsoft.com/en-gb/training/paths/develop-generative-ai-apps/)
+### 0. [Documentação Oficial](https://learn.microsoft.com/en-gb/training/paths/develop-generative-ai-apps/)
 
 ### 1. [Plan and prepare to develop AI solutions on Azure](https://learn.microsoft.com/en-gb/training/modules/prepare-azure-ai-development/)
 
@@ -752,6 +752,37 @@ markmap:
             - Access project configuration
             - Enable tracing
             - Manage datasets and indexes
+        - Authentication (VScode)
+            - Developer account
+                - Implement the code
+                    - `pip install azure-identity`
+                    - `pip install azure-identity-broker`
+                - Credential implementation
+                    - Single person/tool scenarios
+                        - This requires previously logging in to Azure via "az login", and
+                            will use the CLI's currently logged in identity.
+                        - Example
+                            <pre><code>
+                            from azure.identity import AzureCliCredential
+                            from azure.storage.blob import BlobServiceClient
+                            &nbsp;
+                            credential = AzureCliCredential()
+                            &nbsp;
+                            blob_service_client = BlobServiceClient(
+                            account_url="https://<account-name>.blob.core.windows.net",
+                            credential=credential)
+                            </code></pre>
+                        - [AzureCliCredential Class](https://learn.microsoft.com/en-us/python/api/azure-identity/azure.identity.azureclicredential?view=azure-python)
+                    - Any development tool
+                        - Use a `DefaultAzureCredential`instance optimized for 
+                            all local development tools.
+                        - Example
+                            <pre><code>
+                            from azure.identity import DefaultAzureCredential
+                            &nbsp;
+                            credential = DefaultAzureCredential()
+                            </code></pre>
+                        - [DefaultAzureCredential Class](https://learn.microsoft.com/en-us/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python)
 
     - Creating a chat client
         - Use OpenAI-compatible client object **get_openai_client()**
@@ -2613,7 +2644,7 @@ markmap:
 
 ## Develop AI agents on Azure
 
-- [`Documentação Oficial`](https://learn.MS.com/pt-pt/training/paths/develop-ai-agents-azure/)
+### 0. [`Documentação Oficial`](https://learn.MS.com/pt-pt/training/paths/develop-ai-agents-azure/)
 
 ### 1. [Develop AI agents with MS Foundry and Visual Studio Code](https://learn.microsoft.com/en-gb/training/modules/develop-ai-agents-azure-vs-code/)
 
@@ -4191,7 +4222,10 @@ markmap:
 
 
 - **Exercise - Integrate an AI agent with Foundry IQ**
-    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/09-integrate-agent-with-foundry-iq.html)
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/04-integrate-agent-with-foundry-iq.html)
+
+- **Article - Connect a Foundry IQ Knowledge base to Foundry Agent Seervice**
+    [&rarr; saber &plus;](https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/foundry-iq-connect?tabs=foundry%2Cpython)
 
 
 
@@ -5201,7 +5235,7 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
 
 
 - **Exercise - Develop an Azure AI agent with the Microsoft Agent Framework SDK**
-    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/06-build-workflow-ms-foundry.html)
+    [&rarr; saber &plus;](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/07-agent-framework.html)
 
 ### 8. [Orchestrate a multi-agent solution using the MS Agent Framework](https://learn.microsoft.com/en-gb/training/modules/orchestrate-semantic-kernel-multi-agent-solution/)
 
@@ -5999,7 +6033,7 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
 
 ## Develop natural language solutions in Azure
 
-- [`Documentação Oficial`](https://learn.MS.com/en-gb/training/paths/develop-language-solutions-azure-ai/)
+### 0. [`Documentação Oficial`](https://learn.MS.com/en-gb/training/paths/develop-language-solutions-azure-ai/)
 
 ### 1. [Analyze text with Azure Language in Foundry Tools](https://learn.microsoft.com/en-gb/training/modules/analyze-text-ai-language/)
 
@@ -8125,7 +8159,7 @@ I               It accesses data through Microsoft Graph<br/>with your authentic
 
 ## Extract insights from visual data on Azure
 
-- [`Documentação oficial`](https://learn.microsoft.com/en-us/training/paths/insight-visual-data/)
+### 0. [`Documentação oficial`](https://learn.microsoft.com/en-us/training/paths/insight-visual-data/)
 
 ### 1. [Develop a vision-enabled generative AI application](https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-vision-apps/)
 
